@@ -9,8 +9,8 @@ require ('nav.php');
 
         <div class="w-full md:max-w-7xl mx-auto mt-10 grid grid-cols-1 md:grid-cols-2">
             <div class="mx-auto md:mx-0">
-                <h2 class="text-base">Seminario</h2>
-                <h1 class="font-petrona text-4xl text-bordoInforcap">Panadería y Confitería</h1>
+                <h2 class="text-base">Taller</h2>
+                <h1 class="font-petrona text-4xl text-bordoInforcap">TORTAS PESADAS E INVERTIDAS</h1>
             </div>
             <div class="font-sacramento text-3xl text-bordoInforcap py-2 text-center md:text-right">
                 <span class="inline-block align-middle">No pierdas esta oportunidad! <br />
@@ -18,28 +18,29 @@ require ('nav.php');
             </div>
         </div>
         <div class="md:max-w-7xl mx-4 md:mx-auto overflow-hidden rounded-lg drop-shadow-xl">
-            <img src="https://images.pexels.com/photos/15587528/pexels-photo-15587528/free-photo-of-comida-azucar-postre-dulce.jpeg" class="object-cover w-full h-72">
+            <img src="img/tortas-pesadas-e-invertidas.jpg" class="object-cover w-full h-72">
         </div>
         <div class="md:max-w-7xl w-11/12 mx-auto mt-10 mb-20 md:pl-10">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
                 <div class="px-4 py-8 md:p-8 bg-slate-50 rounded-lg drop-shadow-xl">
                     <p class="text-2xl mb-6 text-bordoInforcap font-bold">Aprenderás a elaborar</p>
                     <ul class="text-base/loose">
-                        <li>&rarr; PAN QUESÚ - PAN LACTAL RELLENO (JAMON Y QUESO)</li>
-                        <li>&rarr; GRISINES SABORIZADOS, PANES SABORIZADOS (CEBOLLA Y AJO)</li>
-                        <li>&rarr; PAN  DE HAMBURGUESA Y PAN PITA ARABE</li>
+                        <li>&rarr; TORTAS PESADAS DE NARANJA </li>
+                        <li>&rarr; MARMOLADAS</li>
+                        <li>&rarr; BUDIN INGLES Y AJEDREZ</li>
+                        <li>&rarr; INVERTIDAS DE DURAZNOS Y ANANA.</li>
                         <li>&rarr; CÁLCULO DE COSTO</li>
                     </ul>
 
                     <div class="mt-10">
                         <div class="text-2xl text-bordoInforcap font-bold h-12">Marzo</div>
                         <div class="flex h-12"><i class="fa-solid fa-arrow-right text-amarilloInforcap mr-4"></i>Jueves</div>
-                        <div class="flex h-12"><i class="fa-solid fa-calendar-days text-amarilloInforcap mr-4"></i>7 - 14 - 21</div>
-                        <div class="flex h-12"><i class="fa-solid fa-clock text-amarilloInforcap mr-4"></i>08:00 a 12:00</div>
+                        <div class="flex h-12"><i class="fa-solid fa-calendar-days text-amarilloInforcap mr-4"></i>20</div>
+                        <div class="flex h-12"><i class="fa-solid fa-clock text-amarilloInforcap mr-4"></i>14:00 a 18:00</div>
                     </div>
                     <div class="mt-6">
-                       <p><strong>Duración:</strong> 1 mes<br>
-                        <strong>Frecuencia:</strong> 1 vez a la semana<br><br>
+                       <p><strong>Duración:</strong> 1 día<br>
+                        <!--<strong>Frecuencia:</strong> 1 vez a la semana<br><br>-->
                         <strong>Requisitos</strong><br>
                           1 fotocopia de cédula<br>
                         Llenar la solicitud correspondiente <br>

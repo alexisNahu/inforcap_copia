@@ -1,90 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inforcap</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="css/output.css" rel="stylesheet">
-    <link href="css/input.css" rel="stylesheet">
+<?php 
+require ('header.php'); 
+?>
 
-
-</head>
-<body class="font-body">
-
-    <nav class="relative container mx-auto p-6 max-w-7xl">
-        <div class="flex items-center justify-between">
-            <!--logo-->
-            <div class="pt-2">
-                <a href="index.php"><img src="img/logo-inforcap.png" class="w-40"></a>
-            </div>
-            <!--Menu Items-->
-            <div class="hidden md:flex space-x-6">
-                <a href="inforcap.html" class="">Inforcap</a>
-                <a href="formacion-profesional.html" class="">Formacion profesional</a>
-                <a href="actividades.html" class="">Actividades</a>
-                <a href="videos.html" class="">Videos</a>
-                <a href="rse.html" class="">RSE</a>
-                <a href="contactenos.html" class="">Contáctenos</a>
-            </div>
-            <!--Button-->
-            <div class="hidden md:flex">
-                <a href="#" class="p-3 pt-2 text-bordoInforcap text-3xl"><i class="fa-brands fa-facebook-square"></i></a>
-                <a href="#" class="p-3 pt-2 text-bordoInforcap text-3xl"><i class="fa-brands fa-instagram-square"></i></a>
-            </div>
-
-            <div>
-                <img src="./img/logo-inforcap-21-original.png" class="w-24">
-            </div>
-        </div>
-
-    </nav>
+<?php 
+require ('nav.php'); 
+?>
 
     <div class="w-full mt-10">
 
         <div class="md:max-w-7xl grid grid-cols-2 mx-auto">
             <div class="w-full">
-                <img src="./img/pizzas-y-calzones.jpeg" class="object-cover rounded-lg">
+                <img src="./img/donas-y-berlinesas.jpg" class="object-cover rounded-lg">
             </div>
             <div class="w-full">
                 <div class="mx-auto md:mx-0">
-                    <h2 class="text-base">Seminario</h2>
-                    <h1 class="font-petrona text-4xl text-bordoInforcap">Panadería y Confitería</h1>
+                    <h2 class="text-base">Taller</h2>
+                    <h1 class="font-petrona text-4xl text-bordoInforcap">DONAS Y BERLINESAS</h1>
                 </div>
                 <div class="flex my-10">
                     <div class="pr-8 border-r-2 border-amarilloInforcap">
                         <div class="text-base text-gris">Mes</div>
-                        <div class="text-3xl font-petrona text-bordoInforcap">Marzo</div>
+                        <div class="text-3xl font-petrona text-bordoInforcap">Julio</div>
                     </div>
                     <div class="px-8 border-r-2 border-amarilloInforcap">
                         <div class="text-base text-gris">Día</div>
-                        <div class="text-3xl font-petrona text-bordoInforcap">Jueves</div>
+                        <div class="text-3xl font-petrona text-bordoInforcap">Miércoles</div>
                     </div>
                     <div class="px-8">
                         <div class="text-base text-gris">Fechas</div>
-                        <div class="text-3xl font-petrona text-bordoInforcap">12 - 19 - 26</div>
+                        <div class="text-3xl font-petrona text-bordoInforcap">5</div>
                     </div>
                 </div>
 
                 <p class="text-2xl mb-6 text-bordoInforcap font-bold">Aprenderás a elaborar</p>
                 <ul class="text-base/loose">
-                    <li>&rarr; PAN QUESÚ - PAN LACTAL RELLENO (JAMON Y QUESO)</li>
-                    <li>&rarr; GRISINES SABORIZADOS, PANES SABORIZADOS (CEBOLLA Y AJO)</li>
-                    <li>&rarr; PAN  DE HAMBURGUESA Y PAN PITA ARABE</li>
-                    <li>&rarr; CÁLCULO DE COSTO</li>
+                        <li>&rarr; BERLINES RELLENAS DULCE DE LECHE </li>
+                        <li>&rarr; CREMA PASTELERA, GUAYABA Y NUTELLA</li>
+                        <li>&rarr; DIFERENTES COBERTURAS Y CONFITES.</li>
+                        <li>&rarr; CÁLCULO DE COSTO</li>
                 </ul>
 
                 <div class="mt-6">
-                    <p><strong>Duración:</strong> 1 mes<br>
-                     <strong>Frecuencia:</strong> 1 vez a la semana<br><br>
+                    <p><strong>Duración:</strong> 1 día<br>
+                    <!-- <strong>Frecuencia:</strong> 1 vez a la semana<br><br>-->
                      <strong>Requisitos</strong><br>
                        1 fotocopia de cédula<br>
                      Llenar la solicitud correspondiente <br>
                      Firmar el Reglamento Académico y Administrativo</p>
 
-                     <p class="mt-8 text-2xl font-bold text-bordoInforcap"><span class="bg-naranjaInforcap text-white px-4 py-2 rounded-lg">Costo: Gs. 400.000</span></p>
+                     <p class="mt-8 text-2xl font-bold text-bordoInforcap"><span class="bg-naranjaInforcap text-white px-4 py-2 rounded-lg">Costo: Gs. 160.000</span></p>
                  </div>
             </div>
         </div>
@@ -152,52 +116,6 @@
     </div>
 
 
-<footer>
-
-    <div class="w-full bg-bordoInforcap">
-        <div class="max-w-7xl mx-auto bg-bordoInforcap py-20 grid-cols-1 grid md:grid-cols-4 gap-8">
-
-            <div class="md:ml-0">
-                <img src="./img/logo-inforcap-blanco.png" class="w-60 mx-auto">
-            </div>
-            <div class="md:col-span-2 mx-4 text-center">
-                <div class="text-white">
-                    <p class="font-bold"><i class="fa-solid fa-location-dot"></i> Dirección </p>
-                    <div class=""> Avda. Eusebio Ayala 3909 esq. Alas Paraguayas Km 4,5. Asunción</div>
-                    </div>
-
-                <div class="text-white my-8">
-                
-                    <p class="font-bold"><i class="fa-solid fa-phone"></i> Teléfonos</p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
-                        <div class="mb-2"><a href="#"><i class="fa-solid fa-phone"></i> +595 21 613135</a></div> 
-                        <div class="mb-2"><a href="https://wa.me/595981727101"><i class="fa-brands fa-whatsapp"></i> +595 981 727101</a> </div> 
-                    
-                        <div class="mb-2"><a href="https://wa.me/595983350062"><i class="fa-brands fa-whatsapp"></i> +595 983 350062</a> </div> 
-                        <div class="mb-2"><a href="https://wa.me/595986237441"><i class="fa-brands fa-whatsapp"></i> +595 986 237441</a></div>
-                    </div>
-                </div>
-
-                <div class="text-white">
-                    <p class="font-bold"><i class="fa-solid fa-envelope"></i> Email</p>
-                  <a href="mailto:inforcap@inforcap.edu.py">inforcap@inforcap.edu.py</a>
-                </div>
-           
-            </div>
-
-            <div class="w-5/6 mx-auto md:relative">
-                <img src="./img/logo-inforcap-21.png" class="mx-auto md:absolute md:right-0 w-40">
-            </div>
-
-    </div>
-</div>
-
-<div class="w-full bg-gris text-white text-center py-4 text-sm"><a href="https://fincreativo.com" target="_blank">Diseñado y desarrollado por FINCREATIVO</a></div>
-</footer>
-
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script type="text/javascript" src="js/functions.min.js"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js"></script>
-<script type="text/javascript" src="js/responsiveslides.min.js"></script>
-</body>
-</html>
+    <?php 
+    require ('footer.php'); 
+    ?>

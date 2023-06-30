@@ -26,7 +26,7 @@ require ('nav.php');
             
         </a>
 
-        <a href="#" class="group relative cursor-pointer rounded-lg items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
+        <a href="carrera-tecnica-panaderia-y-confiteria.php" class="group relative cursor-pointer rounded-lg items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
             <div class="w-full h-full">
                 <img src="./img/panaderia-y-confiteria.jpeg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-125">
             </div>

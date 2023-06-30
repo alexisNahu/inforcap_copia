@@ -1,46 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inforcap</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="/css/output.css" rel="stylesheet">
-    <link href="/css/input.css" rel="stylesheet">
+<?php 
+require ('header.php'); 
+?>
+
+<?php 
+require ('nav.php'); 
+?>
 
 
-</head>
-<body class="font-body">
-
-    <nav class="relative container mx-auto p-6 max-w-7xl">
-        <div class="flex items-center justify-between">
-            <!--logo-->
-            <div class="pt-2">
-                <a href="index.html"><img src="img/logo-inforcap.png" class="w-40"></a>
-            </div>
-            <!--Menu Items-->
-            <div class="hidden md:flex space-x-6">
-                <a href="inforcap.html" class="">Inforcap</a>
-                <a href="formacion-profesional.html" class="">Formacion profesional</a>
-                <a href="actividades.html" class="">Actividades</a>
-                <a href="videos.html" class="">Videos</a>
-                <a href="rse.html" class="">RSE</a>
-                <a href="contactenos.html" class="">Contáctenos</a>
-            </div>
-            <!--Button-->
-            <div class="hidden md:flex">
-                <a href="#" class="p-3 pt-2 text-bordoInforcap text-3xl"><i class="fa-brands fa-facebook-square"></i></a>
-                <a href="#" class="p-3 pt-2 text-bordoInforcap text-3xl"><i class="fa-brands fa-instagram-square"></i></a>
-            </div>
-
-            <div>
-                <img src="./img/logo-inforcap-21-original.png" class="w-24">
-            </div>
-        </div>
-
-    </nav>
 
     <div class="w-full bg-slate-50">
         <div class="max-w-7xl py-8 px-8 mx-auto">
@@ -68,19 +34,19 @@
         <div class="max-w-7xl text-center py-8 px-8 mx-auto">
             <div class="mt-10 mb-20 grid grid-cols-1 md:grid-cols-4 gap-4 text-left">
                 <div class="rounded-md bg-slate-50 p-4 drop-shadow-xl"> 
-                    <p class="mb-4 py-2 rounded-md"><span class="font-bold">Técnico en Panadería y Confitería</span></p>
+                    <p class="mb-4 py-2 rounded-md"><span class="font-bold text-bordoInforcap">Técnico en Panadería y Confitería</span></p>
                     <p class="mb-4">Inicia en marzo y se extiende hasta noviembre</p>
                     <p><span class="font-bold">Duración:</span> 3 años.</p>
                 </div>
                 <div class="rounded-md bg-slate-50 p-4 drop-shadow-xl"> 
-                    <p class="mb-4 py-2 rounded-md"><span class="font-bold">Días de Clase</span></p>
+                    <p class="mb-4 py-2 rounded-md"><span class="font-bold text-bordoInforcap">Días de Clase</span></p>
                     <p class="mb-4"><span class="font-bold">1er año,</span> todos los lunes.</p>
                     <p class="mb-4"><span class="font-bold">2do. año,</span> todos los martes.</p>
                     <p><span class="font-bold">3er. año,</span> todos lo miércoles</p>
                 </div>
 
                 <div class="rounded-md bg-slate-50 p-4 drop-shadow-xl"> 
-                    <p class="mb-4 py-2 rounded-md"><span class="font-bold ">Requisitos</span></p>
+                    <p class="mb-4 py-2 rounded-md"><span class="font-bold text-bordoInforcap">Requisitos</span></p>
 
                      <div class="flex">
                         <div class="mr-2 mb-2 text-amarilloInforcap">&#10003;</div>
@@ -113,7 +79,7 @@
                 </div>
 
                 <div class="rounded-md bg-slate-50 p-4 drop-shadow-xl"> 
-                    <p class="mb-4 py-2 rounded-md"><span class="font-bold">Malla Curricular</span></p>
+                    <p class="mb-4 py-2 rounded-md"><span class="font-bold text-bordoInforcap">Malla Curricular</span></p>
                     <div class="flex">
                         <div class="mr-2 mb-2 text-amarilloInforcap">&#10003;</div>
                         <div class=""> Masa Fermentada</div>
@@ -207,52 +173,6 @@
     </div>
 
 
-<footer>
-
-    <div class="w-full bg-bordoInforcap">
-        <div class="max-w-7xl mx-auto bg-bordoInforcap py-20 grid-cols-1 grid md:grid-cols-4 gap-8">
-
-            <div class="md:ml-0">
-                <img src="./img/logo-inforcap-blanco.png" class="w-60 mx-auto">
-            </div>
-            <div class="md:col-span-2 mx-4 text-center">
-                <div class="text-white">
-                    <p class="font-bold"><i class="fa-solid fa-location-dot"></i> Dirección </p>
-                    <div class=""> Avda. Eusebio Ayala 3909 esq. Alas Paraguayas Km 4,5. Asunción</div>
-                    </div>
-
-                <div class="text-white my-8">
-                
-                    <p class="font-bold"><i class="fa-solid fa-phone"></i> Teléfonos</p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
-                        <div class="mb-2"><a href="#"><i class="fa-solid fa-phone"></i> +595 21 613135</a></div> 
-                        <div class="mb-2"><a href="https://wa.me/595981807101"><i class="fa-brands fa-whatsapp"></i> +595 981 807101</a> </div> 
-                    
-                        <div class="mb-2"><a href="https://wa.me/595983350062"><i class="fa-brands fa-whatsapp"></i> +595 983 350062</a> </div> 
-                        <div class="mb-2"><a href="https://wa.me/595986237441"><i class="fa-brands fa-whatsapp"></i> +595 986 237441</a></div>
-                    </div>
-                </div>
-
-                <div class="text-white">
-                    <p class="font-bold"><i class="fa-solid fa-envelope"></i> Email</p>
-                  <a href="mailto:inforcap@inforcap.edu.py">inforcap@inforcap.edu.py</a>
-                </div>
-           
-            </div>
-
-            <div class="w-5/6 mx-auto md:relative">
-                <img src="./img/logo-inforcap-21.png" class="mx-auto md:absolute md:right-0 w-40">
-            </div>
-
-    </div>
-</div>
-
-<div class="w-full bg-gris text-white text-center py-4 text-sm"><a href="https://fincreativo.com" target="_blank">Diseñado y desarrollado por FINCREATIVO</a></div>
-</footer>
-
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script type="text/javascript" src="js/functions.min.js"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js"></script>
-<script type="text/javascript" src="js/responsiveslides.min.js"></script>
-</body>
-</html>
+    <?php 
+    require ('footer.php'); 
+    ?>
