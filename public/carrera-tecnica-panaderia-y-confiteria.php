@@ -14,22 +14,39 @@ require ('nav.php');
             <h1 class="text-3xl font-bold tracking-tight font-petrona text-bordoInforcap">Panadería y Confitería </h1>
             <div class="text-xl tracking-tight text-gris mb-8">Aprenderá las diferentes técnicas para elaborar varios tipos de panificados en forma industrial y artesanal.</div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="md:col-span-2" id="galeriaCursos">
-                   <div><img src="./img/panaderia-y-confiteria.jpeg"></div> 
-                   <div><img src="./img/panaderia-y-confiteria_02.jpeg" alt=""></div>
-                    <div><img src="./img/panaderia-y-confiteria_03.jpeg" alt=""></div>
-                    <div><img src="./img/panaderia-y-confiteria_04.jpeg" alt=""></div>
-                    <div><img src="./img/panaderia-y-confiteria_05.jpeg" alt=""></div>
-                </div>
+            <div class="container mx-auto">
+
+
+<div class="md:w-[800px] md:h-[480px] mx-auto" id="galeriaCursos">
+
+    <div><img src="./img/panaderia-y-confiteria.jpeg" alt=""></div>
+    <div><img src="./img/panaderia-y-confiteria_02.jpeg" alt=""></div>
+    <div><img src="./img/panaderia-y-confiteria_03.jpeg" alt=""></div>
+    <div><img src="./img/panaderia-y-confiteria_04.jpeg" alt=""></div>
+    <div><img src="./img/panaderia-y-confiteria_05.jpeg" alt=""></div>
+    <div><img src="./img/panaderia-y-confiteria_06.jpeg" alt=""></div>
+    <div><img src="./img/panaderia-y-confiteria_07.jpeg" alt=""></div>
+    <div><img src="./img/panaderia-y-confiteria_08.jpeg" alt=""></div>
+
+</div>
+
+<div id="galeriaCursos-pager" class="w-full md:w-[800px] bg-grisClaro grid grid-cols-2 md:grid-cols-4 mx-auto">
+
+    <div class="w-auto m-2"><a href="#"><img src="./img/panaderia-y-confiteria.jpeg" alt=""></a></div>
+    <div class="w-auto m-2"><a href="#"><img src="./img/panaderia-y-confiteria_02.jpeg" alt=""></a></div>
+    <div class="w-auto m-2"><a href="#"><img src="./img/panaderia-y-confiteria_03.jpeg" alt=""></a></div>
+    <div class="w-auto m-2"><a href="#"><img src="./img/panaderia-y-confiteria_04.jpeg" alt=""></a></div>
+    <div class="w-auto m-2"><a href="#"><img src="./img/panaderia-y-confiteria_05.jpeg" alt=""></a></div>
+    <div class="w-auto m-2"><a href="#"><img src="./img/panaderia-y-confiteria_06.jpeg" alt=""></a></div>
+    <div class="w-auto m-2"><a href="#"><img src="./img/panaderia-y-confiteria_07.jpeg" alt=""></a></div>
+    <div class="w-auto m-2"><a href="#"><img src="./img/panaderia-y-confiteria_08.jpeg" alt=""></a></div>
+
+</div>
+</div>
                 
-                <div class="md:relative w-full h-full bg-amarilloInforcap md:w-96 md:h-96">
-                        <div class="md:absolute p-10 font-sacramento text-4xl text-bordoInforcap text-left z-20">Ser panadero, es ser artesano, humanista, artista, pues produce con su imaginación y sus manos, formas y nombres bellos que son alimento diario de los hombres.</div>
-                </div>
-               
-            </div>
-            
         </div>
+            
+    </div>
     </div>
         <div class="max-w-7xl text-center py-8 px-8 mx-auto">
             <div class="mt-10 mb-20 grid grid-cols-1 md:grid-cols-4 gap-4 text-left">
@@ -40,9 +57,11 @@ require ('nav.php');
                 </div>
                 <div class="rounded-md bg-slate-50 p-4 drop-shadow-xl"> 
                     <p class="mb-4 py-2 rounded-md"><span class="font-bold text-bordoInforcap">Días de Clase</span></p>
-                    <p class="mb-4"><span class="font-bold">1er año,</span> todos los lunes.</p>
-                    <p class="mb-4"><span class="font-bold">2do. año,</span> todos los martes.</p>
-                    <p><span class="font-bold">3er. año,</span> todos lo miércoles</p>
+                    <p class="mb-4"><span class="font-bold">1er año,</span> Lunes y Jueves</p>
+                    <p class="mb-4"><span class="font-bold">2do. año,</span> Martes y Viernes</p>
+                    <p class="mb-4"><span class="font-bold">3er. año,</span> Miércoles y Viernes</p>
+                    <p><span class="font-bold">Horarios:</span> 14:00 a 18:00 hs</p>
+
                 </div>
 
                 <div class="rounded-md bg-slate-50 p-4 drop-shadow-xl"> 

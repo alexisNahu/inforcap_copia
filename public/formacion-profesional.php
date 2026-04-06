@@ -15,20 +15,11 @@ require ('nav.php');
 
 <!--Sliders-->
     <div class="max-w-7xl flex grid grid-cols-1 md:grid-cols-3 gap-8 mx-8 md:mx-auto">
-        <a href="capacitacion-personalizada.php" class="group relative cursor-pointer rounded-lg items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
-                <div class="w-full h-full">
-                    <img src="./img/capacitacion-personalizada.jpeg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-125">
-                </div>
-                <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
-                <div class="absolute inset-0 flex translate-y-[30%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
-                    <h1 class="text-3xl font-bold text-white">Capacitación Personalizada</h1>
-                </div>
-            
-        </a>
+       
 
         <a href="carrera-tecnica-panaderia-y-confiteria.php" class="group relative cursor-pointer rounded-lg items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
             <div class="w-full h-full">
-                <img src="./img/panaderia-y-confiteria.jpeg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-125">
+                <img src="./img/panaderia-y-confiteria.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-125">
             </div>
             <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
             <div class="absolute inset-0 flex translate-y-[30%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
@@ -36,9 +27,9 @@ require ('nav.php');
             </div>
         </a>
 
-        <a href="#" class="group relative cursor-pointer rounded-lg items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
+        <a href="especializacion-pasteleria-y-confiteria.php" class="group relative cursor-pointer rounded-lg items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
             <div class="w-full h-72">
-                <img src="./img/pasteleria-y-confiteria.jpeg" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-125">
+                <img src="./img/pasteleria-y-confiteria.jpg" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-125">
             </div>
             <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
             <div class="absolute inset-0 flex translate-y-[30%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
@@ -46,13 +37,13 @@ require ('nav.php');
             </div>
         </a>
 
-        <a href="#" class="group relative cursor-pointer rounded-lg items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
+        <a href="especializacion-decoracion-de-tortas.php" class="group relative cursor-pointer rounded-lg items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
             <div class="w-full h-72">
-                <img src="./img/decoracion-de-tortas.jpeg" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-125">
+                <img src="./img/decoracion-de-tortas-02.jpg" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-125">
             </div>
             <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
             <div class="absolute inset-0 flex translate-y-[30%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
-                <h1 class="text-3xl font-bold text-white">Decoración de tortas</h1>
+                <h1 class="text-3xl font-bold text-white">Diplomado en Repostería y Decoración</h1>
             </div>
         </a>
 
@@ -62,11 +53,11 @@ require ('nav.php');
             </div>
             <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
             <div class="absolute inset-0 flex translate-y-[30%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
-                <h1 class="text-3xl font-bold text-white">Seminarios</h1>
+                <h1 class="text-3xl font-bold text-white">Talleres y Seminarios</h1>
             </div>
         </a>
 
-        <a href="#" class="group relative cursor-pointer rounded-lg items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
+        <a href="clases-magistrales.php" class="group relative cursor-pointer rounded-lg items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
             <div class="w-full h-72">
                 <img src="./img/clases-magistrales-inforcap.jpeg" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-125">
             </div>
@@ -74,6 +65,16 @@ require ('nav.php');
             <div class="absolute inset-0 flex translate-y-[30%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
                 <h1 class="text-3xl font-bold text-white">Clases Magistrales</h1>
             </div>
+        </a>
+        <a href="capacitacion-personalizada.php" class="group relative cursor-pointer rounded-lg items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
+                <div class="w-full h-full">
+                    <img src="./img/capacitacion-13.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-125">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+                <div class="absolute inset-0 flex translate-y-[30%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
+                    <h1 class="text-3xl font-bold text-white">Capacitaciones empresariales y grupales</h1>
+                </div>
+            
         </a>
 
     </div>

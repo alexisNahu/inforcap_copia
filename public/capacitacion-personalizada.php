@@ -8,7 +8,7 @@ require ('nav.php');
 
     <div class="w-full bg-slate-50">
         <div class="max-w-7xl text-center py-8 px-8 mx-auto bg-slate-50">
-            <h1 class="text-3xl font-bold tracking-tight font-petrona mb-8 text-bordoInforcap">Capacitación Personalizada </h1>
+            <h1 class="text-3xl font-bold tracking-tight font-petrona mb-8 text-bordoInforcap">Capacitaciones empresariales y grupales </h1>
             <h3 class="text-base tracking-tight text-gris mb-8">Las organizaciones hoy en día buscan la constante capacitación para sus empleados o tales así grupos de personas que se unen para un fin común como es así. El Progreso de su desarrollo de vida para ello hemos pensado en capacitaciones personalizadas con el objetivo de ayudar a la formación de un determinado grupo de personas interesadas en el crecimiento profesional</h3>
         </div>
     </div>
@@ -20,41 +20,31 @@ require ('nav.php');
             
             <div class="mt-10 ml-8 md:ml-0">
                 <h1 class="font-bold mb-4 text-amarilloInforcap uppercase">Capacitaciones realizadas</h1>
-                <div class="mb-4"><a href="#" class="hover:text-naranjaInforcap">&rarr; Clase con el Profesor José Alves</a></div>
+                <!--<div class="mb-4"><a href="#" class="hover:text-naranjaInforcap">&rarr; Clase con el Profesor José Alves</a></div>
                 <div class="mb-4"><a href="#" class="hover:text-naranjaInforcap">&rarr; Capacitación Villarrica</a></div>
                 <div class="mb-4"><a href="#" class="hover:text-naranjaInforcap">&rarr; Capacitación Encarnación</a></div>
                 <div class="mb-4"><a href="#" class="hover:text-naranjaInforcap">&rarr; Capacitación Coronel Oviedo</a></div>
                 <div class="mb-4"><a href="#" class="hover:text-naranjaInforcap">&rarr; Capacitación CDE</a></div>
-                <div class="mb-4"><a href="#" class="hover:text-naranjaInforcap">&rarr; Capacitación Caaguazú</a></div>
+                <div class="mb-4"><a href="#" class="hover:text-naranjaInforcap">&rarr; Capacitación Caaguazú</a></div>-->
             </div>
 
             <div class="col-span-2">
 
                 <div class="" id="galeriaCursos">
                     
-                    <div><img src="./img/capacitacion-10.jpg" alt=""></div>
-                    <div><img src="./img/capacitacion-11.jpeg" alt=""></div>
-                    <div><img src="./img/capacitacion-12.jpeg" alt=""></div>
-                    <div><img src="./img/capacitacion-13.jpeg" alt=""></div>
+                    <div><img src="./img/capacitacion-personalizada-01.jpg" alt=""></div>
+                    <div><img src="./img/capacitacion-personalizada-02.jpg" alt=""></div>
+   
 
-                    <div><img src="./img/capacitacion-10.jpg" alt=""></div>
-                    <div><img src="./img/capacitacion-11.jpeg" alt=""></div>
-                    <div><img src="./img/capacitacion-12.jpeg" alt=""></div>
-                    <div><img src="./img/capacitacion-13.jpeg" alt=""></div>
+       
                 
                 </div>
      
                 <div id="galeriaCursos-pager" class="w-full md:w-[800px] bg-grisClaro grid grid-cols-2 md:grid-cols-4">
         
-                    <div class="w-auto m-2"><a href="#"><img src="./img/capacitacion-10.jpg" alt=""></a></div>
-                    <div class="w-auto m-2"><a href="#"><img src="./img/capacitacion-11.jpeg" alt=""></a></div>
-                    <div class="w-auto m-2"><a href="#"><img src="./img/capacitacion-12.jpeg" alt=""></a></div>
-                    <div class="w-auto m-2"><a href="#"><img src="./img/capacitacion-13.jpeg" alt=""></a></div>
-
-                    <div class="w-auto m-2"><a href="#"><img src="./img/capacitacion-10.jpg" alt=""></a></div>
-                    <div class="w-auto m-2"><a href="#"><img src="./img/capacitacion-11.jpeg" alt=""></a></div>
-                    <div class="w-auto m-2"><a href="#"><img src="./img/capacitacion-12.jpeg" alt=""></a></div>
-                    <div class="w-auto m-2"><a href="#"><img src="./img/capacitacion-13.jpeg" alt=""></a></div>
+                    <div class="w-auto m-2"><a href="#"><img src="./img/capacitacion-personalizada-01.jpg" alt=""></a></div>
+                    <div class="w-auto m-2"><a href="#"><img src="./img/capacitacion-personalizada-02.jpg" alt=""></a></div>
+           
                 </div>
             </div>
         </div>

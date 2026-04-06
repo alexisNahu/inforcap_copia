@@ -7,7 +7,7 @@
         <h1 class="text-3xl font-bold tracking-tight font-petrona mb-8 text-bordoInforcap">Historia de Inforcap </h1>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                    <img src="./img/historia-inforcap.jpg">
+                    <img src="./img/historia-de-inforcap_02.jpg">
                 </div>
                 
                 <div class="text-left">
@@ -47,30 +47,24 @@
 
 
                 <div class="md:w-[800px] md:h-[480px] mx-auto" id="galeriaCursos">
-                    
-                    <div><img src="./img/capacitacion-10.jpg" alt=""></div>
-                    <div><img src="./img/capacitacion-11.jpeg" alt=""></div>
-                    <div><img src="./img/capacitacion-12.jpeg" alt=""></div>
-                    <div><img src="./img/capacitacion-13.jpeg" alt=""></div>
 
                     <div><img src="./img/capacitacion-10.jpg" alt=""></div>
-                    <div><img src="./img/capacitacion-11.jpeg" alt=""></div>
-                    <div><img src="./img/capacitacion-12.jpeg" alt=""></div>
-                    <div><img src="./img/capacitacion-13.jpeg" alt=""></div>
+                    <div><img src="./img/capacitacion-11.jpg" alt=""></div>
+                   
+                    <div><img src="./img/capacitacion-13.jpg" alt=""></div>
+                    <div><img src="./img/equipo-de-profesores.jpg" alt=""></div>
+        
                 
                 </div>
      
                 <div id="galeriaCursos-pager" class="w-full md:w-[800px] bg-grisClaro grid grid-cols-2 md:grid-cols-4 mx-auto">
-        
-                    <div class="w-auto m-2"><a href="#"><img src="./img/capacitacion-10.jpg" alt=""></a></div>
-                    <div class="w-auto m-2"><a href="#"><img src="./img/capacitacion-11.jpeg" alt=""></a></div>
-                    <div class="w-auto m-2"><a href="#"><img src="./img/capacitacion-12.jpeg" alt=""></a></div>
-                    <div class="w-auto m-2"><a href="#"><img src="./img/capacitacion-13.jpeg" alt=""></a></div>
 
                     <div class="w-auto m-2"><a href="#"><img src="./img/capacitacion-10.jpg" alt=""></a></div>
-                    <div class="w-auto m-2"><a href="#"><img src="./img/capacitacion-11.jpeg" alt=""></a></div>
-                    <div class="w-auto m-2"><a href="#"><img src="./img/capacitacion-12.jpeg" alt=""></a></div>
-                    <div class="w-auto m-2"><a href="#"><img src="./img/capacitacion-13.jpeg" alt=""></a></div>
+                    <div class="w-auto m-2"><a href="#"><img src="./img/capacitacion-11.jpg" alt=""></a></div>
+                    
+                    <div class="w-auto m-2"><a href="#"><img src="./img/capacitacion-13.jpg" alt=""></a></div>
+                    <div class="w-auto m-2"><a href="#"><img src="./img/equipo-de-profesores.jpg" alt=""></a></div>
+  
                 </div>
             </div>
         </div>

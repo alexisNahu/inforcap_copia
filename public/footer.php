@@ -1,6 +1,6 @@
 <footer>
 
-    <div class="w-full bg-bordoInforcap">
+    <div class="w-full bg-bordoInforcap" id="contactenos">
         <div class="max-w-7xl mx-auto bg-bordoInforcap py-20 grid-cols-1 grid md:grid-cols-4 gap-8">
 
             <div class="md:ml-0">
@@ -32,7 +32,7 @@
             </div>
 
             <div class="w-5/6 mx-auto md:relative">
-                <img src="./img/logo-inforcap-21.png" class="mx-auto md:absolute md:right-0 w-40">
+                <img src="./img/logo-23-inforcap.png" class="mx-auto md:absolute md:right-0 w-40">
             </div>
 
     </div>
@@ -46,4 +46,22 @@
 <script type="text/javascript" src="js/owl.carousel.min.js"></script>
 <script type="text/javascript" src="js/responsiveslides.min.js"></script>
 </body>
+
+<script
+		src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"
+	></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+		crossorigin="anonymous"
+	></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+		crossorigin="anonymous"
+	></script>
+
+
 </html>

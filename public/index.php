@@ -6,389 +6,487 @@ require ('header.php');
 require ('nav.php'); 
 ?>
 <div class="w-full h-full bg-naranjaInforcap">
-<img src="./img/banner-web-julio.jpg" class="object-none object-center h-96 md:h-full">
-</div>
 
-<div class="text-center py-8 px-8">
-    <h1 class="text-3xl font-bold tracking-tight font-petrona">Talleres y Seminarios </h1>
-    <h2 class="text-6xl font-bold tracking-tight text-bordoInforcap font-sacramento">Julio</h2>
-    <h3 class="text-base tracking-tight text-gris">Nuestros talleres están enfocados a impartir clases de un día. <br /> Descubre las mejores técnicas de la más deliciosa profesión.</h3>
-</div>
+<!--BANNER-->
+<article>
+			<div
+				id="carouselExampleControls"
+				class="carousel slide"
+				data-ride="carousel"
+			>
+				<div class="carousel-inner">
+					<div class="carousel-item py-5 active">
+						<img
+							class="d-block w-100"
+							src="img/banner-web-diplomados-2025.jpg"
+							alt="Diplomados 2025"
+						/>
+					</div>
 
-<div class="container mx-auto my-8 max-w-7xl flex grid grid-cols-1 md:grid-cols-4 gap-8">
+					<div class="carousel-item py-5">
+						<img
+							class="d-block w-100"
+							src="img/BANNER-WEB-inforcap-2025.jpg"
+							alt="Seminarios y Talleres Abril 2025"
+						/>
+				
+					</div>
+				</div>
 
-<div class="w-4/5 md:w-full h-full rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
+				<a
+					class="carousel-control-prev"
+					href="#carouselExampleControls"
+					role="button"
+					data-slide="prev"
+				>
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a
+					class="carousel-control-next"
+					href="#carouselExampleControls"
+					role="button"
+					data-slide="next"
+				>
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+		</article>
 
-        <img src="img/panes-clasicos-y-salvados.jpg">
-
-        <div class="font-petrona px-4 mt-4">
-            <div class="text-base uppercase text-grisClaro font-body">Taller de 1 día</div>
-            <div class="text-3xl">TALLER DE PANES CLÁSICOS Y SALVADOS </div>
-            <div class="text-2xl text-naranjaInforcap">Gs. 160.000</div>
-         </div>
-         <div class="px-4 py-4">
-            <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>Sábado</div>
-            <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>1</div>
-            <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>08:00 a 12:00</div>
-         </div>
-         <button class="bg-amarilloInforcap w-full py-4 uppercase hover:bg-naranjaInforcap text-white"><a href="panes-clasicos-y-salvados.php">INSCRIBIRSE</a></button>
-    </div>
-
-    <div class="w-4/5 md:w-full h-full rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
-
-        <img src="img/pasteleria-paso-a-paso.jpg">
-
-        <div class="font-petrona px-4 mt-4">
-            <div class="text-base uppercase text-grisClaro font-body">Taller de 1 día</div>
-            <div class="text-3xl">TALLER DE PASTELERÍA PASO A PASO </div>
-            <div class="text-2xl text-naranjaInforcap">Gs. 160.000</div>
-         </div>
-         <div class="px-4 py-4">
-            <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>Sábado</div>
-            <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>1</div>
-            <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>14:00 a 18:00</div>
-         </div>
-         <button class="bg-amarilloInforcap w-full py-4 uppercase hover:bg-naranjaInforcap text-white"><a href="pasteleria-paso-a-paso.php">INSCRIBIRSE</a></button>
-    </div>
-
-    <div class="w-4/5 md:w-full h-full rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
-
-        <img src="img/donas-y-berlinesas.jpg">
-
-        <div class="font-petrona px-4 mt-4">
-            <div class="text-base uppercase text-grisClaro font-body">Taller de 1 día</div>
-            <div class="text-3xl">TALLE DE DONAS Y BERLINESAS </div>
-            <div class="text-2xl text-naranjaInforcap">Gs. 160.000</div>
-         </div>
-         <div class="px-4 py-4">
-            <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i> Miércoles</div>
-            <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>5</div>
-            <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>14:00 a 18:00</div>
-         </div>
-         <button class="bg-amarilloInforcap w-full py-4 uppercase hover:bg-naranjaInforcap text-white"><a href="donas-y-berlinesas.php">INSCRIBIRSE</a></button>
-    </div>
-
-    <div class="w-4/5 md:w-full h-full rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
-
-        <img src="img/croissant.jpg">
-
-        <div class="font-petrona px-4 mt-4">
-            <div class="text-base uppercase text-grisClaro font-body">Taller de 1 día</div>
-            <div class="text-3xl">TALLER DE CROISSANT <br />&nbsp;</div>
-            <div class="text-2xl text-naranjaInforcap">Gs. 160.000</div>
-         </div>
-         <div class="px-4 py-4">
-            <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>Sábado</div>
-            <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>8</div>
-            <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>08:00 a 12:00</div>
-         </div>
-         <button class="bg-amarilloInforcap w-full py-4 uppercase hover:bg-naranjaInforcap text-white"><a href="croissant.php">INSCRIBIRSE</a></button>
-    </div>
-
-    <div class="w-4/5 md:w-full h-full rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
-
-        <img src="img/panes-rusticos.jpg">
-
-        <div class="font-petrona px-4 mt-4">
-            <div class="text-base uppercase text-grisClaro font-body">Taller de 1 día</div>
-            <div class="text-3xl">TALLER DE PANES RÚSTICOS<br />&nbsp;</div>
-            <div class="text-2xl text-naranjaInforcap">Gs. 160.000</div>
-         </div>
-         <div class="px-4 py-4">
-            <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>Sábado</div>
-            <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>8</div>
-            <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>08:00 a 12:00</div>
-         </div>
-         <button class="bg-amarilloInforcap w-full py-4 uppercase hover:bg-naranjaInforcap text-white"><a href="panes-rusticos.php">INSCRIBIRSE</a></button>
-    </div>
-
-    <div class="w-4/5 md:w-full h-full rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
-
-        <img src="img/tortas-americanas.jpg">
-
-        <div class="font-petrona px-4 mt-4">
-            <div class="text-base uppercase text-grisClaro font-body">TALLER DE 1 DIA</div>
-            <div class="text-3xl">TALLER DE TORTAS AMERICANAS</div>
-            <div class="text-2xl text-naranjaInforcap">Gs. 160.000</div>
-         </div>
-         <div class="px-4 py-4">
-            <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>Sábado</div>
-            <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>8</div>
-            <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>14:00 a 18:00</div>
-         </div>
-         <button class="bg-amarilloInforcap w-full py-4 uppercase hover:bg-naranjaInforcap text-white"><a href="tortas-americanas.php">INSCRIBIRSE</a></button>
-    </div>
-
-    <div class="w-4/5 md:w-full rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
-
-        <img src="img/tartas-dulces.jpg">
-
-        <div class="font-petrona px-4 mt-4">
-            <div class="text-base uppercase text-grisClaro font-body">TALLER DE 1 DÍA</div>
-            <div class="text-3xl">TALLER DE TARTAS DULCES<br />&nbsp;</div>
-            <div class="text-2xl text-naranjaInforcap">Gs. 160.000</div>
-         </div>
-         <div class="px-4 py-4">
-            <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i> Miércoles</div>
-            <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>19</div>
-            <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i> 14:00 a 18:00</div>
-         </div>
-         <div class="items-end">
-         <button class="bg-amarilloInforcap w-full py-4 uppercase hover:bg-naranjaInforcap text-white"><a href="tartas-dulces.php">INSCRIBIRSE</a></button>
-         </div>
-        </div>
-
-    <div class="w-4/5 md:w-full h-full rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
-
-        <img src="img/tortas-pesadas-e-invertidas.jpg">
-
-        <div class="font-petrona px-4 mt-4">
-            <div class="text-base uppercase text-grisClaro font-body">Taller de 1 día</div>
-            <div class="text-3xl">TALLER DE TORTAS PESADAS E INVERTIDAS </div>
-            <div class="text-2xl text-naranjaInforcap">Gs. 160.000</div>
-         </div>
-         <div class="px-4 py-4">
-            <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>Jueves</div>
-            <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>20</div>
-            <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>14:00 a 18:00</div>
-         </div>
-         <button class="bg-amarilloInforcap w-full py-4 uppercase hover:bg-naranjaInforcap text-white"> <a href="tortas-pesadas-e-invertidas.php">INSCRIBIRSE</a></button>
-    </div>
-
-    <div class="w-4/5 md:w-full h-full rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
-
-        <img src="img/galletitas-saborizadas.jpg">
-
-        <div class="font-petrona px-4 mt-4">
-            <div class="text-base uppercase text-grisClaro font-body">TALLER DE 1 DÍA</div>
-            <div class="text-3xl">GALLETITAS SABORIZADAS - CÉSAR DÍAZ</div>
-            <div class="text-2xl text-naranjaInforcap">Gs. 160.000</div>
-         </div>
-         <div class="px-4 py-4">
-            <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>Jueves</div>
-            <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>20</div>
-            <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>14:00 a 18:00</div>
-         </div>
-         <button class="bg-amarilloInforcap w-full py-4 uppercase hover:bg-naranjaInforcap text-white"><a href="galletitas-saborizadas.php">INSCRIBIRSE</a></button>
-    </div>
-
-    <div class="w-4/5 md:w-full h-full rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
-
-        <img src="img/panes-craquelados-y-mexicano.jpg">
-
-        <div class="font-petrona px-4 mt-4">
-            <div class="text-base uppercase text-grisClaro font-body">TALLER DE 1 DÍA</div>
-            <div class="text-3xl">PANES CRAQUELADOS Y MEXICANO (CONCHA) CÉSAR DÍAZ</div>
-            <div class="text-2xl text-naranjaInforcap">Gs. 160.000</div>
-         </div>
-         <div class="px-4 py-4">
-            <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>Sábado</div>
-            <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>22</div>
-            <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>08:00 a 12:00</div>
-         </div>
-         <button class="bg-amarilloInforcap w-full py-4 uppercase hover:bg-naranjaInforcap text-white"><a href="panes-craquelados-y-mexicano.php">INSCRIBIRSE</a></button>
-    </div>
-
-    <div class="w-4/5 md:w-full h-full rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
-
-        <img src="img/panes-saborizados.jpg">
-
-        <div class="font-petrona px-4 mt-4">
-            <div class="text-base uppercase text-grisClaro font-body">TALLER DE 1 DÍA</div>
-            <div class="text-3xl">TALLER DE PANES SABORIZADOS</div>
-            <div class="text-2xl text-naranjaInforcap">Gs. 160.000</div>
-         </div>
-         <div class="px-4 py-4">
-            <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>Sábado</div>
-            <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>22</div>
-            <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>08:00 a 12:00</div>
-         </div>
-         <button class="bg-amarilloInforcap w-full py-4 uppercase hover:bg-naranjaInforcap text-white"><a href="panes-saborizados.php">INSCRIBIRSE</a></button>
-    </div>
-
-    <div class="w-4/5 md:w-full h-full rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
-
-        <img src="img/surtidos-de-empanadas.jpg">
-
-        <div class="font-petrona px-4 mt-4">
-            <div class="text-base uppercase text-grisClaro font-body">TALLER DE 1 DÍA</div>
-            <div class="text-3xl">TALLER DE SURTIDOS DE EMPANADAS</div>
-            <div class="text-2xl text-naranjaInforcap">Gs. 160.000</div>
-         </div>
-         <div class="px-4 py-4">
-            <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>Sábado</div>
-            <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>22</div>
-            <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>08:00 a 12:00</div>
-         </div>
-         <button class="bg-amarilloInforcap w-full py-4 uppercase hover:bg-naranjaInforcap text-white"><a href="surtidos-de-empanadas.php">INSCRIBIRSE</a></button>
-    </div>
-
-    <div class="w-4/5 md:w-full h-full rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
-
-        <img src="img/taller-de-postres.jpg">
-
-        <div class="font-petrona px-4 mt-4">
-            <div class="text-base uppercase text-grisClaro font-body">TALLER DE 1 DÍA</div>
-            <div class="text-3xl">TALLER DE POSTRES</div>
-            <div class="text-2xl text-naranjaInforcap">Gs. 160.000</div>
-         </div>
-         <div class="px-4 py-4">
-            <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>Miércoles</div>
-            <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>26</div>
-            <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>14:00 a 18:00</div>
-         </div>
-         <button class="bg-amarilloInforcap w-full py-4 uppercase hover:bg-naranjaInforcap text-white"><a href="taller-de-postres.php">INSCRIBIRSE</a></button>
-    </div>
-    <div class="w-4/5 md:w-full h-full rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
-
-<img src="img/taller-de-chipas.jpg">
-
-<div class="font-petrona px-4 mt-4">
-    <div class="text-base uppercase text-grisClaro font-body">TALLER DE 1 DÍA</div>
-    <div class="text-3xl">TALLER DE CHIPAS - CESAR DIAZ</div>
-    <div class="text-2xl text-naranjaInforcap">Gs. 160.000</div>
- </div>
- <div class="px-4 py-4">
-    <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>Jueves</div>
-    <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>27</div>
-    <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>14:00 a 18:00</div>
- </div>
- <button class="bg-amarilloInforcap w-full py-4 uppercase hover:bg-naranjaInforcap text-white"><a href="taller-de-chipas.php">INSCRIBIRSE</a></button>
-</div>
-
-<div class="w-4/5 md:w-full h-full rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
-
-<img src="img/taller-de-panettones-clasicos.jpg">
-
-<div class="font-petrona px-4 mt-4">
-    <div class="text-base uppercase text-grisClaro font-body">TALLER DE 1 DÍA</div>
-    <div class="text-3xl">TALLER DE PANETTONES CLÁSICOS Y CHIPS DE CHOCOLATE</div>
-    <div class="text-2xl text-naranjaInforcap">Gs. 160.000</div>
- </div>
- <div class="px-4 py-4">
-    <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>Sábado</div>
-    <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>29</div>
-    <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>14:00 a 18:00</div>
- </div>
- <button class="bg-amarilloInforcap w-full py-4 uppercase hover:bg-naranjaInforcap text-white"><a href="taller-de-panettones-clasicos.php">INSCRIBIRSE</a></button>
-</div>
-
-<div class="w-4/5 md:w-full h-full rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
-
-<img src="img/taller-de-lomipizzas.jpg">
-
-<div class="font-petrona px-4 mt-4">
-    <div class="text-base uppercase text-grisClaro font-body">TALLER DE 1 DÍA</div>
-    <div class="text-3xl">TALLER DE LOMI PIZZAS Y HAMBURGUESAS GOURMET</div>
-    <div class="text-2xl text-naranjaInforcap">Gs. 160.000</div>
- </div>
- <div class="px-4 py-4">
-    <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>Sábado</div>
-    <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>29</div>
-    <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>08:00 a 12:00</div>
- </div>
- <button class="bg-amarilloInforcap w-full py-4 uppercase hover:bg-naranjaInforcap text-white"><a href="taller-de-lomipizzas.php">INSCRIBIRSE</a></button>
-</div>
-
-<div class="w-4/5 md:w-full h-full rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
-
-<img src="img/taller-de-torta-espejo.jpg">
-
-<div class="font-petrona px-4 mt-4">
-    <div class="text-base uppercase text-grisClaro font-body">TALLER DE 1 DÍA</div>
-    <div class="text-3xl"> TORTA ESPEJO - CÉSAR DÍAZ</div>
-    <div class="text-2xl text-naranjaInforcap">Gs. 160.000</div>
- </div>
- <div class="px-4 py-4">
-    <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>Sábado</div>
-    <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>29</div>
-    <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>08:00 a 12:00</div>
- </div>
- <button class="bg-amarilloInforcap w-full py-4 uppercase hover:bg-naranjaInforcap text-white"><a href="taller-de-torta-espejo.php">INSCRIBIRSE</a></button>
-</div>
 
 </div>
+
+
 
 <div class="bg-bordoInforcap py-8 md:py-20">
-    <div class="text-center py-8 px-8">
-        <h1 class="text-3xl font-bold tracking-tight font-petrona text-white">Talleres prácticos de un día</h1>
-        <h3 class="text-base tracking-tight text-white">Nuestros talleres y seminarios están enfocados a impartir clases 1 vez a la semana. <br /> Descubre las mejores técnicas de la más deliciosa profesión.</h3>
+    <!--<div class="text-center py-8 px-8">
+        <h1 class="text-3xl font-bold tracking-tight font-petrona text-white">DIPLOMADOS</h1>
+        <h2 class="text-6xl font-bold tracking-tight text-white font-sacramento">2025</h2>
+       <h3 class="text-base tracking-tight text-white">Nuestros talleres están enfocados a impartir clases de un día. <br /> Descubre las mejores técnicas de la más deliciosa profesión.</h3>
+        </div>-->
+
+
+<!--Capacitaciones-->
+
+<div class="container mx-auto my-8 max-w-7xl flex grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="w-4/5 md:w-full h-full flex flex-col justify-between rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
+
+        <img src="img/reposteria-y-decoracion.jpeg">
+
+         <button class="bg-naranjaInforcap w-full py-4 uppercase hover:bg-amarilloInforcap text-white space-x-2">
+         <span class="w-32"><i class="fa-brands fa-whatsapp"></i></span><a href="https://wa.me/595983350062?text=Me%20interesa%20el%20Diplomado%20en%20Reposteria%20y%20Decoracion">INSCRIBIRSE</a></button>
+    </div>
+
+    <div class="w-4/5 md:w-full h-full flex flex-col justify-between rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
+
+<img src="img/pasteleria-y-confiteria.jpeg">
+
+ <button class="bg-naranjaInforcap w-full py-4 uppercase hover:bg-amarilloInforcap text-white space-x-2">
+ <span class="w-32"><i class="fa-brands fa-whatsapp"></i></span><a href="https://wa.me/595983350062?text=Me%20interesa%20el%20Diplomado%20en%20Pasteleria%20y%20Confiteria">INSCRIBIRSE</a></button>
+</div>
+
+<div class="w-4/5 md:w-full h-full flex flex-col justify-between rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
+
+<img src="img/panaderia-y-confiteria.jpeg">
+
+ <button class="bg-naranjaInforcap w-full py-4 uppercase hover:bg-amarilloInforcap text-white space-x-2">
+ <span class="w-32"><i class="fa-brands fa-whatsapp"></i></span><a href="https://wa.me/595983350062?text=Me%20interesa%20la%20Carrera%20Tecnica%20en%20Panaderia%20y%20Confiteria">INSCRIBIRSE</a></button>
+</div>
+
+
+</div>
+</div>
+<!--<div class="text-center py-8 px-8">
+    <h1 class="text-3xl font-bold tracking-tight font-petrona">Seminarios </h1>
+    <h2 class="text-6xl font-bold tracking-tight text-bordoInforcap font-petrona">Noviembre 2025</h2>
+    <h3 class="text-base tracking-tight text-gris">Nuestros Seminarios están enfocados a impartir clases tres días al mes.
+</div>
+<div class="container mx-auto my-8 max-w-7xl flex grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <div class="w-4/5 md:w-full h-full flex flex-col justify-between rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
+
+        <img src="img/Heladeria-Industrial.jpg">
+            <div class="font-petrona px-4 mt-4">
+                <div class="text-base uppercase text-grisClaro font-body">SEMINARIO</div>
+                <div class="text-3xl">SEMINARIO DE "HELADERIA INDUSTRIAL"</div>
+                <div class="text-2xl text-naranjaInforcap">Gs. 430.000</div>
+            </div>
+
+            <div class="px-4 py-4">
+                <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>Sábados</div>
+                <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>09-23-30 de Noviembre</div>
+                <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>08:00 a 12:00</div>
+                <div class="underline mt-4 text-naranjaInforcap space-x-2"><i class="fa-solid fa-arrow-right"></i><a href="seminario-heladeria-industrial.php">Ver más</a></div>
+            </div>
+
+            <button class="bg-naranjaInforcap w-full py-4 uppercase hover:bg-amarilloInforcap text-white space-x-2">
+            <span class="w-32"><i class="fa-brands fa-whatsapp"></i></span><a href="https://wa.me/595983350062?text=Me%20interesa%20el%20Seminario%20Heladeria-Industrial">INSCRIBIRSE</a></button>
         </div>
+  
+
+    <div class="w-4/5 md:w-full h-full flex flex-col justify-between rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
+
+        <img src="img/ABC-de-la-reposteria.jpg">
+            <div class="font-petrona px-4 mt-4">
+                <div class="text-base uppercase text-grisClaro font-body">SEMINARIO</div>
+                <div class="text-3xl">SEMINARIO "ABC DE LA REPOSTERÍA"</div>
+                <div class="text-2xl text-naranjaInforcap">Gs. 430.000</div>
+            </div>
+
+            <div class="px-4 py-4">
+                <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>Sábados</div>
+                <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>09-23-30 de Noviembre</div>
+                <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>08:00 a 12:00</div>
+                <div class="underline mt-4 text-naranjaInforcap space-x-2"><i class="fa-solid fa-arrow-right"></i><a href="seminario-abc-de-la-reposteria.php">Ver más</a></div>
+            </div>
+
+            <button class="bg-naranjaInforcap w-full py-4 uppercase hover:bg-amarilloInforcap text-white space-x-2">
+            <span class="w-32"><i class="fa-brands fa-whatsapp"></i></span><a href="https://wa.me/595983350062?text=Me%20interesa%20el%20Seminario%20ABC-DE-LA-REPOSTERIA">INSCRIBIRSE</a></button>
+    </div>
 
 
-<!--Talleres précticos de un día-->
+</div>-->
+
+
+<!--Talleres prácticos de un día-->
+
+<div class="text-center py-8 px-8">
+    <h1 class="text-3xl font-bold tracking-tight font-petrona">Talleres </h1>
+    <h2 class="text-6xl font-bold tracking-tight text-bordoInforcap font-petrona">Noviembre 2025</h2>
+    <h3 class="text-base tracking-tight text-gris">Nuestros talleres están enfocados a impartir clases de un día. <br /> 
+    <strong>¡Descubre las mejores técnicas de la más deliciosa profesión!</strong></h3>
+</div>
+
 
 
 
 <div class="container mx-auto my-8 max-w-7xl flex grid grid-cols-1 md:grid-cols-4 gap-8">
-    <div class="w-4/5 md:w-full h-full rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
 
-        <img src="img/img_demo_01.png">
+    <!-- TALLER 1 -->
+    <div class="w-4/5 md:w-full h-full flex flex-col justify-between rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
 
-        <div class="font-petrona px-4 mt-4">
-            <div class="text-base uppercase text-grisClaro font-body">Talleres prácticos de un día</div>
-            <div class="text-3xl">Panadería y Confitería con masapan</div>
-            <div class="text-2xl text-naranjaInforcap">Gs. 160.000</div>
-         </div>
-         <div class="px-4 py-4">
-            <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i> Lunes</div>
-            <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>21</div>
-            <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>14:00 a 18:00</div>
-         </div>
-         <button class="bg-naranjaInforcap w-full py-4 uppercase hover:bg-amarilloInforcap text-white"><a href="seminarios-template_02.html">INSCRIBIRSE</a></button>
+        <img src="img/cookies.jpg">
+            <div class="font-petrona px-4 mt-4">
+                <div class="text-base uppercase text-grisClaro font-body">TALLER</div>
+                <div class="text-3xl">TALLER "COOKIES" CONVINACIÓN, TEXTURAS Y SABORES</div>
+                <div class="text-2xl text-naranjaInforcap">Gs. 175.000</div>
+            </div>
+
+            <div class="px-4 py-4">
+                <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>Sábado</div>
+                <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>01 de Noviembre</div>
+                <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>08:00 a 12:00</div>
+                <div class="underline mt-4 text-naranjaInforcap space-x-2"><i class="fa-solid fa-arrow-right"></i><a href="taller-cookies.php">Ver más</a></div>
+            </div>
+
+            <button class="bg-naranjaInforcap w-full py-4 uppercase hover:bg-amarilloInforcap text-white space-x-2">
+            <span class="w-32"><i class="fa-brands fa-whatsapp"></i></span><a href="https://wa.me/595983350062?text=Me%20interesa%20el%20taller%20de%20Cookies">INSCRIBIRSE</a></button>
     </div>
 
-    <div class="w-4/5 md:w-full h-full rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
+    <!-- TALLER 2 -->
+    <div class="w-4/5 md:w-full h-full flex flex-col justify-between rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
 
-        <img src="img/img_demo_02.png">
+        <img src="img/budines.jpg">
+            <div class="font-petrona px-4 mt-4">
+                <div class="text-base uppercase text-grisClaro font-body">TALLER</div>
+                <div class="text-3xl">TALLER "SHOW DE BUDINES"</div>
+                <div class="text-2xl text-naranjaInforcap">Gs. 175.000</div>
+            </div>
 
-        <div class="font-petrona px-4 mt-4">
-            <div class="text-base uppercase text-grisClaro font-body">Talleres prácticos de un día</div>
-            <div class="text-3xl">Panadería y Confitería con masapan</div>
-            <div class="text-2xl text-naranjaInforcap">Gs. 160.000</div>
-         </div>
-         <div class="px-4 py-4">
-            <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>Martes</div>
-            <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>14 </div>
-            <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>14:00 a 18:00</div>
-         </div>
-         <button class="bg-naranjaInforcap w-full py-4 uppercase hover:bg-amarilloInforcap text-white"><a href="seminarios-template_02.html">INSCRIBIRSE</a></button>
+            <div class="px-4 py-4">
+                <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>Sábado</div>
+                <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>01 de Noviembre</div>
+                <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>08:00 a 12:00</div>
+                <div class="underline mt-4 text-naranjaInforcap space-x-2"><i class="fa-solid fa-arrow-right"></i><a href="taller-de-budines.php">Ver más</a></div>
+            </div>
+
+            <button class="bg-naranjaInforcap w-full py-4 uppercase hover:bg-amarilloInforcap text-white space-x-2">
+            <span class="w-32"><i class="fa-brands fa-whatsapp"></i></span><a href="https://wa.me/595983350062?text=Me%20interesa%20el%20Taller%20de%20Budines">INSCRIBIRSE</a></button>
+    </div>    
+
+        <!-- TALLER 3 -->
+        <div class="w-4/5 md:w-full h-full flex flex-col justify-between rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
+
+<img src="img/panettones.jpg">
+    <div class="font-petrona px-4 mt-4">
+        <div class="text-base uppercase text-grisClaro font-body">TALLER</div>
+        <div class="text-3xl">TALLER "PANETTONES Y SUS DERIVADOS"</div>
+        <div class="text-2xl text-naranjaInforcap">Gs. 175.000</div>
     </div>
 
-    <div class="w-4/5 md:w-full h-full rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
-
-        <img src="img/img_demo_03.png">
-
-        <div class="font-petrona px-4 mt-4">
-            <div class="text-base uppercase text-grisClaro font-body">Talleres prácticos de un día</div>
-            <div class="text-3xl">Panadería y Confitería con masapan</div>
-            <div class="text-2xl text-naranjaInforcap">Gs. 160.000</div>
-         </div>
-         <div class="px-4 py-4">
-            <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>Miércoles</div>
-            <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>7 </div>
-            <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>14:00 a 18:00</div>
-         </div>
-         <button class="bg-naranjaInforcap w-full py-4 uppercase hover:bg-amarilloInforcap text-white"><a href="seminarios-template_02.html">INSCRIBIRSE</a></button>
+    <div class="px-4 py-4">
+        <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>Sábado</div>
+        <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>01 de Noviembre</div>
+        <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>14:00 a 18:00</div>
+        <div class="underline mt-4 text-naranjaInforcap space-x-2"><i class="fa-solid fa-arrow-right"></i><a href="taller-panettones.php">Ver más</a></div>
     </div>
 
-    <div class="w-4/5 md:w-full h-full rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
+    <button class="bg-naranjaInforcap w-full py-4 uppercase hover:bg-amarilloInforcap text-white space-x-2">
+    <span class="w-32"><i class="fa-brands fa-whatsapp"></i></span><a href="https://wa.me/595983350062?text=Me%20interesa%20el%20Taller%20de%20Panettones">INSCRIBIRSE</a></button>
+</div>    
 
-        <img src="img/img_demo_04.png">
+<!-- TALLER 4 -->
+<div class="w-4/5 md:w-full h-full flex flex-col justify-between rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
 
-        <div class="font-petrona px-4 mt-4">
-            <div class="text-base uppercase text-grisClaro font-body">Talleres prácticos de un día</div>
-            <div class="text-3xl">Panadería y Confitería con masapan</div>
-            <div class="text-2xl text-naranjaInforcap">Gs. 160.000</div>
-         </div>
-         <div class="px-4 py-4">
-            <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>Jueves</div>
-            <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>7</div>
-            <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>14:00 a 18:00</div>
-         </div>
-         <button class="bg-naranjaInforcap w-full py-4 uppercase hover:bg-amarilloInforcap text-white"><a href="seminarios-template_02.html">INSCRIBIRSE</a></button>
+<img src="img/rolls.jpg">
+    <div class="font-petrona px-4 mt-4">
+        <div class="text-base uppercase text-grisClaro font-body">TALLER</div>
+        <div class="text-3xl">TALLER "ESPECIAL ROLLS & CROISSANT"</div>
+        <div class="text-2xl text-naranjaInforcap">Gs. 175.000</div>
     </div>
+
+    <div class="px-4 py-4">
+        <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>Miércoles</div>
+        <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>05 de Noviembre</div>
+        <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>14:00 a 18:00</div>
+        <div class="underline mt-4 text-naranjaInforcap space-x-2"><i class="fa-solid fa-arrow-right"></i><a href="taller-rolls.php">Ver más</a></div>
+    </div>
+
+    <button class="bg-naranjaInforcap w-full py-4 uppercase hover:bg-amarilloInforcap text-white space-x-2">
+    <span class="w-32"><i class="fa-brands fa-whatsapp"></i></span><a href="https://wa.me/595983350062?text=Me%20interesa%20el%20Taller%20Rolls&Croissant">INSCRIBIRSE</a></button>
+</div>   
+<!-- TALLER X -->
+<div class="w-4/5 md:w-full h-full flex flex-col justify-between rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
+
+<img src="img/galletitas.jpg">
+    <div class="font-petrona px-4 mt-4">
+        <div class="text-base uppercase text-grisClaro font-body">TALLER</div>
+        <div class="text-3xl">TALLER "ESPECIAL GALLETITAS NAVIDEÑAS"</div>
+        <div class="text-2xl text-naranjaInforcap">Gs. 175.000</div>
+    </div>
+
+    <div class="px-4 py-4">
+        <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>Jueves</div>
+        <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>06 de Noviembre</div>
+        <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>14:00 a 18:00</div>
+        <div class="underline mt-4 text-naranjaInforcap space-x-2"><i class="fa-solid fa-arrow-right"></i><a href="taller-galletitas-navidenas.php">Ver más</a></div>
+    </div>
+
+    <button class="bg-naranjaInforcap w-full py-4 uppercase hover:bg-amarilloInforcap text-white space-x-2">
+    <span class="w-32"><i class="fa-brands fa-whatsapp"></i></span><a href="https://wa.me/595983350062?text=Me%20interesa%20el%20taller%20Galletitas%20Navideñas">INSCRIBIRSE</a></button>
+</div>   
+
+<!-- TALLER 5 -->
+<div class="w-4/5 md:w-full h-full flex flex-col justify-between rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
+
+<img src="img/tartas.jpg">
+    <div class="font-petrona px-4 mt-4">
+        <div class="text-base uppercase text-grisClaro font-body">TALLER</div>
+        <div class="text-3xl">TALLER "SHOW DE TARTAS"</div>
+        <div class="text-2xl text-naranjaInforcap">Gs. 175.000</div>
+    </div>
+
+    <div class="px-4 py-4">
+        <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>Miércoles</div>
+        <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>12 de Noviembre</div>
+        <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>14:00 a 18:00</div>
+        <div class="underline mt-4 text-naranjaInforcap space-x-2"><i class="fa-solid fa-arrow-right"></i><a href="taller-show-de-tartas.php">Ver más</a></div>
+    </div>
+
+    <button class="bg-naranjaInforcap w-full py-4 uppercase hover:bg-amarilloInforcap text-white space-x-2">
+    <span class="w-32"><i class="fa-brands fa-whatsapp"></i></span><a href="https://wa.me/595983350062?text=Me%20interesa%20el%20taller%20Show%20de%20Tartas">INSCRIBIRSE</a></button>
+</div>  
+
+<!-- TALLER 6 -->
+<div class="w-4/5 md:w-full h-full flex flex-col justify-between rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
+<!-- img -->
+<img src="img/confiteria-clasica.jpg">
+
+    <div class="font-petrona px-4 mt-4">
+        <div class="text-base uppercase text-grisClaro font-body">TALLER</div>
+        <div class="text-3xl">TALLER "ESPECIAL CONFITERÍA CLÁSICA"</div>
+        <div class="text-2xl text-naranjaInforcap">Gs. 175.000</div>
+    </div>
+
+    <div class="px-4 py-4">
+        <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>Jueves</div>
+        <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>13 de Noviembre</div>
+        <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>14:00 a 18:00</div>
+        <div class="underline mt-4 text-naranjaInforcap space-x-2"><i class="fa-solid fa-arrow-right"></i><a href="taller-confiteria-clasica.php">Ver más</a></div>
+    </div>
+
+    <button class="bg-naranjaInforcap w-full py-4 uppercase hover:bg-amarilloInforcap text-white space-x-2">
+    <span class="w-32"><i class="fa-brands fa-whatsapp"></i></span><a href="https://wa.me/595983350062?text=Me%20interesa%20el%20Taller%20de%20Confiteria%20Clasica">INSCRIBIRSE</a></button>
+</div> 
+<!-- TALLER  -->
+<div class="w-4/5 md:w-full h-full flex flex-col justify-between rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
+<!-- img -->
+<img src="img/panes-navidenos.jpg">
+
+    <div class="font-petrona px-4 mt-4">
+        <div class="text-base uppercase text-grisClaro font-body">TALLER</div>
+        <div class="text-3xl">TALLER "ESPECIAL PANES NAVIDEÑOS"</div>
+        <div class="text-2xl text-naranjaInforcap">Gs. 175.000</div>
+    </div>
+
+    <div class="px-4 py-4">
+        <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>Sábado</div>
+        <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>15 de Noviembre</div>
+        <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>14:00 a 18:00</div>
+        <div class="underline mt-4 text-naranjaInforcap space-x-2"><i class="fa-solid fa-arrow-right"></i><a href="taller-panes-navidenos.php">Ver más</a></div>
+    </div>
+
+    <button class="bg-naranjaInforcap w-full py-4 uppercase hover:bg-amarilloInforcap text-white space-x-2">
+    <span class="w-32"><i class="fa-brands fa-whatsapp"></i></span><a href="https://wa.me/595983350062?text=Me%20interesa%20el%20Taller%20de%20Panes-Navideños">INSCRIBIRSE</a></button>
+</div> 
+
+<!-- TALLER 7 -->
+<div class="w-4/5 md:w-full h-full flex flex-col justify-between rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
+<!-- img -->
+<img src="img/macarons.jpg">
+
+    <div class="font-petrona px-4 mt-4">
+        <div class="text-base uppercase text-grisClaro font-body">TALLER</div>
+        <div class="text-3xl">TALLER "ESPECIAL MACARONS"</div>
+        <div class="text-2xl text-naranjaInforcap">Gs. 175.000</div>
+    </div>
+
+    <div class="px-4 py-4">
+        <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>Miércoles</div>
+        <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>19 de Noviembre</div>
+        <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>14:00 a 18:00</div>
+        <div class="underline mt-4 text-naranjaInforcap space-x-2"><i class="fa-solid fa-arrow-right"></i><a href="taller-macarons.php">Ver más</a></div>
+    </div>
+
+    <button class="bg-naranjaInforcap w-full py-4 uppercase hover:bg-amarilloInforcap text-white space-x-2">
+    <span class="w-32"><i class="fa-brands fa-whatsapp"></i></span><a href="https://wa.me/595983350062?text=Me%20interesa%20el%20Taller%20de%20Macarons">INSCRIBIRSE</a></button>
+</div> 
+
+<!-- TALLER 7 -->
+<div class="w-4/5 md:w-full h-full flex flex-col justify-between rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
+<!-- img -->
+<img src="img/hojaldres.jpg">
+
+    <div class="font-petrona px-4 mt-4">
+        <div class="text-base uppercase text-grisClaro font-body">TALLER</div>
+        <div class="text-3xl">TALLER "ESPECIAL HOJALDRES"</div>
+        <div class="text-2xl text-naranjaInforcap">Gs. 175.000</div>
+    </div>
+
+    <div class="px-4 py-4">
+        <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>Jueves</div>
+        <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>20 de Noviembre</div>
+        <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>14:00 a 18:00</div>
+        <div class="underline mt-4 text-naranjaInforcap space-x-2"><i class="fa-solid fa-arrow-right"></i><a href="taller-hojaldres.php">Ver más</a></div>
+    </div>
+
+    <button class="bg-naranjaInforcap w-full py-4 uppercase hover:bg-amarilloInforcap text-white space-x-2">
+    <span class="w-32"><i class="fa-brands fa-whatsapp"></i></span><a href="https://wa.me/595983350062?text=Me%20interesa%20el%20Taller%20Especial%20Hojaldres">INSCRIBIRSE</a></button>
+</div> 
+
+<!-- TALLER 8 -->
+<div class="w-4/5 md:w-full h-full flex flex-col justify-between rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
+<!-- img -->
+<img src="img/panaderia-clasica.jpg">
+<!-- img -->
+    <div class="font-petrona px-4 mt-4">
+        <div class="text-base uppercase text-grisClaro font-body">TALLER</div>
+        <div class="text-3xl">"TALLER PANADERÍA CLÁSICA"</div>
+        <div class="text-2xl text-naranjaInforcap">Gs. 175.000</div>
+    </div>
+
+    <div class="px-4 py-4">
+        <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>Miércoles</div>
+        <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i> 26 de Noviembre</div>
+        <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>14:00 a 18:00</div>
+        <div class="underline mt-4 text-naranjaInforcap space-x-2"><i class="fa-solid fa-arrow-right"></i><a href="taller-panaderia-clasica.php">Ver más</a></div>
+    </div>
+
+    <button class="bg-naranjaInforcap w-full py-4 uppercase hover:bg-amarilloInforcap text-white space-x-2">
+    <span class="w-32"><i class="fa-brands fa-whatsapp"></i></span><a href="https://wa.me/595983350062?text=Me%20interesa%20el%20Taller%20taller%20Panadería%20Clásica">INSCRIBIRSE</a></button>
 </div>
+
+<!-- TALLER 9 -->
+<div class="w-4/5 md:w-full h-full flex flex-col justify-between rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
+<!-- img -->
+<img src="img/reposteria-inicial.jpg">
+<!-- img -->
+   <div class="font-petrona px-4 mt-4">
+        <div class="text-base uppercase text-grisClaro font-body">TALLER</div>
+        <div class="text-3xl">TALLER "REPOSTERÍA INICIAL"</div>
+        <div class="text-2xl text-naranjaInforcap">Gs. 175.000</div>
+    </div>
+
+    <div class="px-4 py-4">
+        <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>Jueves</div>
+        <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>27 de Noviembre</div>
+        <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>14:00 a 18:00</div>
+        <div class="underline mt-4 text-naranjaInforcap space-x-2"><i class="fa-solid fa-arrow-right"></i><a href="taller-reposteria-inicial.php">Ver más</a></div>
+    </div>
+
+    <button class="bg-naranjaInforcap w-full py-4 uppercase hover:bg-amarilloInforcap text-white space-x-2">
+    <span class="w-32"><i class="fa-brands fa-whatsapp"></i></span><a href="https://wa.me/595983350062?text=Me%20interesa%20el%20Taller%20de%20Reposteria-Inicial">INSCRIBIRSE</a></button>
+</div> 
+
+<!-- TALLER 10 -->
+<div class="w-4/5 md:w-full h-full flex flex-col justify-between rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
+<!-- img -->
+<img src="img/postres-vaso.jpg">
+
+     <div class="font-petrona px-4 mt-4">
+        <div class="text-base uppercase text-grisClaro font-body">TALLER</div>
+        <div class="text-3xl">TALLER "POSTRES EN VASO"</div>
+        <div class="text-2xl text-naranjaInforcap">Gs. 175.000</div>
+    </div>
+
+    <div class="px-4 py-4">
+        <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>Sábado</div>
+        <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>29 de Noviembre</div>
+        <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>08:00 a 12:00</div>
+        <div class="underline mt-4 text-naranjaInforcap space-x-2"><i class="fa-solid fa-arrow-right"></i><a href="taller-postres-en-vaso.php">Ver más</a></div>
+    </div>
+
+    <button class="bg-naranjaInforcap w-full py-4 uppercase hover:bg-amarilloInforcap text-white space-x-2">
+    <span class="w-32"><i class="fa-brands fa-whatsapp"></i></span><a href="https://wa.me/595983350062?text=Me%20interesa%20el%20Taller%20Postres-en-vaso">INSCRIBIRSE</a></button>
+</div>
+
+<!-- TALLER 12 -->
+<div class="w-4/5 md:w-full h-full flex flex-col justify-between rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
+
+<img src="img/panes-sin-gluten.jpg">
+    <div class="font-petrona px-4 mt-4">
+        <div class="text-base uppercase text-grisClaro font-body">TALLER</div>
+        <div class="text-3xl">TALLER "PANES SIN GLUTEN"</div>
+        <div class="text-2xl text-naranjaInforcap">Gs. 175.000</div>
+    </div>
+
+    <div class="px-4 py-4">
+        <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>Sábado</div>
+        <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>29 de Noviembre</div>
+        <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>08:00 a 12:00</div>
+        <div class="underline mt-4 text-naranjaInforcap space-x-2"><i class="fa-solid fa-arrow-right"></i><a href="taller-panes-sin-gluten.php">Ver más</a></div>
+    </div>
+
+    <button class="bg-naranjaInforcap w-full py-4 uppercase hover:bg-amarilloInforcap text-white space-x-2">
+    <span class="w-32"><i class="fa-brands fa-whatsapp"></i></span><a href="https://wa.me/595983350062?text=Me%20interesa%20el%20Taller%20de%20Panes%20sin%20Gluten">INSCRIBIRSE</a></button>
+</div> 
+
+<!-- TALLER 13 -->
+<div class="w-4/5 md:w-full h-full flex flex-col justify-between rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
+
+<img src="img/pizzas-a-la-piedra.jpg">
+    <div class="font-petrona px-4 mt-4">
+        <div class="text-base uppercase text-grisClaro font-body">TALLER</div>
+        <div class="text-3xl">TALLER "PIZZAS A LA PIEDRA (MASAS PRE FERMENTADAS) Y CALZÓN.</div>
+        <div class="text-2xl text-naranjaInforcap">Gs. 175.000</div>
+    </div>
+
+    <div class="px-4 py-4">
+        <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>Sábado</div>
+        <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>29 de Noviembre</div>
+        <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>14:00 a 18:00</div>
+        <div class="underline mt-4 text-naranjaInforcap space-x-2"><i class="fa-solid fa-arrow-right"></i><a href="taller-pizzas-a-la-piedra.php">Ver más</a></div>
+    </div>
+
+    <button class="bg-naranjaInforcap w-full py-4 uppercase hover:bg-amarilloInforcap text-white space-x-2">
+    <span class="w-32"><i class="fa-brands fa-whatsapp"></i></span><a href="https://wa.me/595983350062?text=Me%20interesa%20el%20Taller%20Pizzas-a-la-piedra">INSCRIBIRSE</a></button>
+</div>  
+
+
+
+
+
 
 </div>
 
@@ -400,11 +498,11 @@ require ('nav.php');
 </div>
 
 <div class="w-56 md:container mx-auto flex grid grid-cols-1 md:grid-cols-5 md:max-w-7xl items-center place-content-center">
-    <a href="#" class="w-48 md:w-56 mx-auto"><img src="img/icon-panaderia.png"></a>
-    <a href="#" class="w-48 md:w-56 mx-auto"><img src="img/icon-reposteria.png"></a>
-    <a href="#" class="w-48 md:w-56 mx-auto"><img src="img/icon-heladeria.png"></a>
-    <a href="#" class="w-48 md:w-56 mx-auto"><img src="img/icon-confiteria.png"></a>
-    <a href="#" class="w-48 md:w-56 mx-auto"><img src="img/icon-pasteleria.png"></a>
+    <a href="carrera-tecnica-panaderia-y-confiteria.php" class="w-48 md:w-56 mx-auto"><img src="img/icon-panaderia.png"></a>
+    <a href="especializacion-pasteleria-y-confiteria.php" class="w-48 md:w-56 mx-auto"><img src="img/icon-reposteria.png"></a>
+    <a href="especializacion-pasteleria-y-confiteria.php" class="w-48 md:w-56 mx-auto"><img src="img/icon-heladeria.png"></a>
+    <a href="carrera-tecnica-panaderia-y-confiteria.php" class="w-48 md:w-56 mx-auto"><img src="img/icon-confiteria.png"></a>
+    <a href="especializacion-decoracion-de-tortas.php" class="w-48 md:w-56 mx-auto"><img src="img/icon-pasteleria.png"></a>
 </div>
 
 <!--Form de suscripcion Newsletter-->
