@@ -1,0 +1,200 @@
+---
+import TalleresCard from './components/TalleresCard.astro';
+
+import imgCookies from '../../assets/img/cookies.jpg';
+import imgBudines from '../../assets/img/budines.jpg';
+import imgPanettones from '../../assets/img/panettones.jpg';
+import imgRolls from '../../assets/img/rolls.jpg';
+import imgGalletitas from '../../assets/img/galletitas.jpg';
+import imgTartas from '../../assets/img/tartas.jpg';
+import imgConfiteria from '../../assets/img/Confiteria-Clasica.jpg';
+import imgPanesNav from '../../assets/img/panes-navidenos.jpg';
+import imgMacarons from '../../assets/img/macarons.jpg';
+import imgHojaldres from '../../assets/img/hojaldres.jpg';
+import imgPanaderiaClasica from '../../assets/img/panaderia-clasica.jpg';
+import imgReposteriaIni from '../../assets/img/Reposteria-Inicial.jpg';
+import imgPostresVaso from '../../assets/img/postres-vaso.jpg';
+import imgSinGluten from '../../assets/img/panes-sin-gluten.jpg';
+import imgPizzas from '../../assets/img/pizzas-a-la-Piedra.jpg';
+import {APP_PAGES} from "../../constants";
+
+const listaTalleres = [
+    {
+        image: imgCookies,
+        titulo: 'TALLER "COOKIES" COMBINACIÓN, TEXTURAS Y SABORES',
+        precio: "Gs. 175.000",
+        diaSemana: "Sábado",
+        fecha: "01 de Noviembre",
+        horario: "08:00 a 12:00",
+        hrefVerMas: `${APP_PAGES.taller_cookies}`,
+        textoWhatsapp: "Me interesa el taller de Cookies"
+    },
+    {
+        image: imgBudines,
+        titulo: 'TALLER "SHOW DE BUDINES"',
+        precio: "Gs. 175.000",
+        diaSemana: "Sábado",
+        fecha: "01 de Noviembre",
+        horario: "08:00 a 12:00",
+        hrefVerMas: `${APP_PAGES.taller_budines}`,
+        textoWhatsapp: "Me interesa el Taller de Budines"
+    },
+    {
+        image: imgPanettones,
+        titulo: 'TALLER "PANETTONES Y SUS DERIVADOS"',
+        precio: "Gs. 175.000",
+        diaSemana: "Sábado",
+        fecha: "01 de Noviembre",
+        horario: "14:00 a 18:00",
+        hrefVerMas: `${APP_PAGES.taller_panettones}`,
+        textoWhatsapp: "Me interesa el Taller de Panettones"
+    },
+    {
+        image: imgRolls,
+        titulo: 'TALLER "ESPECIAL ROLLS & CROISSANT"',
+        precio: "Gs. 175.000",
+        diaSemana: "Miércoles",
+        fecha: "05 de Noviembre",
+        horario: "14:00 a 18:00",
+        hrefVerMas: `${APP_PAGES.taller_rolls_croissant}`,
+        textoWhatsapp: "Me interesa el Taller Rolls & Croissant"
+    },
+    {
+        image: imgGalletitas,
+        titulo: 'TALLER "ESPECIAL GALLETITAS NAVIDEÑAS"',
+        precio: "Gs. 175.000",
+        diaSemana: "Jueves",
+        fecha: "06 de Noviembre",
+        horario: "14:00 a 18:00",
+        hrefVerMas: `${APP_PAGES.taller_galletitas_navidenas}`,
+        textoWhatsapp: "Me interesa el taller Galletitas Navideñas"
+    },
+    {
+        image: imgTartas,
+        titulo: 'TALLER "SHOW DE TARTAS"',
+        precio: "Gs. 175.000",
+        diaSemana: "Miércoles",
+        fecha: "12 de Noviembre",
+        horario: "14:00 a 18:00",
+        hrefVerMas: `${APP_PAGES.taller_show_de_tartas}`,
+        textoWhatsapp: "Me interesa el taller Show de Tartas"
+    },
+    {
+        image: imgConfiteria,
+        titulo: 'TALLER "ESPECIAL CONFITERÍA CLÁSICA"',
+        precio: "Gs. 175.000",
+        diaSemana: "Jueves",
+        fecha: "13 de Noviembre",
+        horario: "14:00 a 18:00",
+        hrefVerMas: `${APP_PAGES.taller_confiteria_clasica}`,
+        textoWhatsapp: "Me interesa el Taller de Confiteria Clasica"
+    },
+    {
+        image: imgPanesNav,
+        titulo: 'TALLER "ESPECIAL PANES NAVIDEÑOS"',
+        precio: "Gs. 175.000",
+        diaSemana: "Sábado",
+        fecha: "15 de Noviembre",
+        horario: "14:00 a 18:00",
+        hrefVerMas: `${APP_PAGES.taller_panes_navidenos}`,
+        textoWhatsapp: "Me interesa el Taller de Panes-Navideños"
+    },
+    {
+        image: imgMacarons,
+        titulo: 'TALLER "ESPECIAL MACARONS"',
+        precio: "Gs. 175.000",
+        diaSemana: "Miércoles",
+        fecha: "19 de Noviembre",
+        horario: "14:00 a 18:00",
+        hrefVerMas: `${APP_PAGES.taller_macarons}`,
+        textoWhatsapp: "Me interesa el Taller de Macarons"
+    },
+    {
+        image: imgHojaldres,
+        titulo: 'TALLER "ESPECIAL HOJALDRES"',
+        precio: "Gs. 175.000",
+        diaSemana: "Jueves",
+        fecha: "20 de Noviembre",
+        horario: "14:00 a 18:00",
+        hrefVerMas: `${APP_PAGES.taller_hojaldres}`,
+        textoWhatsapp: "Me interesa el Taller Especial Hojaldres"
+    },
+    {
+        image: imgPanaderiaClasica,
+        titulo: '"TALLER PANADERÍA CLÁSICA"',
+        precio: "Gs. 175.000",
+        diaSemana: "Miércoles",
+        fecha: "26 de Noviembre",
+        horario: "14:00 a 18:00",
+        hrefVerMas: `${APP_PAGES.taller_panaderia_clasica}`,
+        textoWhatsapp: "Me interesa el Taller Panadería Clásica"
+    },
+    {
+        image: imgReposteriaIni,
+        titulo: 'TALLER "REPOSTERÍA INICIAL"',
+        precio: "Gs. 175.000",
+        diaSemana: "Jueves",
+        fecha: "27 de Noviembre",
+        horario: "14:00 a 18:00",
+        hrefVerMas: `${APP_PAGES.taller_reposteria_inicial}`,
+        textoWhatsapp: "Me interesa el Taller de Reposteria-Inicial"
+    },
+    {
+        image: imgPostresVaso,
+        titulo: 'TALLER "POSTRES EN VASO"',
+        precio: "Gs. 175.000",
+        diaSemana: "Sábado",
+        fecha: "29 de Noviembre",
+        horario: "08:00 a 12:00",
+        hrefVerMas: `${APP_PAGES.taller_postres_en_vaso}`,
+        textoWhatsapp: "Me interesa el Taller Postres-en-vaso"
+    },
+    {
+        image: imgSinGluten,
+        titulo: 'TALLER "PANES SIN GLUTEN"',
+        precio: "Gs. 175.000",
+        diaSemana: "Sábado",
+        fecha: "29 de Noviembre",
+        horario: "08:00 a 12:00",
+        hrefVerMas: `${APP_PAGES.taller_panes_sin_gluten}`,
+        textoWhatsapp: "Me interesa el Taller de Panes sin Gluten"
+    },
+    {
+        image: imgPizzas,
+        titulo: 'TALLER "PIZZAS A LA PIEDRA Y CALZÓN"',
+        precio: "Gs. 175.000",
+        diaSemana: "Sábado",
+        fecha: "29 de Noviembre",
+        horario: "14:00 a 18:00",
+        hrefVerMas: `${APP_PAGES.taller_pizzas_a_la_piedra}`,
+        textoWhatsapp: "Me interesa el Taller Pizzas-a-la-piedra"
+    }
+];
+---
+
+<section>
+    <div class="text-center py-8 px-8">
+        <h1 class="text-3xl font-bold tracking-tight font-petrona">Talleres</h1>
+        <h2 class="text-6xl font-bold tracking-tight text-bordoInforcap font-petrona">Noviembre 2025</h2>
+        <h3 class="text-base tracking-tight text-gris">
+            Nuestros talleres están enfocados a impartir clases de un día. <br />
+            <strong>¡Descubre las mejores técnicas de la más deliciosa profesión!</strong>
+        </h3>
+    </div>
+
+    <div class="container mx-auto my-8 max-w-7xl grid grid-cols-1 md:grid-cols-4 gap-8">
+        {listaTalleres.map((taller) => (
+                <TalleresCard
+                        image={taller.image}
+                        alt={taller.titulo}
+                        titulo={taller.titulo}
+                        precio={taller.precio}
+                        diaSemana={taller.diaSemana}
+                        fecha={taller.fecha}
+                        horario={taller.horario}
+                        hrefVerMas={taller.hrefVerMas}
+                        textoWhatsapp={taller.textoWhatsapp}
+                />
+        ))}
+    </div>
+</section>

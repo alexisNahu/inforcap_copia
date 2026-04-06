@@ -1,0 +1,55 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+import imgCapacitacion01 from '../../assets/img/capacitacion-personalizada-01.jpg';
+import imgCapacitacion02 from '../../assets/img/capacitacion-personalizada-02.jpg'
+---
+
+<Layout title="Capacitaciones Empresariales | Inforcap">
+
+    <section class="w-full bg-slate-50 py-16 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-bold font-petrona mb-6 text-bordoInforcap">
+                Capacitaciones empresariales y grupales
+            </h1>
+            <p class="text-lg text-gris leading-relaxed">
+                Las organizaciones buscan la constante capacitación para sus empleados.
+                Hemos diseñado formaciones personalizadas con el objetivo de impulsar
+                el crecimiento profesional de equipos de trabajo y grupos con fines comunes.
+            </p>
+        </div>
+    </section>
+
+    <section class="w-full bg-bordoInforcap py-16">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div>
+                <h2 class="text-2xl font-bold text-amarilloInforcap uppercase tracking-wider mb-6">
+                    Capacitaciones realizadas
+                </h2>
+                <p class="text-white/80 italic">
+                    Nuestra experiencia en formación personalizada en todo el país.
+                </p>
+            </div>
+
+            <div class="col-span-2 space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <Image
+                            src={imgCapacitacion01}
+                            alt="Capacitación presencial Inforcap"
+                            class="rounded-xl shadow-lg w-full h-64 object-cover"
+                            quality="high"
+                            format="webp"
+                    />
+                    <Image
+                            src={imgCapacitacion02}
+                            alt="Grupo de alumnos en capacitación"
+                            class="rounded-xl shadow-lg w-full h-64 object-cover"
+                            quality="high"
+                            format="webp"
+                    />
+                </div>
+            </div>
+        </div>
+    </section>
+</Layout>

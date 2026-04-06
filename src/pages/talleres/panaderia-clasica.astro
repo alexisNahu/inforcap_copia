@@ -1,0 +1,30 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import TalleresLayout from "@/components/Talleres/components/TalleresLayout.astro";
+import imgPanaderia from '@/assets/img/panaderia-clasica.jpg';
+
+const variedadesPan = [
+    "ELABORACIÓN DE PAN TRINCHA Y PAN FELIPE",
+    "PAN FLAUTA, BAGUETTE Y MIGNON",
+    "CAÑÓN Y GALLETA ESPECIAL",
+    "PAN ARGOLLA TRADICIONAL",
+    "TÉCNICAS DE AMASADO Y FERMENTACIÓN",
+    "CÁLCULO DE COSTO Y PRECIO DE VENTA"
+];
+---
+
+<Layout title='Taller "Panadería Clásica" | Inforcap'>
+    <TalleresLayout
+            title='Taller <br/> Panadería Clásica'
+            image={imgPanaderia}
+            imageAlt="Variedad de Panes Artesanales"
+            mes="Noviembre"
+            dia="Miércoles"
+            fecha="26/11/2025"
+            hora="14:00 a 18:00"
+            temario={variedadesPan}
+            costo="Gs. 175.000"
+            nota="¡Panes frescos hechos por vos!"
+            fraseGancho="¡No pierdas esta oportunidad! <br/> <span class='text-3xl md:text-4xl font-normal'>Descubre los secretos de la panadería artesanal.</span>"
+    />
+</Layout>

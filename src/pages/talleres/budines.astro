@@ -1,0 +1,29 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import TallerLayout from '../../components/Talleres/components/TalleresLayout.astro';
+import imgBudines from '@/assets/img/budines.jpg';
+
+const temario = [
+    "ELABORACIÓN DE BUDINES GOURMET",
+    "VARIEDADES: CÍTRICOS, CHOCOLATE Y RELLENOS",
+    "TÉCNICAS DE HUMEDAD Y CONSERVACIÓN",
+    "COBERTURAS Y DECORACIÓN FINAL",
+    "CÁLCULO DE COSTO Y PRECIO DE VENTA"
+];
+---
+
+<Layout title='Taller "Show de Budines" | Inforcap'>
+    <TallerLayout
+            title='TALLER "SHOW DE <br/> BUDINES"'
+            image={imgBudines}
+            imageAlt="Taller Show de Budines"
+            mes="Noviembre"
+            dia="Sábado"
+            fecha="01/11/2025"
+            hora="08:00 a 12:00"
+            temario={temario}
+            costo="Gs. 175.000"
+            nota="No requiere conocimientos previos"
+            fraseGancho="¡No pierdas esta oportunidad! <br/> <span class='text-3xl md:text-4xl font-normal'>Inicia tu propio emprendimiento dulce.</span>"
+    />
+</Layout>

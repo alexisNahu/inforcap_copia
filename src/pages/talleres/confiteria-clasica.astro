@@ -1,0 +1,29 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import TalleresLayout from '../../components/Talleres/components/TalleresLayout.astro';
+import imgTaller from '@/assets/img/Confiteria-Clasica.jpg';
+
+const aprendizaje = [
+    "ELABORACIÓN DE PIONONO SELVA NEGRA Y FRUTILLA",
+    "MASA PARA PASTA FROLA TRADICIONAL",
+    "VARIEDAD DE RELLENOS ARTESANALES",
+    "TÉCNICA DE BRIGADEIRO",
+    "CÁLCULO DE COSTO Y PRECIO DE VENTA"
+];
+---
+
+<Layout title='Taller "Especial Confitería Clásica" | Inforcap'>
+    <TalleresLayout
+            title='TALLER "ESPECIAL <br/> CONFITERÍA CLÁSICA"'
+            image={imgTaller}
+            imageAlt="Confitería Clásica"
+            mes="Noviembre"
+            dia="Jueves"
+            fecha="13/11/2025"
+            hora="14:00 a 18:00"
+            temario={aprendizaje}
+            costo="Gs. 175.000"
+            nota="Duración: 1 día"
+            fraseGancho="¡No pierdas esta oportunidad! <br/> <span class='text-3xl md:text-4xl font-normal'>Elige tu carrera, elige un futuro mejor.</span>"
+    />
+</Layout>

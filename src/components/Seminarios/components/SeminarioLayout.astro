@@ -1,0 +1,73 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../../../layouts/Layout.astro";
+
+interface Props {
+    titulo: string;
+    subtitulo: string;
+    imgSrc: ImageMetadata;
+    precio: string;
+    mes: string;
+    dia: string;
+    fechas: string;
+    hora: string;
+    duracion: string;
+}
+
+const { titulo, subtitulo, imgSrc, precio, mes, dia, fechas, hora, duracion } = Astro.props;
+---
+
+<Layout title={`${titulo} | Inforcap`}>
+    <div class="w-full mt-10 p-4">
+        <div class="max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-12 mx-auto">
+            <div class="w-full aspect-square overflow-hidden rounded-xl shadow-lg">
+                <Image src={imgSrc} alt={titulo} class="w-full h-full object-cover" />
+            </div>
+
+            <div class="w-full">
+                <header>
+                    <h2 class="text-base text-gris font-bold tracking-widest uppercase">{subtitulo}</h2>
+                    <h1 class="font-petrona text-4xl md:text-5xl text-bordoInforcap leading-tight">{titulo}</h1>
+                </header>
+
+                <div class="flex flex-wrap gap-4 md:gap-0 my-10 border-y border-gray-100 py-6">
+                    { [
+                        { label: 'Mes', val: mes },
+                        { label: 'Día', val: dia },
+                        { label: 'Fecha', val: fechas },
+                        { label: 'Hora', val: hora }
+                    ].map((item) => (
+                            <div class="px-6 border-r-2 border-amarilloInforcap last:border-0">
+                                <p class="text-xs text-gris uppercase tracking-tighter">{item.label}</p>
+                                <p class="text-xl font-petrona text-bordoInforcap font-bold">{item.val}</p>
+                            </div>
+                    ))}
+                </div>
+
+                <div class="prose prose-slate max-w-none">
+                    <p class="text-2xl mb-4 text-bordoInforcap font-bold font-petrona">Aprenderás a elaborar:</p>
+                    <div class="text-base text-gris leading-relaxed mb-8">
+                        <slot /> </div>
+                </div>
+
+                <div class="space-y-6">
+                    <p class="text-gris"><strong>Duración:</strong> {duracion}</p>
+
+                    <div class="inline-block bg-naranjaInforcap text-white px-6 py-3 rounded-xl shadow-md">
+                        <span class="text-sm uppercase block opacity-80">Inversión</span>
+                        <span class="text-2xl font-bold">Gs. {precio}</span>
+                    </div>
+
+                    <a
+                            href={`https://wa.me/595983350062?text=Me%20interesa%20el%20${titulo}`}
+                            target="_blank"
+                            class="flex items-center justify-center gap-3 bg-amarilloInforcap w-full py-4 uppercase hover:bg-naranjaInforcap text-white transition-all font-bold rounded-xl shadow-lg group"
+                    >
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        INSCRIBIRSE AHORA
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>

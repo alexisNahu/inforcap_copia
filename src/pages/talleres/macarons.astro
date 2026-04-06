@@ -1,0 +1,29 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import TalleresLayout from "@/components/Talleres/components/TalleresLayout.astro";
+import imgMacarons from '@/assets/img/macarons.jpg';
+
+const temarioMacarons = [
+    "ELABORACIÓN A BASE DE HARINA DE ALMENDRAS",
+    "RELLENOS GOURMET: CHOCOLATE, MBURUCUYÁ Y CAFÉ",
+    "TÉCNICAS DE MACARONAGE Y HORNEADO",
+    "TIPS DE CONSERVACIÓN Y PRESENTACIÓN",
+    "CÁLCULO DE COSTO Y PRECIO DE VENTA"
+];
+---
+
+<Layout title='Taller "Especial Macarons" | Inforcap'>
+    <TalleresLayout
+            title='TALLER "ESPECIAL <br/> MACARONS"'
+            image={imgMacarons}
+            imageAlt="Taller de Macarons Franceses"
+            mes="Noviembre"
+            dia="Miércoles"
+            fecha="19/11/2025"
+            hora="14:00 a 18:00"
+            temario={temarioMacarons}
+            costo="Gs. 175.000"
+            nota="¡Domina la técnica francesa!"
+            fraseGancho="¡No pierdas esta oportunidad! <br/> <span class='text-3xl md:text-4xl font-normal'>Suma distinción a tu catálogo de productos.</span>"
+    />
+</Layout>

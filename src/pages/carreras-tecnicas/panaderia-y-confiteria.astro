@@ -1,0 +1,106 @@
+---
+import { Image } from 'astro:assets';
+import Layout from "../../layouts/Layout.astro";
+
+import img01 from '../../assets/img/panaderia-y-confiteria.jpeg';
+import img02 from '../../assets/img/panaderia-y-confiteria_02.jpeg';
+import img03 from '../../assets/img/panaderia-y-confiteria_03.jpeg';
+import img04 from '../../assets/img/panaderia-y-confiteria_04.jpeg';
+import img05 from '../../assets/img/panaderia-y-confiteria_05.jpeg';
+import img06 from '../../assets/img/panaderia-y-confiteria_06.jpeg';
+import img07 from '../../assets/img/panaderia-y-confiteria_07.jpeg';
+import img08 from '../../assets/img/panaderia-y-confiteria_08.jpeg';
+
+const galeria = [img01, img02, img03, img04, img05, img06, img07, img08];
+
+const requisitos = [
+    "15 años cumplidos.",
+    "Certificado de estudios visado por el M.E.C.",
+    "Certificado de nacimiento.",
+    "Dos fotocopias de cédula de identidad.",
+    "Una foto tipo carnet.",
+    "Llenar la solicitud correspondiente.",
+    "Firmar el reglamento administrativo y académico."
+];
+
+const malla = [
+    "Masa Fermentada",
+    "Masa Batida",
+    "Masa Hojaldre",
+    "Masa Quebrada (arenado método)",
+    "Masa Para Freír",
+    "Masa Bizcochuelo",
+    "Merenges"
+];
+---
+
+<Layout title="Panadería y Confitería | Inforcap">
+
+    <div class="w-full bg-slate-50">
+        <div class="max-w-7xl py-12 px-8 mx-auto">
+            <p class="uppercase text-sm tracking-widest text-gris font-bold">Carrera Técnica</p>
+            <h1 class="text-5xl font-bold tracking-tight font-petrona text-bordoInforcap mt-2">Panadería y Confitería</h1>
+            <div class="text-xl tracking-tight text-gris mt-4 mb-12 max-w-3xl">
+                Aprenderá las diferentes técnicas para elaborar varios tipos de panificados en forma industrial y artesanal.
+            </div>
+
+            <div class="container mx-auto">
+                <div class="md:w-[800px] mx-auto overflow-hidden rounded-xl shadow-2xl">
+                    <Image src={img01} alt="Panadería y Confitería" class="w-full h-auto object-cover" />
+                </div>
+
+                <div class="w-full md:w-[800px] bg-grisClaro grid grid-cols-4 md:grid-cols-8 mx-auto mt-4 rounded-lg p-2 gap-2">
+                    {galeria.map((img) => (
+                            <div class="cursor-pointer hover:opacity-75 transition-opacity">
+                                <Image src={img} alt="Miniatura" class="rounded-sm h-16 w-full object-cover" />
+                            </div>
+                    ))}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-7xl py-16 px-8 mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+
+            <div class="rounded-xl bg-white p-6 shadow-lg border-t-4 border-bordoInforcap">
+                <p class="font-bold text-bordoInforcap mb-4 text-lg">Técnico en Panadería y Confitería</p>
+                <p class="mb-4 text-grisClaro">Inicia en marzo y se extiende hasta noviembre</p>
+                <p class="text-grisClaro"><span class="font-bold text-black">Duración:</span> 3 años.</p>
+            </div>
+
+            <div class="rounded-xl bg-white p-6 shadow-lg border-t-4 border-bordoInforcap">
+                <p class="font-bold text-bordoInforcap mb-4 text-lg">Días de Clase</p>
+                <ul class="space-y-2 text-grisClaro">
+                    <li><span class="font-bold text-black">1er año:</span> Lunes y Jueves</li>
+                    <li><span class="font-bold text-black">2do año:</span> Martes y Viernes</li>
+                    <li><span class="font-bold text-black">3er año:</span> Miércoles y Viernes</li>
+                    <li class="pt-2"><span class="font-bold text-black">Horarios:</span> 14:00 a 18:00 hs</li>
+                </ul>
+            </div>
+
+            <div class="rounded-xl bg-white p-6 shadow-lg border-t-4 border-bordoInforcap">
+                <p class="font-bold text-bordoInforcap mb-4 text-lg">Requisitos</p>
+                <ul class="space-y-3">
+                    {requisitos.map((req) => (
+                            <li class="flex text-sm text-grisClaro leading-tight">
+                                <span class="text-amarilloInforcap mr-2 font-bold">✓</span> {req}
+                            </li>
+                    ))}
+                </ul>
+            </div>
+
+            <div class="rounded-xl bg-white p-6 shadow-lg border-t-4 border-bordoInforcap">
+                <p class="font-bold text-bordoInforcap mb-4 text-lg">Malla Curricular</p>
+                <ul class="space-y-3">
+                    {malla.map((item) => (
+                            <li class="flex text-sm text-grisClaro">
+                                <span class="text-amarilloInforcap mr-2 font-bold">✓</span> {item}
+                            </li>
+                    ))}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</Layout>

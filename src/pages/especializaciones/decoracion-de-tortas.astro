@@ -1,0 +1,81 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+import img01 from '../../assets/img/decoracion-de-tortas-01.jpg';
+import img02 from '../../assets/img/decoracion-de-tortas-02.jpg';
+import img03 from '../../assets/img/decoracion-de-tortas-03.jpg';
+import img04 from '../../assets/img/decoracion-de-tortas-04.jpg';
+import img05 from '../../assets/img/decoracion-de-tortas-05.jpg';
+
+const requisitos = [
+    "1 fotocopia de Cédula de Identidad",
+    "Llenar la solicitud correspondiente",
+    "Firmar el reglamento administrativo y académico"
+];
+
+const galeria = [img02, img03, img04, img05];
+---
+
+<Layout title="Repostería y Decoración de Tortas | Inforcap">
+
+    <section class="w-full bg-slate-50">
+        <div class="max-w-7xl py-12 px-8 mx-auto">
+            <p class="text-bordoInforcap font-bold uppercase tracking-wider text-sm">Diplomado en Pastelería y Confitería</p>
+            <h1 class="text-4xl font-bold tracking-tight font-petrona text-bordoInforcap mt-2">Repostería y Decoración de Tortas</h1>
+
+            <div class="text-xl tracking-tight text-gris mt-6 mb-12 max-w-4xl leading-relaxed">
+                <p class="mb-4">
+                    Aprenderá la técnica de pastillaje, artesanía en azúcar, en chocolate, torta forrada con fondant de distintos sabores (chocolate, vainilla, leche condensada, sabor chicle).
+                </p>
+                <p>
+                    Presentación de torta gratinada con soplete, torta superpuesta, decorado con merengue suizo, italiano, francés, merengue con y sin emulsionante. Torta espejo, torta desnuda, torta helada, masa fina, chocolatería, petit fours, torta para todo tipo de eventos.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+                <div class="md:col-span-2 grid grid-cols-1 gap-4">
+                    <Image src={img01} alt="Decoración de tortas principal" class="rounded-lg shadow-md w-full h-96 object-cover" />
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        {galeria.map((img, index) => (
+                                <Image src={img} alt={`Técnica 0${index + 2}`} class="rounded-lg shadow-md h-32 object-cover" />
+                        ))}
+                    </div>
+                </div>
+
+                <div class="relative bg-amarilloInforcap aspect-square flex items-center justify-center p-10 rounded-lg shadow-inner">
+                    <div class="font-sacramento text-[32px] md:text-[28px] text-bordoInforcap text-left leading-tight italic">
+                        Conocé todas las técnicas necesarias para convertirte en un profesional
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-7xl py-16 px-8 mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="rounded-xl bg-white p-6 shadow-xl border-t-4 border-bordoInforcap">
+                <p class="font-bold text-bordoInforcap mb-4 text-lg">Fecha de inicio</p>
+                <p class="text-gris">Inicia en marzo y se extiende hasta noviembre</p>
+                <p class="mt-2 text-gris"><span class="font-bold text-black">Duración:</span> 9 meses</p>
+            </div>
+
+            <div class="rounded-xl bg-white p-6 shadow-xl border-t-4 border-bordoInforcap">
+                <p class="font-bold text-bordoInforcap mb-4 text-lg">Días de Clase</p>
+                <p class="text-gris"><span class="font-bold text-black">Sábados</span> de 14:00 a 18:00 hs.</p>
+            </div>
+
+            <div class="rounded-xl bg-white p-6 shadow-xl border-t-4 border-bordoInforcap">
+                <p class="font-bold text-bordoInforcap mb-4 text-lg">Requisitos para la inscripción</p>
+                <ul class="space-y-3">
+                    {requisitos.map((req) => (
+                            <li class="flex items-start text-sm text-gris leading-tight">
+                                <span class="text-amarilloInforcap mr-2 font-bold">✓</span> {req}
+                            </li>
+                    ))}
+                </ul>
+            </div>
+        </div>
+    </section>
+
+</Layout>

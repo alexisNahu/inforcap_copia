@@ -1,0 +1,29 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import TalleresLayout from "@/components/Talleres/components/TalleresLayout.astro";
+import imgPanettones from '@/assets/img/panettones.jpg';
+
+const temarioPanettones = [
+    "ELABORACIÓN DE PANETTONES CON FRUTAS Y PASAS",
+    "VARIEDADES CON FRUTAS ABRILLANTADAS",
+    "OPCIONES DE SALVADO Y CHIPS DE CHOCOLATE",
+    "TÉCNICAS DE LEUDADO Y CONSERVACIÓN",
+    "CÁLCULO DE COSTO Y PRECIO DE VENTA"
+];
+---
+
+<Layout title='Taller "Panettones y sus Derivados" | Inforcap'>
+    <TalleresLayout
+            title='TALLER "PANETTONES <br/> Y SUS DERIVADOS"'
+            image={imgPanettones}
+            imageAlt="Elaboración artesanal de Panettones"
+            mes="Noviembre"
+            dia="Sábado"
+            fecha="01/11/2025"
+            hora="14:00 a 18:00"
+            temario={temarioPanettones}
+            costo="Gs. 175.000"
+            nota="Duración: 1 día"
+            fraseGancho="¡No pierdas esta oportunidad! <br/> <span class='text-3xl md:text-4xl font-normal'>Elige tu carrera, elige un futuro mejor.</span>"
+    />
+</Layout>

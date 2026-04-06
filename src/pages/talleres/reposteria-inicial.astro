@@ -1,0 +1,30 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import TalleresLayout from "@/components/Talleres/components/TalleresLayout.astro";
+import imgReposteria from '@/assets/img/reposteria-inicial-junio-2025.jpg';
+
+const temarioInicial = [
+    "ELABORACIÓN DE BIZCOCHUELOS EN PLANCHAS",
+    "RELLENOS: MOUSSES VARIOS, NUTELLA Y GANACHE",
+    "DECORADOS CON CHANTILLY, CHOCOLATE Y FRUTOS",
+    "TÉCNICAS DE ARMADO, MONTADO Y PRESENTACIÓN",
+    "MANEJO DE MANGAS Y PRÁCTICA DE LETRAS",
+    "CÁLCULO DE COSTO Y PRECIO DE VENTA"
+];
+---
+
+<Layout title='Taller "Repostería Inicial" | Inforcap'>
+    <TalleresLayout
+            title='TALLER "REPOSTERÍA <br/> INICIAL"'
+            image={imgReposteria}
+            imageAlt="Taller de iniciación a la repostería"
+            mes="Noviembre"
+            dia="Jueves"
+            fecha="27/11/2025"
+            hora="14:00 a 18:00"
+            temario={temarioInicial}
+            costo="Gs. 175.000"
+            nota="Duración: 1 día"
+            fraseGancho="¡No pierdas esta oportunidad! <br/> <span class='text-3xl md:text-4xl font-normal'>Elige tu carrera, elige un futuro mejor.</span>"
+    />
+</Layout>

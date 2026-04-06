@@ -1,0 +1,75 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+import img01 from '../../assets/img/pasteleria-y-confiteria-01.jpeg';
+import img02 from '../../assets/img/pasteleria-y-confiteria-02.jpeg';
+import img03 from '../../assets/img/pasteleria-y-confiteria-03.jpeg';
+import img04 from '../../assets/img/pasteleria-y-confiteria-04.jpeg';
+import img05 from '../../assets/img/pasteleria-y-confiteria-05.jpeg';
+
+const requisitos = [
+    "1 fotocopia de Cédula de Identidad",
+    "Llenar la solicitud correspondiente",
+    "Firmar el reglamento administrativo y académico"
+];
+
+const miniaturas = [img02, img03, img04, img05];
+---
+
+<Layout title="Diplomado en Pastelería y Confitería | Inforcap">
+
+    <section class="w-full bg-slate-50">
+        <div class="max-w-7xl py-12 px-8 mx-auto">
+            <p class="text-bordoInforcap font-bold uppercase tracking-wider text-sm">Diplomado en Pastelería y Confitería</p>
+            <h1 class="text-4xl font-bold tracking-tight font-petrona text-bordoInforcap mt-2">Pastelería y Confitería</h1>
+            <p class="text-xl tracking-tight text-gris mt-4 mb-12 max-w-4xl leading-relaxed">
+                Aprenderá las técnicas para elaborar masas finas, tortas, facturas variedad en hojaldre, plunder, postres, semifríos. Elaboración de Fondant, flores de azúcar, técnicas de alisado, practicas con mangas, arabescos, escrituras, petit fours, bizcochos, masas fritas, masas cocidas, método creming, arena. Strudel del hojaldre, vienés. Tartas de frutas, especialidades alemanas. Salados tartas, empanadas, milanesas, etc. (diferentes rellenos).
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+                <div class="md:col-span-2 grid grid-cols-1 gap-4">
+                    <Image src={img01} alt="Pastelería 01" class="rounded-lg shadow-md w-full object-cover h-96" />
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        {miniaturas.map((img, index) => (
+                                <Image src={img} alt={`Miniatura ${index + 2}`} class="rounded-lg shadow-md h-32 object-cover w-full" />
+                        ))}
+                    </div>
+                </div>
+
+                <div class="relative bg-amarilloInforcap aspect-square flex items-center justify-center p-8 rounded-lg shadow-inner">
+                    <div class="font-sacramento text-5xl text-bordoInforcap text-center leading-tight">
+                        Elige tu carrera, elige tu mejor futuro
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-7xl py-16 px-8 mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="rounded-xl bg-white p-6 shadow-xl border-t-4 border-bordoInforcap">
+                <p class="font-bold text-bordoInforcap mb-4 text-lg">Fecha de inicio</p>
+                <p class="text-gris">Inicia en marzo y se extiende hasta noviembre</p>
+                <p class="mt-2 text-gris"><span class="font-bold text-black">Duración:</span> 9 meses</p>
+            </div>
+
+            <div class="rounded-xl bg-white p-6 shadow-xl border-t-4 border-bordoInforcap">
+                <p class="font-bold text-bordoInforcap mb-4 text-lg">Días de Clase</p>
+                <p class="text-gris"><span class="font-bold text-black">Martes</span> de 14:00 a 18:00 hs.</p>
+            </div>
+
+            <div class="rounded-xl bg-white p-6 shadow-xl border-t-4 border-bordoInforcap">
+                <p class="font-bold text-bordoInforcap mb-4 text-lg">Requisitos para la inscripción</p>
+                <ul class="space-y-3">
+                    {requisitos.map((req) => (
+                            <li class="flex items-start text-sm text-gris leading-tight">
+                                <span class="text-amarilloInforcap mr-2 font-bold">✓</span> {req}
+                            </li>
+                    ))}
+                </ul>
+            </div>
+        </div>
+    </section>
+
+</Layout>

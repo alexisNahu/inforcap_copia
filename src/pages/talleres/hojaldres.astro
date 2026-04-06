@@ -1,0 +1,29 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import TalleresLayout from "@/components/Talleres/components/TalleresLayout.astro";
+import imgHojaldres from '@/assets/img/hojaldres.jpg';
+
+const recetasHojaldre = [
+    "ELABORACIÓN DE PALMERITAS Y PALMERAS GRANDES",
+    "FOSFORITOS Y PERSIANAS",
+    "CAÑONES TRADICIONALES",
+    "TÉCNICA DE LAMINADO Y RELLENOS",
+    "CÁLCULO DE COSTO Y PRECIO DE VENTA"
+];
+---
+
+<Layout title='Taller "Especial Hojaldres" | Inforcap'>
+    <TalleresLayout
+            title='Taller "Especial <br/> Hojaldres"'
+            image={imgHojaldres}
+            imageAlt="Variedad de Hojaldres Artesanales"
+            mes="Noviembre"
+            dia="Jueves"
+            fecha="20/11/2025"
+            hora="14:00 a 18:00"
+            temario={recetasHojaldre}
+            costo="Gs. 175.000"
+            nota="¡Técnicas profesionales de laminado!"
+            fraseGancho="¡No pierdas esta oportunidad! <br/> <span class='text-3xl md:text-4xl font-normal'>Domina el arte de las masas laminadas.</span>"
+    />
+</Layout>

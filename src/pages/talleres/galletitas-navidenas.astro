@@ -1,0 +1,28 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import TalleresLayout from "@/components/Talleres/components/TalleresLayout.astro";
+import imgGalletitas from '@/assets/img/galletitas.jpg';
+
+const temarioNavideno = [
+    "ELABORACIÓN DE GALLETITAS DE JENGIBRE Y MIEL",
+    "DECORADOS CON MOTIVOS NAVIDEÑOS",
+    "TÉCNICAS DE GLASEADOS PROFESIONALES",
+    "CÁLCULO DE COSTO Y PRECIO DE VENTA"
+];
+---
+
+<Layout title='Taller "Especial Galletitas Navideñas" | Inforcap'>
+    <TalleresLayout
+            title='TALLER "ESPECIAL <br/> GALLETITAS NAVIDEÑAS"'
+            image={imgGalletitas}
+            imageAlt="Galletitas Navideñas de Jengibre"
+            mes="Noviembre"
+            dia="Jueves"
+            fecha="06/11/2025"
+            hora="14:00 a 18:00"
+            temario={temarioNavideno}
+            costo="Gs. 175.000"
+            nota="¡Incluye materiales de decoración!"
+            fraseGancho="¡Prepara tu negocio para las fiestas! <br/> <span class='text-3xl md:text-4xl font-normal'>Aprende técnicas que enamoran.</span>"
+    />
+</Layout>
