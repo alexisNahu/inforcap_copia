@@ -10,5 +10,5 @@ export interface Seminario {
     precio: string;
     estado: number;
     duracion?: string;
-    aprenderas_html?: string;
+    aprenderas_html?: string[];
 }

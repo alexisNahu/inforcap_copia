@@ -1,12 +1,27 @@
 import { API } from "@/constants.ts";
 import type { Seminario } from "./models";
 
+function mapToSeminarios(obj: any) {
+    if (!Array.isArray(obj)) return [];
+
+    const nuevo = obj.map((val: any) => ({
+        ...val,
+        aprenderas_html: val.aprenderas_html ? val.aprenderas_html.split('-') : [],
+
+        slug: val.slug ? val.slug.replace(/[\.;]/g, '') : ''
+    }));
+
+    console.log("Seminarios mapeados:", nuevo);
+    return nuevo;
+}
+
 export const SeminarioService = {
     async getAll(): Promise<Seminario[]> {
         try {
             const response = await fetch(API.seminarios);
             if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
-            return await response.json();
+            const json = await response.json()
+            return mapToSeminarios(json);
         } catch (e: any) {
             console.error(`Error en el getAll de seminarios: ${e}`);
             throw e;
