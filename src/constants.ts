@@ -12,7 +12,7 @@ export const APP_PAGES = {
     especializacion_pasteleria_y_confiteria: '/especializaciones/pasteleria-y-confiteria',
     especializacion_decoracion_de_tortas: '/especializaciones/decoracion-de-tortas',
 
-    // Diplomados
+    //Diplomados
     diplomado_reposteria_y_decoracion: '/diplomados/reposteria-y-decoracion',
     diplomado_pasteleria_y_confiteria: '/diplomados/pasteleria-y-confiteria',
 
