@@ -1,9 +1,10 @@
 ---
-import Nav from '../components/Nav.astro';
-import Footer from '../components/Footer.astro';
+import Nav from '../features/Nav.astro';
+import Footer from '../features/Footer.astro';
 import "../styles/global.css";
-import Cursos from "../components/Cursos.astro";
-import Auspiciantes from "../components/Auspiciantes.astro";
+import Cursos from "../features/Cursos/Cursos.astro";
+import Auspiciantes from "../features/Auspiciantes/Auspiciantes.astro";
+import InscripcionCurso from "../features/Cursos/InscripcionCurso.astro";
 
 interface Props {
 	title?: string;
@@ -37,7 +38,7 @@ const { title = "Inforcap" } = Astro.props;
 <main>
 	<slot />
 </main>
-<Cursos />
+<InscripcionCurso />
 <Auspiciantes />
 <Footer />
 

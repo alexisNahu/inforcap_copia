@@ -5,6 +5,9 @@ import path from 'path'; // Importamos path para manejar las rutas
 
 // https://astro.build/config
 export default defineConfig({
+  image: {
+      domains: ['inforcap.fincreativo.com'], // Agrega aquí el dominio de tu servidor
+    },
   vite: {
     plugins: [tailwindcss()],
     resolve: {
