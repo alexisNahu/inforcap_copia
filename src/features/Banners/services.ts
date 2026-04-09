@@ -1,5 +1,4 @@
 import {API} from "@/constants.ts";
-
 export const BannerService = {
     getAll: async () => {
         try {
