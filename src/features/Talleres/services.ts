@@ -23,7 +23,6 @@ export const TallerService = {
             throw e;
         }
     },
-
     async getByIdOrSlug(param: number | string): Promise<Taller> {
         try {
             const response = await fetch(`${API.talleres}/${param}`, {
