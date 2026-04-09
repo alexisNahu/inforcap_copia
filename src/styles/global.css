@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+    /* IMPORTANTE: En v4, para mantener el CamelCase exacto en la clase,
+       la variable debe definirse así. Tailwind ignorará el guion inicial
+       del nombre de la variable para crear la clase.
+    */
+
+    /* Colores */
+    --color-bordoInforcap: #9C2D32;
+    --color-amarilloInforcap: #FFC700;
+    --color-naranjaInforcap: #FF8A00;
+    --color-gris: #6A6969;
+    --color-grisClaro: #A6A6A6;
+    --color-grisC: #cccccc;
+
+    /* Tipografías */
+    /* Estas se usarán como font-body, font-petrona, etc. */
+    --font-body: "Inter", sans-serif;
+    --font-petrona: "Petrona", serif;
+    --font-sacramento: "Sacramento", cursive;
+}

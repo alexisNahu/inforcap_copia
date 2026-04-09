@@ -1,0 +1,28 @@
+---
+import {type Seminario} from "../../features/Seminarios/models";
+import {SEMINARIOS_CONTENIDO} from "../../constants";
+import {SeminarioService} from "../../features/Seminarios/services";
+import SeminarioLayout from "../../features/Seminarios/components/SeminarioLayout.astro";
+
+// 1. getStaticPaths es solo para "avisar" a Astro qué URLs existen
+export async function getStaticPaths() {
+    const seminarios = await SeminarioService.getAll();
+
+    // Solo devolvemos los slugs que el backend reconoce
+    return seminarios.map((semi: Seminario) => ({
+        params: { slug: semi.slug }, // Suponiendo que tu API ya devuelve el campo slug
+    }));
+}
+
+// 2. Aquí mantenemos TU lógica: el backend manda
+const { slug } = Astro.params;
+
+// Usamos tu método que ya está preparado
+const seminario = await SeminarioService.getByIdOrSlug(slug!);
+
+if (!seminario) return Astro.redirect('/404');
+
+---
+
+<SeminarioLayout seminario={seminario} />
+

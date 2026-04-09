@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const videos = [
+    "8PrpoP26yP8",
+    "Mc6f6296ncQ",
+    "ySMsdvmPDbY",
+    "EGY3jEhST2Y",
+    "xP7AxkdcY3k",
+    "luuE4tndU08"
+];
+---
+
+<Layout title="Videos de Inforcap | Inforcap">
+    <div class="w-full bg-slate-50 py-12">
+        <div class="max-w-7xl px-8 mx-auto">
+            <h1 class="text-3xl font-bold font-petrona mb-12 text-bordoInforcap">
+                Videos de Inforcap
+            </h1>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+                {videos.map((id) => (
+                        <div class="w-full max-w-[315px] aspect-[9/16] overflow-hidden rounded-2xl shadow-xl bg-black">
+                            <iframe
+                                    class="w-full h-full border-0 hover:opacity-90 transition-opacity"
+                                    src={`https://www.youtube.com/embed/${id}`}
+                                    title="YouTube video player"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen
+                            ></iframe>
+                        </div>
+                ))}
+            </div>
+        </div>
+    </div>
+</Layout>

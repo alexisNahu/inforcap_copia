@@ -1,0 +1,28 @@
+---
+import {type ImageMetadata} from "astro";
+import {Image} from "astro:assets";
+interface Props {
+    image: {
+        src: ImageMetadata,
+        alt: string
+    }
+    textoWhatsapp: string
+}
+const {image, textoWhatsapp} = Astro.props
+---
+
+<div class="w-4/5 md:w-full h-full flex flex-col justify-between rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
+
+    <Image src={image.src} alt={image.alt} />
+
+    <a
+            href={textoWhatsapp}
+            class="bg-naranjaInforcap w-full py-4 uppercase hover:bg-amarilloInforcap text-white flex justify-center items-center gap-2 transition-colors duration-300"
+    >
+        <i class="fa-brands fa-whatsapp"></i>
+        <span>INSCRIBIRSE</span>
+    </a>
+</div>
+
+
+

@@ -1,0 +1,81 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import { APP_PAGES } from '../../constants';
+
+import imgPanaderia from '../../assets/img/panaderia-y-confiteria.jpg';
+import imgPasteleria from '../../assets/img/pasteleria-y-confiteria.jpg';
+import imgDecoracion from '../../assets/img/decoracion-de-tortas-02.jpg';
+import imgSeminarios from '../../assets/img/seminarios.jpeg';
+import imgMagistrales from '../../assets/img/clases-magistrales-inforcap.jpeg';
+import imgEmpresariales from '../../assets/img/capacitacion-13.jpg';
+
+const cursosGrid = [
+    {
+        title: "Panadería y Confitería",
+        img: imgPanaderia,
+        href: APP_PAGES.carrera_tecnica_panaderia_y_confiteria
+    },
+    {
+        title: "Pastelería y Confitería",
+        img: imgPasteleria,
+        href: APP_PAGES.diplomado_pasteleria_y_confiteria
+    },
+    {
+        title: "Diplomado en Repostería y Decoración",
+        img: imgDecoracion,
+        href: APP_PAGES.diplomado_reposteria_y_decoracion
+    },
+    {
+        title: "Talleres y Seminarios",
+        img: imgSeminarios,
+        href: "#"
+    },
+    {
+        title: "Clases Magistrales",
+        img: imgMagistrales,
+        href: APP_PAGES.clases_magistrales
+    },
+    {
+        title: "Capacitaciones empresariales y grupales",
+        img: imgEmpresariales,
+        href: APP_PAGES.capacitacion_personalizada
+    }
+];
+---
+
+<Layout title="Formación Profesional | Inforcap">
+
+    <section class="w-full bg-slate-50">
+        <div class="max-w-7xl text-center py-8 px-8 mx-auto bg-slate-50">
+            <h1 class="text-3xl font-bold tracking-tight font-petrona mb-8 text-bordoInforcap">
+                Formación Profesional
+            </h1>
+            <h3 class="text-base tracking-tight text-gris mb-8">Las organizaciones hoy en día buscan la constante capacitación para sus empleados o tales así grupos de personas que se unen para un fin común como es así. El Progreso de su desarrollo de vida para ello hemos pensado en capacitaciones personalizadas con el objetivo de ayudar a la formación de un determinado grupo de personas interesadas en el crecimiento profesional</h3>
+        </div>
+    </section>
+
+    <section class="max-w-7xl flex grid grid-cols-1 md:grid-cols-3 gap-8 mx-8 md:mx-auto">
+            {cursosGrid.map((curso) => (
+                    <a
+                            href={curso.href}
+                            class="group relative h-80 cursor-pointer rounded-2xl overflow-hidden shadow-lg transition-all duration-500 hover:shadow-2xl"
+                    >
+                        <div class="w-full h-full">
+                            <Image
+                                    src={curso.img}
+                                    alt={curso.title}
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-125"
+                            />
+                        </div>
+
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+
+                        <div class="absolute inset-0 flex translate-y-[30%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
+                            <h2 class="text-2xl font-bold text-white mb-2">{curso.title}</h2>
+                        </div>
+                    </a>
+            ))}
+    </section>
+
+</Layout>

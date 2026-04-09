@@ -1,0 +1,34 @@
+---
+import logoInforcap from '../assets/img/logo-inforcap.png'
+import logoInforcap21Original from '../assets/img/logo-inforcap-21-original.png'
+import {Image} from 'astro:assets'
+import {APP_PAGES} from "../constants";
+---
+<nav class="relative container mx-auto p-6 max-w-7xl">
+    <div class="flex items-center justify-between">
+        <!--logo-->
+        <div class="pt-2">
+            <a href="/"><Image src={logoInforcap} alt="Logo de Inforcap" class={'w-40'}/></a>
+        </div>
+        <!--Menu Items-->
+        <div class="hidden md:flex space-x-6">
+            <a href={APP_PAGES.inforcap} class="">Inforcap</a>
+            <a href={APP_PAGES.formacion_profesional} class="">Formación profesional</a>
+            <a href="#" class="">Actividades</a>
+            <a href={APP_PAGES.videos} class="">Videos</a>
+            <a href="#" class="">RSE</a>
+            <a href="#contactenos" class="">Contáctenos</a>
+
+        </div>
+        <!--Button-->
+        <div class="hidden md:flex">
+            <a href="https://www.facebook.com/Inforcap.edu.py" target="_blank" class="p-3 pt-2 text-bordoInforcap text-3xl"><i class="fa-brands fa-facebook-square"></i></a>
+            <a href="https://www.instagram.com/inforcap.edu.py/" target="_blank" class="p-3 pt-2 text-bordoInforcap text-3xl"><i class="fa-brands fa-instagram-square"></i></a>
+            <a href="https://www.tiktok.com/@inforcapinforcap" target="_blank" class="p-3 pt-2 text-bordoInforcap text-3xl"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+
+        <div>
+            <Image src={logoInforcap21Original} alt="Imagen Inforcap" class={'w-24'}/>
+        </div>
+    </div>
+</nav>
