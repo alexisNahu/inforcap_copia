@@ -8,7 +8,13 @@ function mapToTaller (obj: any) {
 export const TallerService = {
     async getAll(): Promise<Taller[]> {
         try {
-            const response = await fetch(API.talleres);
+            const response = await fetch(API.talleres, {
+                method: 'GET',
+                headers: {
+                    'Cache-Control': 'no-cache',
+                },
+                cache: 'no-store'
+            });
             if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
             const json = await response.json()
             return mapToTaller(json)
@@ -20,7 +26,13 @@ export const TallerService = {
 
     async getByIdOrSlug(param: number | string): Promise<Taller> {
         try {
-            const response = await fetch(`${API.talleres}/${param}`);
+            const response = await fetch(`${API.talleres}/${param}`, {
+                method: 'GET',
+                headers: {
+                    'Cache-Control': 'no-cache',
+                },
+                cache: 'no-store'
+            });
             if (!response.ok) throw new Error(`No se encontró el taller con ID o Parametro ${param}`);
             return await response.json();
         } catch (e: any) {

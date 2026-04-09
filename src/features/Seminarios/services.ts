@@ -8,7 +8,13 @@ function mapToSeminarios (obj: any) {
 export const SeminarioService = {
     async getAll(): Promise<Seminario[]> {
         try {
-            const response = await fetch(API.seminarios);
+            const response = await fetch(API.seminarios, {
+                method: 'GET',
+                headers: {
+                    'Cache-Control': 'no-cache',
+                },
+                cache: 'no-store'
+            });
             if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
             const json = await response.json()
             return mapToSeminarios(json);
@@ -20,7 +26,13 @@ export const SeminarioService = {
 
     async getByIdOrSlug(param: number | string): Promise<Seminario> {
         try {
-            const response = await fetch(`${API.seminarios}/${param}`);
+            const response = await fetch(`${API.seminarios}/${param}`, {
+                method: 'GET',
+                headers: {
+                    'Cache-Control': 'no-cache',
+                },
+                cache: 'no-store'
+            });
             if (!response.ok) throw new Error(`No se encontró el seminario con ID o Parametro ${param}`);
             return await response.json();
         } catch (e: any) {
