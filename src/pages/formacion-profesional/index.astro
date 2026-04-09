@@ -47,44 +47,35 @@ const cursosGrid = [
 <Layout title="Formación Profesional | Inforcap">
 
     <section class="w-full bg-slate-50">
-        <div class="max-w-7xl text-center py-16 px-8 mx-auto">
-            <h1 class="text-4xl font-bold tracking-tight font-petrona mb-6 text-bordoInforcap">
+        <div class="max-w-7xl text-center py-8 px-8 mx-auto bg-slate-50">
+            <h1 class="text-3xl font-bold tracking-tight font-petrona mb-8 text-bordoInforcap">
                 Formación Profesional
             </h1>
-            <p class="text-lg tracking-tight text-gris max-w-4xl mx-auto leading-relaxed">
-                Las organizaciones hoy en día buscan la constante capacitación para sus empleados.
-                Hemos diseñado capacitaciones personalizadas con el objetivo de ayudar a la formación
-                de grupos interesados en el crecimiento profesional y el desarrollo de vida.
-            </p>
+            <h3 class="text-base tracking-tight text-gris mb-8">Las organizaciones hoy en día buscan la constante capacitación para sus empleados o tales así grupos de personas que se unen para un fin común como es así. El Progreso de su desarrollo de vida para ello hemos pensado en capacitaciones personalizadas con el objetivo de ayudar a la formación de un determinado grupo de personas interesadas en el crecimiento profesional</h3>
         </div>
     </section>
 
-    <section class="max-w-7xl mx-auto py-12 px-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <section class="max-w-7xl flex grid grid-cols-1 md:grid-cols-3 gap-8 mx-8 md:mx-auto">
             {cursosGrid.map((curso) => (
                     <a
                             href={curso.href}
                             class="group relative h-80 cursor-pointer rounded-2xl overflow-hidden shadow-lg transition-all duration-500 hover:shadow-2xl"
                     >
-                        <div class="absolute inset-0 w-full h-full">
+                        <div class="w-full h-full">
                             <Image
                                     src={curso.img}
                                     alt={curso.title}
-                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-125"
                             />
                         </div>
 
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent group-hover:from-bordoInforcap/80 transition-colors duration-500"></div>
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
 
-                        <div class="absolute inset-0 flex flex-col items-center justify-end p-8 text-center transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                        <div class="absolute inset-0 flex translate-y-[30%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
                             <h2 class="text-2xl font-bold text-white mb-2">{curso.title}</h2>
-                            <span class="text-amarilloInforcap font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                            Ver información →
-                        </span>
                         </div>
                     </a>
             ))}
-        </div>
     </section>
 
 </Layout>

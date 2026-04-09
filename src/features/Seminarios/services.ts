@@ -1,18 +1,8 @@
 import { API } from "@/constants.ts";
 import type { Seminario } from "./models";
 
-function mapToSeminarios(obj: any) {
-    if (!Array.isArray(obj)) return [];
-
-    const nuevo = obj.map((val: any) => ({
-        ...val,
-        aprenderas_html: val.aprenderas_html ? val.aprenderas_html.split('-') : [],
-
-        slug: val.slug ? val.slug.replace(/[\.;]/g, '') : ''
-    }));
-
-    console.log("Seminarios mapeados:", nuevo);
-    return nuevo;
+function mapToSeminarios (obj: any) {
+    return obj.map((val: any) => ({...val, aprenderas_html: val.aprenderas_html?.split('.'), slug: val.slug.replace(/[\.;]/g, '')}))
 }
 
 export const SeminarioService = {
