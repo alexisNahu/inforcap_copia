@@ -1,15 +1,14 @@
 ---
-    import {Image} from 'astro:assets'
-    import bannerWebDiplomados2025 from '@/assets/img/banner-web-diplomados-2025.jpg'
-    import bannerWebInforcap2025 from '@/assets/img/BANNER-WEB-inforcap-2025.jpg'
     import '@/styles/carusel.css'
+
+    import {Image} from 'astro:assets'
     import {type Banner} from "./models";
     import {BannerService} from "./services";
 
     const banners: Banner[] = await BannerService.getAll()
     const banners_ordenados = banners.sort((a,b) => a.orden - b.orden)
 ---
-<div class="w-full h-full bg-naranjaInforcap">
+<div data-animate class="anim-hidden from-down w-full h-full bg-naranjaInforcap">
     <article>
         <div
                 id="carouselExampleControls"

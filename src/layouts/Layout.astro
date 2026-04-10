@@ -2,9 +2,9 @@
 import Nav from '../features/Nav.astro';
 import Footer from '../features/Footer.astro';
 import "../styles/global.css";
-import Cursos from "../features/Cursos/Cursos.astro";
 import Auspiciantes from "../features/Auspiciantes/Auspiciantes.astro";
 import InscripcionCurso from "../features/Cursos/InscripcionCurso.astro";
+import {ClientRouter} from 'astro:transitions';
 
 interface Props {
 	title?: string;
@@ -18,7 +18,7 @@ const { title = "Inforcap" } = Astro.props;
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{title}</title>
-
+	<ClientRouter />
 	<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-CJ6HQW36LY"></script>
 	<script is:inline>
 		window.dataLayer = window.dataLayer || [];
@@ -32,20 +32,43 @@ const { title = "Inforcap" } = Astro.props;
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Petrona:wght@400;700&family=Sacramento&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" />
 </head>
-<body class="font-body">
+<body class="font-body" >
 
-<Nav />
+<Nav transition:persist />
 <main>
 	<slot />
 </main>
 <InscripcionCurso />
-<Auspiciantes />
-<Footer />
+<Auspiciantes/>
+<Footer/>
 
-<script is:inline src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script is:inline src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script is:inline src="/js/owl.carousel.min.js"></script>
+<script is:inline src="/js/responsiveslides.min.js"></script>
 <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 <script is:inline src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-
 <script is:inline src="/js/functions.min.js"></script>
+<script is:inline>
+	const initAnimations = () => {
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					// Quitamos lo que oculta y mueve
+					entry.target.classList.remove('opacity-0', 'from-top', 'from-bottom');
+
+					// Añadimos nuestra nueva clase maestra de visibilidad
+					entry.target.classList.add('anim-visible');
+
+					observer.unobserve(entry.target);
+				}
+			});
+		}, { threshold: 0.1 });
+
+		document.querySelectorAll('[data-animate]').forEach((el) => observer.observe(el));
+	};
+
+	initAnimations();
+	document.addEventListener('astro:after-swap', initAnimations);
+</script>
 </body>
 </html>

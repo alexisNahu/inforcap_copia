@@ -14,53 +14,82 @@ const galeriaInstitucional = [imgCap10, imgCap11, imgCap13, imgEquipo];
 
 <Layout title="Historia de Inforcap | Excelencia en Gastronomía">
 
-    <section class="w-full bg-slate-50">
-        <div class="max-w-7xl py-8 px-8 mx-auto bg-slate-50">
-            <h1 class="text-3xl font-bold tracking-tight font-petrona mb-8 text-bordoInforcap">Historia de Inforcap </h1>
+    <section
+            data-animate
+            class="anim-hidden from-top w-full bg-slate-50"
+    >
+        <div class="max-w-7xl py-12 px-8 mx-auto">
+            <h1 class="text-4xl font-bold tracking-tight font-petrona mb-10 text-bordoInforcap">
+                Historia de Inforcap
+            </h1>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="flex items-center justify-center">
-                    <Image src={imgHistoria} alt="Inicios de Inforcap" class="w-full h-full object-cover" />
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                <div class="overflow-hidden rounded-2xl shadow-xl">
+                    <Image
+                            src={imgHistoria}
+                            alt="Inicios de Inforcap"
+                            class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
+                    />
                 </div>
 
-                <div class="text-left">
-                    <p class="text-base tracking-tight text-gris mb-8">
+                <div class="text-left space-y-6">
+                    <p class="text-lg leading-relaxed text-gris">
                         INFORCAP inicia sus actividades académicas el 18 de octubre del año 2001 en los campos de Panadería, Confitería, Repostería y Heladería. El Plantel conformado por profesionales especialistas en distintas áreas, sumado a los equipamientos e infraestructura adecuados para el óptimo aprendizaje, marcan hoy la razón de nuestro éxito y nos impulsa a asumir día a día mayores desafíos en busca de la competitividad, calidad y excelencia.
                     </p>
                     <p class="text-base tracking-tight text-gris mb-8">A partir de marzo del año 2002, se desarrollan carreras técnicas profesionales, programas de formación inicial, y programas de educación y capacitación continua, que tienen como objetivo principal la formación de recursos humanos altamente competitivos que contribuyan al desarrollo económico del país, basados en una profesionalidad, ética, credibilidad, visión, calidad humana, espíritu de servicio, disciplina y compromiso.</p>
+
                     <p class="text-base tracking-tight text-gris mb-8">Enfatizamos el método científico y la investigación, como base del aprendizaje con proyección al futuro, nos sustentamos en base metodológicas y técnicas, estimulamos la creatividad como el elemento para el progreso y desarrollamos capacidad de trabajo en equipo y participación conjunta, porque la calidad no se logra por casualidad, sino con educación, desarrollo, capacitación, liderazgo y participación de todos.</p>
+
                 </div>
-
             </div>
         </div>
     </section>
 
-    <section class="max-w-7xl mx-auto my-20">
+    <section class="max-w-7xl mx-8 md:mx-auto my-24">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
-            <div class="w-full bg-amarilloInforcap p-8 rounded-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-                <p class="font-bold text-3xl mb-4">Visión</p>
-                <p>Ser un Instituto sustentado por la comunidad educativa en constante proceso por su calidad y capacidad innovadora, que investiga, educa y forma, proporcionando el encuentro entre el arte, nutrición y la cultura de lo que se refiere a la Panadería, Confitería, Repostería y Heladería.</p>
+
+            <div
+                    data-animate
+                    class="anim-hidden from-bottom w-full bg-amarilloInforcap p-10 rounded-xl transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+            >
+                <p class="font-bold text-3xl mb-5">Visión</p>
+                <p class="text-white/90 leading-relaxed">Ser un Instituto sustentado por la comunidad educativa en constante proceso por su calidad y capacidad innovadora, que investiga, educa y forma, proporcionando el encuentro entre el arte, nutrición y la cultura de lo que se refiere a la Panadería, Confitería, Repostería y Heladería.</p>
             </div>
 
-            <div class="w-full bg-naranjaInforcap p-8 rounded-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-                <p class="font-bold text-3xl mb-4">Misión</p>
-                <p>Formar profesionales altamente competitivos, creativos con espíritu de servicio y comprometidos con las demandas de un entorno culinario nacional e internacional en constante evolución. Con conocimientos, habilidades y aptitudes que le permitan destacar, analizar, evaluar, proponer alternativas, realizar sus propias creaciones y desarrollar nuevos productos que requieren la demanda de la Panadería, Confitería Repostería y Heladería en sí.</p>
+            <div
+                    data-animate
+                    class="anim-hidden from-bottom w-full bg-naranjaInforcap p-10 rounded-xl transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+            >
+                <p class="font-bold text-3xl mb-5">Misión</p>
+                <p class="text-white/90 leading-relaxed">Formar profesionales altamente competitivos, creativos con espíritu de servicio y comprometidos con las demandas de un entorno culinario nacional e internacional en constante evolución. Con conocimientos, habilidades y aptitudes que le permitan destacar, analizar, evaluar, proponer alternativas, realizar sus propias creaciones y desarrollar nuevos productos que requieren la demanda de la Panadería, Confitería Repostería y Heladería en sí.</p>
             </div>
 
-            <div class="w-full bg-bordoInforcap p-8 rounded-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-                <p class="font-bold text-3xl mb-4">Objetivos Generales</p>
-                <p>Proveer a la industria Panadera, Confitera, Repostera y Heladera de un plan de Formación de Aprendices, basados en un sistema de aprendizaje que, a través de las Instituciones y Empresas, logre la calificación de la mano de obra con calidad y en cantidad suficientes para responder a las inquietudes y necesidades del sector.
-                    Brindar Herramientas de Trabajo técnico- Profesional, dentro de un ambiente de competitividad laboral, a jóvenes en búsqueda de oportunidades de aprendizaje y cuyos recursos para la formación profesional no les permita una salida laboral.</p>
+            <div
+                    data-animate
+                    class="anim-hidden from-bottom w-full bg-bordoInforcap p-10 rounded-xl transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+            >
+                <p class="font-bold text-3xl mb-5">Objetivos Generales</p>
+                <p class="text-white/90 leading-relaxed">Proveer a la industria Panadera, Confitera, Repostera y Heladera de un plan de Formación de Aprendices, basados en un sistema de aprendizaje que, a través de las Instituciones y Empresas, logre la calificación de la mano de obra con calidad y en cantidad suficientes para responder a las inquietudes y necesidades del sector. Brindar Herramientas de Trabajo técnico- Profesional, dentro de un ambiente de competitividad laboral, a jóvenes en búsqueda de oportunidades de aprendizaje y cuyos recursos para la formación profesional no les permita una salida laboral.</p>
             </div>
         </div>
     </section>
 
-    <section class="w-full bg-bordoInforcap py-16">
-        <div class="max-w-4xl mx-auto px-8">
+    <section
+            data-animate
+            class="anim-hidden from-left w-full bg-bordoInforcap py-20"
+    >
+        <div class="max-w-5xl mx-auto px-8">
+            <h2 class="text-3xl font-bold text-center text-white mb-12 font-petrona">
+                Nuestra Institución en imágenes
+            </h2>
             <div class="flex flex-col">
                 {galeriaInstitucional.map((img) => (
-                        <div class="overflow-hidden cursor-pointer hover:opacity-80 transition-opacity">
-                            <Image src={img} alt="Galería Inforcap" class="w-full object-cover" />
+                        <div class="overflow-hidden shadow-lg cursor-pointer hover:opacity-90 transition-opacity group">
+                            <Image
+                                    src={img}
+                                    alt="Galería Inforcap"
+                                    class="w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            />
                         </div>
                 ))}
             </div>

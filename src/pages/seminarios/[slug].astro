@@ -1,6 +1,5 @@
 ---
 import {type Seminario} from "../../features/Seminarios/models";
-import {SEMINARIOS_CONTENIDO} from "../../constants";
 import {SeminarioService} from "../../features/Seminarios/services";
 import SeminarioLayout from "../../features/Seminarios/components/SeminarioLayout.astro";
 
@@ -24,5 +23,5 @@ if (!seminario) return Astro.redirect('/404');
 
 ---
 
-<SeminarioLayout seminario={seminario} />
+<SeminarioLayout seminario={seminario}/>
 

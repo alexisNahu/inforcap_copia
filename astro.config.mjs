@@ -1,13 +1,18 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
 import tailwindcss from "@tailwindcss/vite";
-import path from 'path'; // Importamos path para manejar las rutas
+import path from 'path';
 
-// https://astro.build/config
+
+import vercel from '@astrojs/vercel';
+
+
 export default defineConfig({
+  output: 'server',
+
   image: {
-      domains: ['inforcap.fincreativo.com'], // Agrega aquí el dominio de tu servidor
-    },
+      domains: ['inforcap.fincreativo.com'],
+  },
+
   vite: {
     plugins: [tailwindcss()],
     resolve: {
@@ -16,4 +21,6 @@ export default defineConfig({
       },
     },
   },
+
+  adapter: vercel(),
 });

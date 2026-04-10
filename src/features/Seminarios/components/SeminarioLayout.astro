@@ -17,7 +17,7 @@ const {
     mes = "Noviembre"
 } = Astro.props;
 
-const { titulo, dias, fecha_inicio, horario, imagen_portada, precio, aprenderas_html } = seminario;
+const { id, titulo, dias, fecha_inicio, horario, imagen_portada, precio, aprenderas_html } = seminario;
 ---
 <Layout title={`${titulo} | Inforcap`}>
     <div class="w-full mt-10 p-4">
@@ -30,7 +30,7 @@ const { titulo, dias, fecha_inicio, horario, imagen_portada, precio, aprenderas_
                         width={800}
                         height={800}
                         class="w-full h-full object-cover"
-                        loading="eager"
+                        transition:name=`seminario-${id}`
                 />
             </div>
 
