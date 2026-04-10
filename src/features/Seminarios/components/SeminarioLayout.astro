@@ -36,18 +36,18 @@ const { id, titulo, dias, fecha_inicio, horario, imagen_portada, precio, aprende
 
             <div class="w-full">
                 <header>
-                    <h2 class="text-base text-gris font-bold tracking-widest uppercase">{subtitulo}</h2>
+                    <h2 class="text-base">{subtitulo}</h2>
                     <h1 class="font-petrona text-4xl md:text-5xl text-bordoInforcap leading-tight">{titulo}</h1>
                 </header>
 
-                <div class="flex flex-wrap gap-4 md:gap-0 my-10 border-y border-gray-100 py-6">
+                <div class="md:flex my-10">
                     { [
                         { label: 'Mes', val: mes },
                         { label: 'Día', val: dias },
                         { label: 'Fecha', val: fecha_inicio },
                         { label: 'Hora', val: horario }
                     ].map((item) => (
-                            <div class="px-6 border-r-2 border-amarilloInforcap last:border-0">
+                            <div class="px-6 border-r-2 border-amarilloInforcap">
                                 <p class="text-xs text-gris uppercase tracking-tighter">{item.label}</p>
                                 <p class="text-xl font-petrona text-bordoInforcap font-bold">{item.val}</p>
                             </div>
@@ -84,6 +84,15 @@ const { id, titulo, dias, fecha_inicio, horario, imagen_portada, precio, aprende
                         INSCRIBIRSE AHORA
                     </a>
                 </div>
+
+
+            </div>
+
+        </div>
+        <div class="max-w-7xl mx-auto bg-amarilloInforcap h-auto drop-shadow-xl mt-20 grid grid-cols-1 md:grid-cols-2 rounded-lg pb-10">
+            <div class="w-full rounded-l-lg overflow-hidden">
+                <h1 class="text-4xl p-10 font-bold text-bordoInforcap">¡No pierdas esta oportunidad! Elige tu carrera, elige un futuro mejor.</h1>
+                <img src="https://images.pexels.com/photos/15587528/pexels-photo-15587528/free-photo-of-comida-azucar-postre-dulce.jpeg" class="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center">
             </div>
         </div>
     </div>
