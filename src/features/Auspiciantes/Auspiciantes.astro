@@ -6,22 +6,25 @@ import trebol from '@/assets/img/trebol.png';
 import yemita from '@/assets/img/yemita.png';
 ---
 
-<div data-animate class="anim-hidden from-down text-center py-0 md:py-8">
+<div data-animate class="anim-hidden from-bottom text-center py-0 md:py-8">
     <h1 class="text-6xl font-bold tracking-tight font-sacramento text-bordoInforcap">Auspician</h1>
     <h3 class="text-base tracking-tight text-gris">Las marcas que nos ayudan a que nuestros productos sean de la mejor calidad</h3>
 </div>
 
-<div data-animate class="anim-hidden from-down max-w-7xl grid grid-cols-1 md:grid-cols-4 mx-auto mb-20 items-center gap-8">
-    <div class="mx-auto">
+<div class="max-w-7xl grid grid-cols-1 md:grid-cols-4 mx-auto mb-20 items-center gap-8">
+    <div data-animate class="anim-hidden from-bottom mx-auto transition-all duration-500">
         <Image src={alcotec} alt="Logo Alcotec" />
     </div>
-    <div class="mx-auto">
+
+    <div data-animate class="anim-hidden from-bottom delay-100 mx-auto transition-all duration-500">
         <Image src={copalsa} alt="Logo Copalsa" />
     </div>
-    <div class="mx-auto">
+
+    <div data-animate class="anim-hidden from-bottom delay-200 mx-auto transition-all duration-500">
         <Image src={trebol} alt="Logo Trébol" />
     </div>
-    <div class="mx-auto">
+
+    <div data-animate class="anim-hidden from-bottom delay-300 mx-auto transition-all duration-500">
         <Image src={yemita} alt="Logo Yemita" />
     </div>
 </div>

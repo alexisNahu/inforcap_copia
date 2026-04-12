@@ -10,7 +10,7 @@ import iconPasteleria from '@/assets/img/icon-pasteleria.png';
 import {APP_PAGES} from '@/constants'
 ---
 
-<div class="text-center py-8 px-6">
+<div data-animate class="anim-hidden from-top text-center py-8 px-6">
     <h1 class="text-6xl font-bold tracking-tight font-sacramento text-bordoInforcap">Cursos disponibles</h1>
     <h3 class="text-base tracking-tight text-gris">
         Nuestros talleres y seminarios están enfocados a impartir clases 1 vez a la semana. <br />
@@ -18,20 +18,26 @@ import {APP_PAGES} from '@/constants'
     </h3>
 </div>
 
-<div class="w-56 md:container mx-auto grid grid-cols-1 md:grid-cols-5 md:max-w-7xl items-center place-content-center gap-4">
-    <a href=`${APP_PAGES.carrera_tecnica_panaderia_y_confiteria}` class="w-48 md:w-56 mx-auto">
+<div class="w-full md:container mx-auto grid grid-cols-1 md:grid-cols-5 md:max-w-7xl items-center place-content-center gap-4 px-8">
+
+    <a data-animate href=`${APP_PAGES.carrera_tecnica_panaderia_y_confiteria}` class="anim-hidden from-bottom w-48 md:w-56 mx-auto hover:scale-110 transition-transform duration-300">
         <Image src={iconPanaderia} alt="Icono Panadería" />
     </a>
-    <a href=`${APP_PAGES.especializacion_pasteleria_y_confiteria}` class="w-48 md:w-56 mx-auto">
+
+    <a data-animate href=`${APP_PAGES.especializacion_pasteleria_y_confiteria}` class="anim-hidden from-bottom delay-100 w-48 md:w-56 mx-auto hover:scale-110 transition-transform duration-300">
         <Image src={iconReposteria} alt="Icono Repostería" />
     </a>
-    <a href={APP_PAGES.especializacion_pasteleria_y_confiteria} class="w-48 md:w-56 mx-auto">
+
+    <a data-animate href={APP_PAGES.especializacion_pasteleria_y_confiteria} class="anim-hidden from-bottom delay-200 w-48 md:w-56 mx-auto hover:scale-110 transition-transform duration-300">
         <Image src={iconHeladeria} alt="Icono Heladería" />
     </a>
-    <a href={APP_PAGES.carrera_tecnica_panaderia_y_confiteria} class="w-48 md:w-56 mx-auto">
+
+    <a data-animate href={APP_PAGES.carrera_tecnica_panaderia_y_confiteria} class="anim-hidden from-bottom delay-300 w-48 md:w-56 mx-auto hover:scale-110 transition-transform duration-300">
         <Image src={iconConfiteria} alt="Icono Confitería" />
     </a>
-    <a href={APP_PAGES.especializacion_decoracion_de_tortas} class="w-48 md:w-56 mx-auto">
+
+    <a data-animate href={APP_PAGES.especializacion_decoracion_de_tortas} class="anim-hidden from-bottom delay-400 w-48 md:w-56 mx-auto hover:scale-110 transition-transform duration-300">
         <Image src={iconPasteleria} alt="Icono Pastelería" />
     </a>
+
 </div>

@@ -86,9 +86,10 @@ const galeriaInstitucional = [imgCap10, imgCap11, imgCap13, imgEquipo];
                 {galeriaInstitucional.map((img) => (
                         <div class="overflow-hidden shadow-lg cursor-pointer hover:opacity-90 transition-opacity group">
                             <Image
+                                    data-animate
                                     src={img}
                                     alt="Galería Inforcap"
-                                    class="w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    class="w-full object-cover anim-hidden transition-transform duration-700 group-hover:scale-105"
                             />
                         </div>
                 ))}
