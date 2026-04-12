@@ -4,28 +4,22 @@ import pasteleriayConfiteria from '@/assets/img/pasteleria-y-confiteria.jpeg';
 import panaderiayConfiteria from '@/assets/img/panaderia-y-confiteria.jpeg';
 import CapacitacionCard from "./components/CapacitacionCard.astro";
 ---
-<div class="bg-bordoInforcap py-8 md:py-20">
-    <!--<div class="text-center py-8 px-8">
-        <h1 class="text-3xl font-bold tracking-tight font-petrona text-white">DIPLOMADOS</h1>
-        <h2 class="text-6xl font-bold tracking-tight text-white font-sacramento">2025</h2>
-       <h3 class="text-base tracking-tight text-white">Nuestros talleres están enfocados a impartir clases de un día. <br /> Descubre las mejores técnicas de la más deliciosa profesión.</h3>
-    </div>-->
+<div class="bg-bordoInforcap py-8 md:py-20 px-6">
+    <div class="container mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-10">
 
-
-    <div class="container mx-auto my-8 max-w-7xl flex grid grid-cols-1 md:grid-cols-3 gap-8">
         <CapacitacionCard
-            image = {{src: reposteriayDecoracion, alt: "reposteria-y-decoracion"}}
-            textoWhatsapp="https://wa.me/595983350062?text=Me%20interesa%20la%20Carrera%20Tecnica%20en%20Panaderia%20y%20Confiteria"
+                image={{src: reposteriayDecoracion, alt: "Repostería y Decoración Inforcap"}}
+                textoWhatsapp="https://wa.me/595983350062?text=Me%20interesa%20el%20Diplomado%20en%20Reposteria%20y%20Decoracion"
         />
 
         <CapacitacionCard
-                image={{src: pasteleriayConfiteria, alt: "pasteleria-y-confiteria"}}
+                image={{src: pasteleriayConfiteria, alt: "Pastelería y Confitería Inforcap"}}
                 textoWhatsapp="https://wa.me/595983350062?text=Me%20interesa%20el%20Diplomado%20en%20Pasteleria%20y%20Confiteria"
         />
 
         <CapacitacionCard
-                image={{src: panaderiayConfiteria, alt: "panaderia-y-confiteria"}}
-                textoWhatsapp="https://wa.me/595983350062?text=Me%20interesa%20la%20Carrera%20Tecnica%20en%20Panaderia%20y%20Confiteria"
+                image={{src: panaderiayConfiteria, alt: "Panadería y Confitería Inforcap"}}
+                textoWhatsapp="https://wa.me/595983350062?text=Me%20interesa%20el%20Diplomado%20en%20Panaderia%20y%20Confiteria"
         />
     </div>
 </div>

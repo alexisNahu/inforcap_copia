@@ -17,6 +17,7 @@ export const TallerService = {
             });
             if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
             const json = await response.json()
+            console.log(json)
             return mapToTaller(json)
         } catch (e: any) {
             console.error(`Error en el getAll de taller: ${e}`);

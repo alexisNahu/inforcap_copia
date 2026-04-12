@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import type { Taller } from '../models'; // Usando tu interfaz normalizada
+import type { Taller } from '../models';
 
 interface Props {
     taller: Taller;
@@ -10,7 +10,7 @@ interface Props {
 const { taller, verMasHref } = Astro.props;
 ---
 
-<div class="w-4/5 md:w-full h-full flex flex-col justify-between rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white">
+<div data-animation class="anim-hidden from-top w-4/5 md:w-full h-full flex flex-col justify-between rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white">
 
     <div class="w-full">
         <Image

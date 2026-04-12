@@ -20,3 +20,36 @@
     --font-petrona: "Petrona", serif;
     --font-sacramento: "Sacramento", cursive;
 }
+
+.fade-in-down-initial {
+    opacity: 0;
+    transform: translateY(-2rem); /* Mueve 2rem hacia arriba */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Duración y suavizado */
+    will-change: opacity, transform; /* Optimización para el navegador */
+}
+
+.fade-in-down-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* src/styles/global.css */
+
+@layer components {
+    .anim-hidden {
+        @apply opacity-0 transition-all duration-1000 ease-out;
+        will-change: opacity, transform; /* Mantenemos tu optimización */
+    }
+
+    .from-top {
+        @apply -translate-y-12;
+    }
+
+    .from-bottom {
+        @apply translate-y-12;
+    }
+
+    .anim-visible {
+        @apply opacity-100 translate-y-0;
+    }
+}
