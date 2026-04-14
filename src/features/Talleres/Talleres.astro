@@ -6,7 +6,6 @@ import {TallerService} from "./services";
 import {type Taller} from "./models";
 
 const talleres: Taller[] = await TallerService.getAll()
-console.log(talleres)
 ---
 
 <section>
@@ -18,13 +17,15 @@ console.log(talleres)
             <strong>¡Descubre las mejores técnicas de la más deliciosa profesión!</strong>
         </h3>
     </div>
-
     <div class="container mx-auto my-8 max-w-7xl grid grid-cols-1 md:grid-cols-4 gap-8">
         {talleres.map((taller) => (
+            <>
                 <TalleresCard
-                    taller={taller}
-                    verMasHref={APP_PAGES.talleres(taller.slug)}
+                        taller={taller}
+                        verMasHref={APP_PAGES.talleres(taller.slug)}
                 />
+            </>
+
         ))}
     </div>
 </section>
