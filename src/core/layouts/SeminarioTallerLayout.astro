@@ -1,23 +1,24 @@
 ---
 import { Image } from "astro:assets";
-import Layout from "../../../layouts/Layout.astro";
-import type { Seminario } from "../models";
+import Layout from "./Layout.astro";
+import {type Seminario} from "../../features/Seminarios/models";
+import {type Taller} from "../../features/Talleres/models";
 
 interface Props {
-    seminario: Seminario;
+    data: Taller | Seminario;
     subtitulo?: string;
     duracion?: string;
     mes?: string;
 }
 
 const {
-    seminario,
-    subtitulo = "Seminario",
+    data,
+    subtitulo = data.tipo == "Taller" ? 'Taller' : 'Seminario',
     duracion = "3 días",
     mes = "Noviembre"
 } = Astro.props;
 
-const { id, titulo, dias, fecha_inicio, horario, imagen_portada, precio, aprenderas_html } = seminario;
+const { id, titulo, dias, fecha_inicio, horario, imagen_portada, precio, aprenderas_html,slug } = data;
 ---
 <Layout title={`${titulo} | Inforcap`}>
     <div class="w-full mt-10 p-4">
@@ -30,7 +31,7 @@ const { id, titulo, dias, fecha_inicio, horario, imagen_portada, precio, aprende
                         width={800}
                         height={800}
                         class="w-full h-full object-cover"
-                        transition:name=`seminario-${id}`
+                        transition:name=`seminario-taller-${slug}`
                 />
             </div>
 
@@ -110,14 +111,6 @@ const { id, titulo, dias, fecha_inicio, horario, imagen_portada, precio, aprende
         padding-left: 1.5rem;
         margin-bottom: 0.75rem;
         list-style: none;
-    }
-
-    .custom-content li::before, .custom-content p::before {
-        content: "→";
-        position: absolute;
-        left: 0;
-        color: #F26522; /* naranjaInforcap */
-        font-weight: bold;
     }
 
     .custom-content div {

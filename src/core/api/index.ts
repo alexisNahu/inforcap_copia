@@ -1,0 +1,9 @@
+// @ts-ignore
+export const BACKEND_API: string = import.meta.env.PUBLIC_BACKEND_API
+
+export const API_ENDPOINTS = {
+    banners: '/api/banners',
+    seminarios: '/api/seminarios',
+    talleres: '/api/talleres'
+}
+

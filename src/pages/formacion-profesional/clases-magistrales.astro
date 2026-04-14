@@ -1,5 +1,6 @@
 ---
-import Layout from '@/layouts/Layout.astro';
+export const prerender = true
+import Layout from '../../core/layouts/Layout.astro';
 import { Image } from 'astro:assets';
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/magistrales-*.{jpeg,jpg,png}');
 const imagePaths = Object.values(images);

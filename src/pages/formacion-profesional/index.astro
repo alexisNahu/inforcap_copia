@@ -1,7 +1,8 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+export const prerender = true
+import Layout from '../../core/layouts/Layout.astro';
 import { Image } from 'astro:assets';
-import { APP_PAGES } from '../../constants';
+import { APP_PAGES } from '../../core/pages';
 
 import imgPanaderia from '../../assets/img/panaderia-y-confiteria.jpg';
 import imgPasteleria from '../../assets/img/pasteleria-y-confiteria.jpg';

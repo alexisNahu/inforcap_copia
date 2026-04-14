@@ -1,5 +1,7 @@
 ---
-import Layout from "../layouts/Layout.astro";
+export const prerender = true
+
+import Layout from "../core/layouts/Layout.astro";
 import Banner from "../features/Banners/Banner.astro";
 import Capacitaciones from "../features/Capacitaciones/Capacitaciones.astro";
 import Talleres from "../features/Talleres/Talleres.astro";
@@ -8,19 +10,13 @@ import Seminarios from "../features/Seminarios/Seminarios.astro";
 ---
 
 <Layout title="Inforcap | Inicio">
-	<!--BANNER-->
 	<Banner />
 
-	<!--Capacitaciones-->
 	<Capacitaciones />
 
 	<Seminarios />
 
-
-	<!--Talleres prácticos de un día-->
-
 	<Talleres />
 
 	<Cursos />
-
 </Layout>

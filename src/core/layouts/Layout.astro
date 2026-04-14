@@ -1,9 +1,11 @@
 ---
-import Nav from '../features/Nav.astro';
-import Footer from '../features/Footer.astro';
-import "../styles/global.css";
-import Auspiciantes from "../features/Auspiciantes/Auspiciantes.astro";
-import InscripcionCurso from "../features/Cursos/InscripcionCurso.astro";
+export const prerender = true
+
+import Nav from '../../features/Nav.astro';
+import Footer from '../../features/Footer.astro';
+import "../../styles/global.css";
+import Auspiciantes from "../../features/Auspiciantes/Auspiciantes.astro";
+import InscripcionCurso from "../../features/Cursos/InscripcionCurso.astro";
 import {ClientRouter} from 'astro:transitions';
 
 interface Props {

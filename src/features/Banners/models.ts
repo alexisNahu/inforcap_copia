@@ -7,4 +7,3 @@ export interface Banner {
     created_at:  string;
     updated_at:  string;
 }
-

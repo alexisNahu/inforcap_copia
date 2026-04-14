@@ -1,74 +1,49 @@
-import { API } from "@/constants.ts";
 import type { Seminario } from "./models";
+import { apiClient } from "@/core/api/config";
+import { API_ENDPOINTS } from "@/core/api";
 
-function mapToSeminarios (obj: any) {
-    return obj.map((val: any) => ({...val, aprenderas_html: val.aprenderas_html?.split('.'), slug: val.slug.replace(/[\.;]/g, '')}))
+function mapToSeminario(data: any): Seminario {
+    const process = (val: any) => ({
+        ...val,
+        slug: val.slug?.replace(/[\.;]/g, '') ?? '',
+        aprenderas_html: val.aprenderas_html ? val.aprenderas_html.split('.') : [],
+        tipo: 'Seminario' as const
+    });
+
+    return Array.isArray(data) ? data.map(process) : process(data);
 }
 
 export const SeminarioService = {
     async getAll(): Promise<Seminario[]> {
-        try {
-            const response = await fetch(API.seminarios);
-            if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
-            const json = await response.json()
-            return mapToSeminarios(json);
-        } catch (e: any) {
-            console.error(`Error en el getAll de seminarios: ${e}`);
-            throw e;
-        }
+        const data = await apiClient<any[]>(API_ENDPOINTS.seminarios);
+        return mapToSeminario(data) as unknown as Seminario[];
     },
 
     async getByIdOrSlug(param: number | string): Promise<Seminario> {
-        try {
-            const response = await fetch(`${API.seminarios}/${param}`);
-            if (!response.ok) throw new Error(`No se encontró el seminario con ID o Parametro ${param}`);
-            return await response.json();
-        } catch (e: any) {
-            console.error(`Error en getByIdOrSlug de seminarios: ${e}`);
-            throw e;
-        }
+        const data = await apiClient<any>(`${API_ENDPOINTS.seminarios}/${param}`);
+        return mapToSeminario(data) as Seminario;
     },
 
     async create(data: Partial<Seminario>): Promise<Seminario> {
-        try {
-            const response = await fetch(API.seminarios, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            });
-            if (!response.ok) throw new Error('Error al crear el seminario');
-            return await response.json();
-        } catch (e: any) {
-            console.error(`Error en create de seminarios: ${e}`);
-            throw e;
-        }
+        const result = await apiClient<any>(API_ENDPOINTS.seminarios, {
+            method: 'POST',
+            body: JSON.stringify(data)
+        });
+        return mapToSeminario(result) as Seminario;
     },
 
     async update(id: number, data: Partial<Seminario>): Promise<Seminario> {
-        try {
-            const response = await fetch(`${API.seminarios}/${id}`, {
-                method: 'PUT',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            });
-            if (!response.ok) throw new Error('Error al actualizar el seminario');
-            return await response.json();
-        } catch (e: any) {
-            console.error(`Error en update de seminarios: ${e}`);
-            throw e;
-        }
+        const result = await apiClient<any>(`${API_ENDPOINTS.seminarios}/${id}`, {
+            method: 'PUT',
+            body: JSON.stringify(data)
+        });
+        return mapToSeminario(result) as Seminario;
     },
 
     async delete(id: number): Promise<boolean> {
-        try {
-            const response = await fetch(`${API.seminarios}/${id}`, {
-                method: 'DELETE'
-            });
-            if (!response.ok) throw new Error('Error al eliminar el seminario');
-            return true;
-        } catch (e: any) {
-            console.error(`Error en delete de seminarios: ${e}`);
-            throw e;
-        }
+        await apiClient<void>(`${API_ENDPOINTS.seminarios}/${id}`, {
+            method: 'DELETE'
+        });
+        return true;
     }
 };

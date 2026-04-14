@@ -1,0 +1,28 @@
+---
+export const prerender = true
+
+import { TallerService } from "@/features/Talleres/services";
+import {type Taller } from "@/features/Talleres/models";
+import SeminarioTallerLayout from "@/core/layouts/SeminarioTallerLayout.astro";
+import {SeminarioService} from "@/features/Seminarios/services";
+import {type Seminario} from "@/features/Seminarios/models";
+
+export async function getStaticPaths() {
+    const talleres = await TallerService.getAll();
+    const seminarios = await SeminarioService.getAll();
+
+    const allData = [...talleres, ...seminarios]
+
+    return allData.map((data: Taller | Seminario) => ({
+        params: { slug: data.slug },
+        props: {data}
+    }));
+}
+
+const { data } = Astro.props;
+console.log(data)
+
+if (!data) return Astro.redirect('/404');
+---
+
+<SeminarioTallerLayout data={data} />

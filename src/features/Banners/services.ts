@@ -1,13 +1,7 @@
-import {API} from "@/constants.ts";
+import {apiClient} from "@/core/api/config.ts";
+import type {Banner} from "@/features/Banners/models.ts";
+import {API_ENDPOINTS} from "@/core/api";
+
 export const BannerService = {
-    getAll: async () => {
-        try {
-            const response = await fetch(API.banners)
-            if (!response.ok) throw new Error('Error en el getAll de banners')
-            return await response.json()
-        } catch (e: any) {
-            console.error(e)
-            throw e
-        }
-    }
+    getAll: async (): Promise<Banner[]> => await apiClient<Banner[]>(API_ENDPOINTS.banners),
 }

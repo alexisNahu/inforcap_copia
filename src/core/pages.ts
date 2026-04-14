@@ -15,20 +15,12 @@ export const APP_PAGES = {
 
     especializaciones: (slug: string) => `/especializaciones/${slug}`,
 
-    diplomados: (slug: string) => `/diplomados/${slug}`,
-    talleres: (slug: string) => `/talleres/${slug}`,
-    seminarios: (slug: string) => `/seminarios/${slug}`,
+    diplomados: (slug: string) => `${slug}`,
+    talleres: (slug: string) => `${slug}`,
+    seminarios: (slug: string) => `${slug}`,
     // Formaciones Profesionales
     capacitacion_personalizada: '/formacion-profesional/capacitacion-personalizada',
     clases_magistrales: '/formacion-profesional/clases-magistrales',
-}
-
-const BACKEND_API: string = import.meta.env.PUBLIC_BACKEND_API
-
-export const API = {
-    banners: `${BACKEND_API}/api/banners`,
-    seminarios: `${BACKEND_API}/api/seminarios`,
-    talleres: `${BACKEND_API}/api/talleres`
 }
 
 
