@@ -1,12 +1,10 @@
 export interface Contenidos {
-    seminarios: {
-        clave: string,
-        titulo: string,
-        descripcion: string,
-    },
-    talleres: {
-        clave: string,
-        titulo: string,
-        descripcion: string,
-    }
+    seminarios: ContenidoDetalle,
+    talleres: ContenidoDetalle
+}
+
+export interface ContenidoDetalle {
+    clave: string;
+    titulo: string;
+    descripcion: string;
 }

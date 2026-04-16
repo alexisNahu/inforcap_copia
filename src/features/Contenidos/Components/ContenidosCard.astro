@@ -1,13 +1,14 @@
 ---
-import {type Seminario} from "../models";
+import {type Seminario} from "../Seminarios/models";
 import {Image} from 'astro:assets'
+import {type Taller} from "../Talleres/models";
 
 interface Props {
-    seminario: Seminario
+    data: Seminario | Taller
     verMasHref: string
 }
 
-const {seminario, verMasHref} = Astro.props
+const {data, verMasHref} = Astro.props
 
 
 ---
@@ -15,22 +16,22 @@ const {seminario, verMasHref} = Astro.props
 <div class="w-4/5 md:w-full h-full flex flex-col justify-between rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
 
     <Image
-            src={seminario.imagen_portada}
-            alt={seminario.titulo}
+            src={data.imagen_portada}
+            alt={data.titulo}
             width={720}
             height={480}
-            transition:name=`seminario-${seminario.id}`
+            transition:name=`${data.slug}`
     />
     <div class="font-petrona px-4 mt-4">
         <div class="text-base uppercase text-grisClaro font-body">SEMINARIO</div>
-        <div class="text-3xl">{seminario.titulo}</div>
-        <div class="text-2xl text-naranjaInforcap">Gs. {seminario.precio}</div>
+        <div class="text-3xl">{data.titulo}</div>
+        <div class="text-2xl text-naranjaInforcap">Gs. {data.precio}</div>
     </div>
 
     <div class="px-4 py-4">
-        <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>{seminario.dias}</div>
-        <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>{seminario.fecha_inicio}</div>
-        <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>{seminario.horario}</div>
+        <div class="text-base text-gris"><i class="fa-solid fa-arrow-right text-grisClaro mr-2"></i>{data.dias}</div>
+        <div class="text-base text-gris"><i class="fa-solid fa-calendar-days text-grisClaro mr-2"></i>{data.fecha_inicio}</div>
+        <div class="text-base text-gris"><i class="fa-solid fa-clock text-grisClaro mr-2"></i>{data.horario}</div>
         <div class="underline mt-4 text-naranjaInforcap space-x-2"><i class="fa-solid fa-arrow-right"></i><a href={verMasHref}>Ver más</a></div>
     </div>
 

@@ -1,22 +1,33 @@
 ---
+import {ContenidosServices} from "../features/Contenidos/services";
 export const prerender = true
 
 import Layout from "../core/layouts/Layout.astro";
 import Banner from "../features/Banners/Banner.astro";
 import Capacitaciones from "../features/Capacitaciones/Capacitaciones.astro";
-import Talleres from "../features/Contenidos/Talleres/Talleres.astro";
 import Cursos from "../features/Cursos/Cursos.astro";
-import Seminarios from "../features/Contenidos/Seminarios/Seminarios.astro";
+import Contenido from "@/features/Contenidos/Contenido.astro";
+import {type Contenidos} from "../features/Contenidos/models";
+import {type Seminario} from "../features/Contenidos/Seminarios/models";
+import {SeminarioService} from "../features/Contenidos/Seminarios/services";
+import {type Taller} from "../features/Contenidos/Talleres/models";
+import {TallerService} from "../features/Contenidos/Talleres/services";
+
+const contenidos: Contenidos = await ContenidosServices.get()
+const seminarios: Seminario[] = await SeminarioService.getAll()
+const talleres: Taller[] = await TallerService.getAll()
+
 ---
 
 <Layout title="Inforcap | Inicio">
 	<Banner />
+	<Banner />
 
 	<Capacitaciones />
 
-	<Seminarios />
+	<Contenido contenido={contenidos.seminarios} data={seminarios}/>
+	<Contenido contenido={contenidos.talleres} data={talleres}/>
 
-	<Talleres />
 
 	<Cursos />
 </Layout>
