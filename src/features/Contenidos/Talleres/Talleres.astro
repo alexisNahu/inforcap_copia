@@ -6,6 +6,7 @@ import {TallerService} from "./services";
 import {type Taller} from "./models";
 import {type Contenidos} from "../models";
 import {ContenidosServices} from "../services";
+import {capitalize} from "@/utils";
 
 const talleres: Taller[] = await TallerService.getAll()
 const contenido: Contenidos = await ContenidosServices.get()
@@ -13,7 +14,7 @@ const contenido: Contenidos = await ContenidosServices.get()
 
 <section>
     <div class="text-center py-8 px-8">
-        <h1 class="text-3xl font-bold tracking-tight font-petrona">{contenido.talleres.clave}</h1>
+        <h1 class="text-3xl font-bold tracking-tight font-petrona">{capitalize(contenido.talleres.clave)}</h1>
         <h2 class="text-6xl font-bold tracking-tight text-bordoInforcap font-petrona">{contenido.talleres.titulo}</h2>
         <h3 class="text-base tracking-tight text-gris">
             {contenido.talleres.descripcion}
