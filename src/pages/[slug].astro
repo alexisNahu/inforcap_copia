@@ -1,11 +1,11 @@
 ---
 export const prerender = true
 
-import { TallerService } from "@/features/Talleres/services";
-import {type Taller } from "@/features/Talleres/models";
-import SeminarioTallerLayout from "@/core/layouts/SeminarioTallerLayout.astro";
-import {SeminarioService} from "@/features/Seminarios/services";
-import {type Seminario} from "@/features/Seminarios/models";
+import { TallerService } from "../features/Contenidos/Talleres/services";
+import {type Taller } from "../features/Contenidos/Talleres/models";
+import ContenidosLayout from "../core/layouts/ContenidosLayout.astro";
+import {SeminarioService} from "../features/Contenidos/Seminarios/services";
+import {type Seminario} from "../features/Contenidos/Seminarios/models";
 
 export async function getStaticPaths() {
     const talleres = await TallerService.getAll();
@@ -20,9 +20,8 @@ export async function getStaticPaths() {
 }
 
 const { data } = Astro.props;
-console.log(data)
 
 if (!data) return Astro.redirect('/404');
 ---
 
-<SeminarioTallerLayout data={data} />
+<ContenidosLayout data={data} />

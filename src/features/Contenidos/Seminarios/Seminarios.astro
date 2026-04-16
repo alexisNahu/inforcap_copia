@@ -1,19 +1,21 @@
 ---
 import SeminarioCard from './components/SeminarioCard.astro';
 
-import {APP_PAGES} from "@/core/pages";
+import {APP_PAGES} from "../../../core/pages";
 import {type Seminario} from "./models";
 import {SeminarioService} from "./services";
+import {type Contenidos} from "../models";
+import {ContenidosServices} from "../services";
 
 const seminarios: Seminario[] = await SeminarioService.getAll()
-
+const contenido: Contenidos = await ContenidosServices.get()
 ---
     <section data-animate class="anim-hidden from-top">
         <div class="text-center py-8 px-8">
-            <h1 class="text-3xl font-bold tracking-tight font-petrona">Seminarios</h1>
-            <h2 class="text-6xl font-bold tracking-tight text-bordoInforcap font-petrona">Noviembre 2025</h2>
+            <h1 class="text-3xl font-bold tracking-tight font-petrona">{contenido.seminarios.clave}</h1>
+            <h2 class="text-6xl font-bold tracking-tight text-bordoInforcap font-petrona">{contenido.seminarios.titulo}</h2>
             <h3 class="text-base tracking-tight text-gris">
-                Nuestros Seminarios están enfocados a impartir clases tres días al mes.
+                {contenido.seminarios.descripcion}
             </h3>
         </div>
 

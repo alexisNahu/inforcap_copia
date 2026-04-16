@@ -1,6 +1,6 @@
-import { apiClient } from "@/core/api/config";
+import { apiClient } from "@/core/api/config.ts";
 import { API_ENDPOINTS } from "@/core/api";
-import type { Taller } from "./models";
+import type { Taller } from "./models.ts";
 
 function mapToTaller(data: any): Taller {
     const process = (val: any) => ({

@@ -1,5 +1,5 @@
-import type { Seminario } from "./models";
-import { apiClient } from "@/core/api/config";
+import type { Seminario } from "./models.ts";
+import { apiClient } from "@/core/api/config.ts";
 import { API_ENDPOINTS } from "@/core/api";
 
 function mapToSeminario(data: any): Seminario {

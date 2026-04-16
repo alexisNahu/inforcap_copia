@@ -1,4 +1,4 @@
-import type {CursoBase} from "src/core/models";
+import type {CursoBase} from "@/core/models";
 
 export interface Taller extends CursoBase {
     tipo: 'Taller'

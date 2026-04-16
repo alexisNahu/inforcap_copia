@@ -8,7 +8,6 @@ export const apiClient = async <T>(
     options: RequestInit = {}
 ): Promise<T> => {
     const url = `${BASE_URL}${endpoint}`;
-    console.log(url, options)
     const config = {
         ...options,
         headers: {
