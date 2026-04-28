@@ -3,7 +3,6 @@ import {type Seminario} from "../Seminarios/models";
 import {Image} from 'astro:assets'
 import {type Taller} from "../Talleres/models";
 
-import notfoundimage from '@/assets/img/notfoundimage.jpg'
 
 interface Props {
     data: Seminario | Taller
@@ -13,14 +12,14 @@ const {data, verMasHref} = Astro.props
 
 ---
 <div class="w-4/5 md:w-full h-full flex flex-col justify-between rounded-lg mx-auto overflow-hidden drop-shadow-md bg-white object-cover">
-
     <Image
-            src={data.imagen_portada ? data.imagen_portada : notfoundimage.src}
+            src={data.imagen_portada ? data.imagen_portada : '../../../assets/img/notfoundimage.jpg'}
             alt={data.titulo}
             width={720}
             height={480}
             loading="lazy"
-            transition:name=`${data.slug}`
+            class="object-cover"
+            transition:name={data.slug}
     />
     <div class="font-petrona px-4 mt-4">
         <div class="text-base uppercase text-grisClaro font-body">SEMINARIO</div>
