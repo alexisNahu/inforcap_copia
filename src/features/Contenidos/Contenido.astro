@@ -10,10 +10,12 @@ import ContenidosCard from "./Components/ContenidosCard.astro";
 
 interface Props {
     contenido: ContenidoDetalle;
-    data: Seminario[] | Taller[]
+    data: Seminario[] | Taller[];
 }
 
 const {contenido, data} = Astro.props;
+
+
 ---
 <section data-animate class="anim-hidden from-top">
     <div class="text-center py-8 px-8">
