@@ -20,6 +20,7 @@ const {data, verMasHref} = Astro.props
             alt={data.titulo}
             width={720}
             height={480}
+            loading="lazy"
             transition:name=`${data.slug}`
     />
     <div class="font-petrona px-4 mt-4">
