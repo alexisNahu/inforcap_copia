@@ -23,11 +23,8 @@ const talleres: Taller[] = await TallerService.getAll()
 <Layout title="Inforcap | Inicio">
 	<Banner />
 
-	<Capacitaciones />
-
 	<Contenido contenido={contenidos.seminarios} data={seminarios}/>
-	<Contenido contenido={contenidos.talleres} data={talleres}/>
-
+	<Contenido contenido={contenidos.talleres} data={talleres} bg_color="#F3F3F3"/>
 
 	<Cursos />
 </Layout>

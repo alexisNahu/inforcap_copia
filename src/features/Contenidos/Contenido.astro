@@ -1,8 +1,7 @@
 ---
-
 import {APP_PAGES} from "@/core/pages";
 import {type Seminario} from "./Seminarios/models";
-import {type ContenidoDetalle, type Contenidos} from "./models";
+import {type ContenidoDetalle} from "./models";
 import {capitalize} from "@/utils";
 import {type Taller} from "./Talleres/models";
 import ContenidosCard from "./Components/ContenidosCard.astro";
@@ -10,25 +9,37 @@ import ContenidosCard from "./Components/ContenidosCard.astro";
 interface Props {
     contenido: ContenidoDetalle;
     data: Seminario[] | Taller[];
+    bg_color?: string;
 }
 
-const {contenido, data} = Astro.props;
-
-
+const {contenido, data, bg_color} = Astro.props;
 ---
-<section data-animate class="anim-hidden from-top">
-    <div class="text-center py-8 px-8">
-        <h1 class="text-3xl font-bold tracking-tight font-petrona">{capitalize(contenido.clave)}</h1>
-        <h2 class="text-6xl font-bold tracking-tight text-bordoInforcap font-petrona">{contenido.titulo}</h2>
-        <h3 class="text-base tracking-tight text-gris">
+<!--
+    Cambiamos la clase dinámica por style={...}
+    Mantenemos las clases de animación y padding intactas.
+-->
+<section
+        data-animate
+        class="anim-hidden from-top py-12"
+        style={{ backgroundColor: bg_color ? bg_color : 'transparent' }}
+>
+    <div class="text-center mb-12 px-8">
+        <h1 class="text-[44px] leading-none tracking-tight font-petrona uppercase text-black font-bold mb-1">
+            {capitalize(contenido.clave)}
+        </h1>
+        <h2 class="text-[44px] leading-tight font-bold tracking-tight text-bordoInforcap font-petrona mb-4">
+            {contenido.titulo}
+        </h2>
+        <h3 class="text-[20px] leading-normal max-w-2xl mx-auto text-slate-600">
             {contenido.descripcion}
         </h3>
     </div>
 
-    <div class="container mx-auto my-8 max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-items-center items-start">
         {data.map((d) => (
-                <ContenidosCard data={d} verMasHref={APP_PAGES.contenido(d.slug)}/>
-                <!--<SeminarioCard seminario={semi} verMasHref={APP_PAGES.seminarios(semi.slug)} />-->
+                <div class="w-full flex justify-center">
+                    <ContenidosCard data={d} verMasHref={APP_PAGES.contenido(d.slug)}/>
+                </div>
         ))}
     </div>
 </section>

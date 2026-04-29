@@ -41,6 +41,23 @@
         will-change: opacity, transform; /* Mantenemos tu optimización */
     }
 
+    .titulos {
+        @apply font-petrona font-bold text-[44px]
+    }
+
+    .subtitulos {
+        @apply font-body text-[20px] text-[#6A6969]
+    }
+
+    .titulo_seminario {
+        @apply font-petrona text-[33px]
+    }
+
+    .etiqueta_seminario {
+        @apply font-body text-[16px]
+    }
+
+
     .from-top {
         @apply -translate-y-12;
     }

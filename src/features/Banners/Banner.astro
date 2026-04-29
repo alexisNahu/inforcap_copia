@@ -1,53 +1,42 @@
-    ---
-    import '@/styles/carusel.css'
+---
+import '@/styles/carusel.css'
+import {Image} from 'astro:assets'
+import {type Banner} from "./models";
+import {BannerService} from "./services";
 
-    import {Image} from 'astro:assets'
-    import {type Banner} from "./models";
-    import {BannerService} from "./services";
-
-    const banners: Banner[] = await BannerService.getAll()
-    const banners_ordenados = banners.sort((a,b) => a.orden - b.orden)
-    ---
-    <div data-animate class="anim-hidden w-full">
-        <article>
-            <div
-                    id="carouselExampleControls"
-                    class="carousel slide"
-                    data-ride="carousel"
-            >
-                <div class="carousel-inner">
-                    {banners_ordenados.map((ban, i) => (
-                            <div class=`carousel-item ${i === 0 ? 'active' : ''}`>
-                                <Image
-                                        src={ban.imagen}
-                                        alt={ban.descripcion}
-                                class="w-full h-auto object-contain"
-                                width={1920}
-                                height={800}
-                                loading={i === 0 ? "eager" : "lazy"}
-                                />
-                            </div>
-                    ))}
-                </div>
-
-                <a
-                        class="carousel-control-prev"
-                        href="#carouselExampleControls"
-                        role="button"
-                        data-slide="prev"
-                >
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a
-                        class="carousel-control-next"
-                        href="#carouselExampleControls"
-                        role="button"
-                        data-slide="next"
-                >
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+const banners: Banner[] = await BannerService.getAll()
+const banners_ordenados = banners.sort((a,b) => a.orden - b.orden)
+---
+<div data-animate class="anim-hidden w-full">
+    <article>
+        <div
+                id="carouselExampleControls"
+                class="carousel slide"
+                data-ride="carousel"
+        >
+            <div class="carousel-inner">
+                {banners_ordenados.map((ban, i) => (
+                        <div class={`carousel-item ${i === 0 ? 'active' : ''}`}>
+                            <Image
+                                    src={ban.imagen}
+                                    alt={ban.descripcion}
+                            class="w-full h-[500px] md:h-[668px] object-cover"
+                            width={1920}
+                            height={1080}
+                            loading={i === 0 ? "eager" : "lazy"}
+                            />
+                        </div>
+                ))}
             </div>
-        </article>
-    </div>
+
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </article>
+</div>
