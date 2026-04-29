@@ -3,37 +3,79 @@ import logoInforcap from '../assets/img/logo-inforcap.png'
 import {Image} from 'astro:assets'
 import {APP_PAGES} from "../core/pages";
 ---
-<nav class="relative w-full">
-    <div class="container mx-auto p-6 max-w-7xl flex items-center justify-between">
-        <!-- Logo a la izquierda -->
-        <div>
+
+<nav class="relative w-full bg-white z-50">
+    <!--
+        1. Cambié max-w-7xl por px-4 md:px-12 para que los elementos no toquen los bordes
+           mientras se achica la pantalla.
+    -->
+    <div class="flex items-center justify-between w-full p-4 md:py-8 lg:px-16">
+
+        <!-- Logo: Ajusté el tamaño para que sea responsivo -->
+        <div class="shrink-0 z-50">
             <a href="/">
-                <Image src={logoInforcap} alt="Logo de Inforcap" class="w-48"/>
+                <Image src={logoInforcap} alt="Logo de Inforcap" class="w-28 sm:w-32 md:w-40 lg:w-48 transition-all"/>
             </a>
         </div>
 
-        <!-- Menú a la derecha -->
-        <div class="hidden md:flex items-center space-x-8 uppercase font-body text-[20px] text-black">
-            <a href={APP_PAGES.inforcap} class="hover:text-bordoInforcap transition-colors">Inforcap</a>
-            <a href={APP_PAGES.formacion_profesional} class="hover:text-bordoInforcap transition-colors">Formación profesional</a>
-            <a href="#" class="hover:text-bordoInforcap transition-colors">Actividades</a>
-            <a href={APP_PAGES.videos} class="hover:text-bordoInforcap transition-colors">Videos</a>
-            <a href="#" class="hover:text-bordoInforcap transition-colors">RSE</a>
-            <a href="#contactenos" class="hover:text-bordoInforcap transition-colors">Contacto</a>
+        <!-- Botón Hamburguesa -->
+        <button id="menu-btn" class="z-50 block md:hidden focus:outline-none p-2">
+            <span class="hamburger-top w-8 h-1 bg-black block mb-1.5 transition-all"></span>
+            <span class="hamburger-middle w-8 h-1 bg-black block mb-1.5 transition-all"></span>
+            <span class="hamburger-bottom w-8 h-1 bg-black block transition-all"></span>
+        </button>
+
+        <!-- Menú de Navegación -->
+        <!--
+            Ajustes realizados:
+            - text-[16px] en tablets (lg:text-[20px]) para que los links no se encimen.
+            - lg:space-x-8 y md:space-x-4 para manejar el espacio entre links.
+        -->
+        <div id="menu" class="absolute hidden top-0 left-0 flex-col items-center justify-center w-full h-screen space-y-8 bg-white uppercase font-body text-[20px] md:static md:h-auto md:py-0 md:flex md:flex-row md:w-auto md:space-y-0 md:space-x-4 lg:space-x-8 md:bg-transparent md:text-[15px] lg:text-[20px] text-black transition-all duration-300">
+
+            <a href={APP_PAGES.inforcap} class="hover:text-bordoInforcap transition-colors whitespace-nowrap">Inforcap</a>
+            <a href={APP_PAGES.formacion_profesional} class="hover:text-bordoInforcap transition-colors whitespace-nowrap">Formación profesional</a>
+            <a href="#" class="hover:text-bordoInforcap transition-colors whitespace-nowrap">Actividades</a>
+            <a href={APP_PAGES.videos} class="hover:text-bordoInforcap transition-colors whitespace-nowrap">Videos</a>
+            <a href="#" class="hover:text-bordoInforcap transition-colors whitespace-nowrap">RSE</a>
+            <a href="#contactenos" class="hover:text-bordoInforcap transition-colors whitespace-nowrap">Contacto</a>
 
             <!-- Redes -->
-            <div class="flex gap-4 items-center pl-4">
+            <div class="flex gap-4 items-center pt-4 md:pt-0 md:pl-2 lg:pl-4">
                 <a href="https://www.facebook.com/Inforcap.edu.py" target="_blank"
-                   class="flex items-center justify-center w-10 h-10 rounded-full bg-bordoInforcap text-white text-xl transition-transform hover:scale-110">
+                   class="flex items-center justify-center w-9 h-9 lg:w-10 lg:h-10 rounded-full bg-bordoInforcap text-white text-lg lg:text-xl transition-transform hover:scale-110">
                     <i class="fa-brands fa-facebook-f"></i>
                 </a>
 
                 <a href="https://www.instagram.com/inforcap.edu.py/" target="_blank"
-                   class="flex items-center justify-center w-10 h-10 rounded-full bg-bordoInforcap text-white text-xl transition-transform hover:scale-110">
+                   class="flex items-center justify-center w-9 h-9 lg:w-10 lg:h-10 rounded-full bg-bordoInforcap text-white text-lg lg:text-xl transition-transform hover:scale-110">
                     <i class="fa-brands fa-instagram"></i>
                 </a>
             </div>
         </div>
-
     </div>
 </nav>
+
+<script>
+    const btn = document.getElementById('menu-btn');
+    const nav = document.getElementById('menu');
+
+    btn?.addEventListener('click', () => {
+        nav?.classList.toggle('flex');
+        nav?.classList.toggle('hidden');
+        btn.classList.toggle('open');
+        // Bloquear scroll cuando el menú móvil está abierto
+        document.body.classList.toggle('overflow-hidden');
+    });
+</script>
+
+<style>
+    .open .hamburger-top { transform: rotate(45deg) translateY(10px); }
+    .open .hamburger-middle { opacity: 0; }
+    .open .hamburger-bottom { transform: rotate(-45deg) translateY(-10px); }
+
+    /* Evita que los links se rompan en dos líneas al achicar */
+    .whitespace-nowrap {
+        white-space: nowrap;
+    }
+</style>
