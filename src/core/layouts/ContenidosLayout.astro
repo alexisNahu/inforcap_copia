@@ -20,8 +20,9 @@ const {
     mes = "Noviembre"
 } = Astro.props;
 
-const { id, tipo, titulo, dias, fecha_inicio, horario, imagen_portada, precio, aprenderas_html,slug } = data;
 
+const { id, tipo, titulo, dias, fecha_inicio, horario, imagen_portada, precio, aprenderas_html,slug } = data;
+console.log(data)
 ---
 <Layout title={`${titulo} | Inforcap`}>
     <div class="w-full mt-10 p-4">
@@ -60,8 +61,8 @@ const { id, tipo, titulo, dias, fecha_inicio, horario, imagen_portada, precio, a
                     <p class="text-2xl mb-4 text-bordoInforcap font-bold font-petrona">Aprenderás a elaborar:</p>
 
                     <div class="text-base text-gris leading-relaxed mb-8 custom-content">
-                        {aprenderas_html ? (
-                                <div set:html={aprenderas_html} />
+                        {data.aprenderas_html ? (
+                                <div set:html={data.aprenderas_html} />
                         ) : (
                                 <slot />
                         )}
