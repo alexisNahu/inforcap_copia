@@ -4,6 +4,7 @@ import Layout from "./Layout.astro";
 import {type Seminario} from "../../features/Contenidos/Seminarios/models";
 import {type Taller} from "../../features/Contenidos/Talleres/models";
 import notfoundimage from '@/assets/img/notfoundimage.jpg'
+import {remoteImageSrc} from "../../utils";
 
 interface Props {
     data: Taller | Seminario;
@@ -27,7 +28,7 @@ const { id, tipo, titulo, dias, fecha_inicio, horario, imagen_portada, precio, a
         <div class="max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-12 mx-auto">
             <div class="w-full aspect-square overflow-hidden rounded-xl shadow-lg bg-gray-50">
                 <Image
-                        src={imagen_portada ? imagen_portada : 'https://ih1.redbubble.net/image.4905811447.8675/flat,750x,075,f-pad,750x1000,f8f8f8.jpg'}
+                        src={imagen_portada ? imagen_portada : remoteImageSrc}
                         alt={titulo}
                         width={800}
                         height={800}

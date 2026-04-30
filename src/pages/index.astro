@@ -1,4 +1,5 @@
 ---
+import {Data} from "../core/models";
 export const prerender = true
 
 import {ContenidosServices} from "../features/Contenidos/services";
@@ -8,23 +9,34 @@ import Banner from "../features/Banners/Banner.astro";
 import Capacitaciones from "../features/Capacitaciones/Capacitaciones.astro";
 import Cursos from "../features/Cursos/Cursos.astro";
 import Contenido from "@/features/Contenidos/Contenido.astro";
-import {type Contenidos} from "../features/Contenidos/models";
+import {type Contenidos, type ContenidosMix} from "../features/Contenidos/models";
 import {type Seminario} from "../features/Contenidos/Seminarios/models";
 import {SeminarioService} from "../features/Contenidos/Seminarios/services";
 import {type Taller} from "../features/Contenidos/Talleres/models";
 import {TallerService} from "../features/Contenidos/Talleres/services";
 
-const contenidos: Contenidos = await ContenidosServices.get()
+
+const contenidos: ContenidosMix = await ContenidosServices.getMix()
+
+/*const contenidos: Contenidos = await ContenidosServices.get()
 const seminarios: Seminario[] = await SeminarioService.getAll()
-const talleres: Taller[] = await TallerService.getAll()
+const talleres: Taller[] = await TallerService.getAll()*/
 
 ---
 
 <Layout title="Inforcap | Inicio">
 	<Banner />
+	{
+		contenidos.seminarios && <Contenido contenido={contenidos.seminarios.content} data={contenidos.seminarios.data}/>
+	}
 
-	<Contenido contenido={contenidos.seminarios} data={seminarios}/>
+	{
+		contenidos.talleres && <Contenido contenido={contenidos.talleres.content} data={contenidos.talleres.data} bg_color="F3F3F3"/>
+	}
+<!--
+	<Contenido contenido={contenidos.seminarios.content} data={seminarios}/>
 	<Contenido contenido={contenidos.talleres} data={talleres} bg_color="#F3F3F3"/>
+-->
 
 	<Cursos />
 </Layout>

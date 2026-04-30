@@ -2,7 +2,8 @@
 import { type Seminario } from "../Seminarios/models";
 import { Image } from 'astro:assets'
 import { type Taller } from "../Talleres/models";
-import { APP_PAGES } from "@/core/pages"; // Asegúrate de importar APP_PAGES
+import { APP_PAGES } from "@/core/pages";
+import {remoteImageSrc} from "../../../utils"; // Asegúrate de importar APP_PAGES
 
 interface Props {
     data: Seminario | Taller
@@ -19,8 +20,6 @@ const detalleHref = APP_PAGES.contenido(data.slug);
 console.log(data)
 ---
 
-<!-- Reducimos el min-h general a 580px (antes 620px) -->
-
 <div class="flex flex-col h-full min-h-[650px] bg-white rounded-md overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300 border border-slate-100">
 
     <!-- 1. Envolvemos Imagen e Info en un contenedor que use todo el espacio menos el botón -->
@@ -29,7 +28,7 @@ console.log(data)
         <!-- Imagen: Usamos basis-1/2 para que ocupe el 50% de este sub-contenedor -->
         <a href={detalleHref} class="basis-1/2 shrink-0 overflow-hidden border-b-[3px] border-slate-400/30 block">
             <Image
-                    src={data.imagen_portada ?? 'https://ih1.redbubble.net/image.4905811447.8675/flat,750x,075,f-pad,750x1000,f8f8f8.jpg'}
+                    src={data.imagen_portada ?? remoteImageSrc}
                     alt={data.titulo}
                     width={400}
                     height={325}

@@ -14,6 +14,10 @@ export interface CursoBase {
     aprenderas_html?: string[]
 }
 
+export interface Data {
+    titulo: string;
+    descripcion: string;
+}
 
 
 

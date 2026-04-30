@@ -4,6 +4,7 @@ export const API_ENDPOINTS = {
     banners: '/api/banners',
     seminarios: '/api/seminarios',
     talleres: '/api/talleres',
-    contenidos: '/api/contenidos'
+    contenidos: '/api/contenidos',
+    mix: '/api/mix'
 }
 

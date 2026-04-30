@@ -1,18 +1,26 @@
 ---
 import {APP_PAGES} from "@/core/pages";
 import {type Seminario} from "./Seminarios/models";
-import {type ContenidoDetalle} from "./models";
+import {type ContenidoDetalle, ContenidosData} from "./models";
 import {capitalize} from "@/utils";
 import {type Taller} from "./Talleres/models";
 import ContenidosCard from "./Components/ContenidosCard.astro";
+import {type Data} from "../../core/models";
 
-interface Props {
+/*interface Props {
     contenido: ContenidoDetalle;
     data: Seminario[] | Taller[];
     bg_color?: string;
+}*/
+
+interface Props {
+    contenido: Seminario[] | Taller[],
+    data: ContenidosData;
+    bg_color?: string;
+    esTaller?: boolean;
 }
 
-const {contenido, data, bg_color} = Astro.props;
+const {contenido, data, bg_color, esTaller} = Astro.props;
 ---
 <!--
     Cambiamos la clase dinámica por style={...}
@@ -25,18 +33,19 @@ const {contenido, data, bg_color} = Astro.props;
 >
     <div class="text-center mb-12 px-8">
         <h1 class="text-[44px] leading-none tracking-tight font-petrona uppercase text-black font-bold mb-1">
-            {capitalize(contenido.clave)}
+            {data.clave}
         </h1>
         <h2 class="text-[44px] leading-tight font-bold tracking-tight text-bordoInforcap font-petrona mb-4">
-            {contenido.titulo}
+            {data.titulo}
         </h2>
-        <h3 class="text-[20px] leading-normal max-w-2xl mx-auto text-slate-600">
-            {contenido.descripcion}
-        </h3>
+        <h3
+                class="text-[20px] leading-normal max-w-2xl mx-auto text-slate-600"
+                set:html={data.descripcion}
+        />
     </div>
 
     <div class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-items-center items-start">
-        {data.map((d) => (
+        {contenido.map((d) => (
                 <div class="w-full flex justify-center">
                     <ContenidosCard data={d} verMasHref={APP_PAGES.contenido(d.slug)}/>
                 </div>
