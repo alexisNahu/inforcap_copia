@@ -41,6 +41,12 @@
         will-change: opacity, transform; /* Mantenemos tu optimización */
     }
 
+    @media (max-width: 768px) {
+        .anim-hidden {
+            @apply opacity-100 transform-none;
+        }
+    }
+
     .titulos {
         @apply font-petrona font-bold text-[44px]
     }

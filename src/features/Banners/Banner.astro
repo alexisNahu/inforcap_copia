@@ -7,12 +7,14 @@ import {BannerService} from "./services";
 const banners: Banner[] = await BannerService.getAll()
 const banners_ordenados = banners.sort((a,b) => a.orden - b.orden)
 ---
+
 <div data-animate class="anim-hidden w-full">
     <article>
+        <!-- Cambiado data-ride por data-bs-ride -->
         <div
                 id="carouselExampleControls"
                 class="carousel slide"
-                data-ride="carousel"
+                data-bs-ride="carousel"
         >
             <div class="carousel-inner">
                 {banners_ordenados.map((ban, i) => (
@@ -20,23 +22,24 @@ const banners_ordenados = banners.sort((a,b) => a.orden - b.orden)
                             <Image
                                     src={ban.imagen}
                                     alt={ban.descripcion}
-                            class="w-full h-[500px] md:h-[550px] object-cover"
-                            width={1920}
-                            height={1080}
-                            loading={i === 0 ? "eager" : "lazy"}
+                                    class="w-full h-auto min-h-[180px] md:h-[550px] object-cover"
+                                    width={1920}
+                                    height={1080}
+                                    loading={i === 0 ? "eager" : "lazy"}
                             />
                         </div>
                 ))}
             </div>
 
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <!-- Botones corregidos con data-bs-target y data-bs-slide -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
-            </a>
+            </button>
         </div>
     </article>
 </div>

@@ -33,10 +33,5 @@ const talleres: Taller[] = await TallerService.getAll()*/
 	{
 		contenidos.talleres && <Contenido contenido={contenidos.talleres.content} data={contenidos.talleres.data} bg_color="F3F3F3"/>
 	}
-<!--
-	<Contenido contenido={contenidos.seminarios.content} data={seminarios}/>
-	<Contenido contenido={contenidos.talleres} data={talleres} bg_color="#F3F3F3"/>
--->
-
 	<Cursos />
 </Layout>
