@@ -11,7 +11,7 @@ export interface CursoBase {
     horario: string;
     precio: string;
     duracion?: string;
-    aprenderas_html?: string[]
+    aprenderas_html?: string
 }
 
 export interface Data {

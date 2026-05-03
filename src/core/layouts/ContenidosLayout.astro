@@ -22,7 +22,6 @@ const {
 
 
 const { id, tipo, titulo, dias, fecha_inicio, horario, imagen_portada, precio, aprenderas_html,slug } = data;
-console.log(data)
 ---
 <Layout title={`${titulo} | Inforcap`}>
     <div class="w-full mt-10 p-4">
@@ -62,7 +61,12 @@ console.log(data)
 
                     <div class="text-base text-gris leading-relaxed mb-8 custom-content">
                         {data.aprenderas_html ? (
-                                <div set:html={data.aprenderas_html} />
+                            <!-- Cambia space-y-4 por space-y-1 o elimina la clase por completo -->
+                                <ul class="list-disc space-y-1">
+                                    {data.aprenderas_html.split('-').map(item => (
+                                            <li>{item}</li>
+                                    ))}
+                                </ul>
                         ) : (
                                 <slot />
                         )}

@@ -13,8 +13,6 @@ export async function getStaticPaths() {
 
     const allData = [...talleres, ...seminarios]
 
-    console.log(talleres)
-
     return allData.map((data: Taller | Seminario) => ({
         params: { slug: data.slug },
         props: {data}
