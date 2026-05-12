@@ -71,7 +71,7 @@ const {
                         {data.aprenderas_html ? (
                                 <ul class="list-disc space-y-1" set:html={
                                     data.aprenderas_html
-                                        .split('.')
+                                        .split('-')
                                         .filter(item => item.trim() !== "") // Limpia espacios vacíos
                 .map(item => `<li>${item.trim()}</li>`)
                                         .join('')
