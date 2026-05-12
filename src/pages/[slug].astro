@@ -1,4 +1,5 @@
 ---
+import {ContenidosServices} from "../features/Contenidos/services";
 export const prerender = true
 
 import { TallerService } from "../features/Contenidos/Talleres/services";
@@ -6,10 +7,14 @@ import {type Taller } from "../features/Contenidos/Talleres/models";
 import ContenidosLayout from "../core/layouts/ContenidosLayout.astro";
 import {SeminarioService} from "../features/Contenidos/Seminarios/services";
 import {type Seminario} from "../features/Contenidos/Seminarios/models";
+import {type ContenidosMix} from "../features/Contenidos/models";
 
 export async function getStaticPaths() {
-    const talleres: Taller[] = await TallerService.getAll();
-    const seminarios: Seminario[] = await SeminarioService.getAll();
+    const contenidos: ContenidosMix = await ContenidosServices.getMix()
+
+    const seminarios = contenidos?.seminarios?.content || []
+    const talleres = contenidos?.talleres?.content || []
+
 
     const allData: (Taller | Seminario)[] = [...talleres, ...seminarios]
 

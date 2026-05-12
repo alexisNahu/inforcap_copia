@@ -17,6 +17,7 @@ const {
     subtitulo = data.tipo == "Taller" ? 'Taller' : 'Seminario',
 } = Astro.props;
 
+console.log(data)
 ---
 <Layout title={`${data.titulo} | Inforcap`}>
     <div class="w-full mt-10 p-4">
