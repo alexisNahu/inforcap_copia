@@ -54,9 +54,9 @@ const {
                 <div class="prose prose-slate max-w-none">
                     <p class="text-2xl mb-4 text-bordoInforcap font-bold font-petrona">Aprenderás a elaborar:</p>
 
-                    <div class="text-base text-gris leading-relaxed mb-8 custom-content">
+                    <!--<div class="text-base text-gris leading-relaxed mb-8 custom-content">
                         {data.aprenderas_html ? (
-                            <!-- Cambia space-y-4 por space-y-1 o elimina la clase por completo -->
+                            &lt;!&ndash; Cambia space-y-4 por space-y-1 o elimina la clase por completo &ndash;&gt;
                                 <ul class="list-disc space-y-1">
                                     {data.aprenderas_html.split('-').map(item => (
                                             <li>{item}</li>
@@ -66,6 +66,19 @@ const {
                                 <slot />
                         )}
 
+                    </div>-->
+                    <div class="text-base text-gris leading-relaxed mb-8 custom-content">
+                        {data.aprenderas_html ? (
+                                <ul class="list-disc space-y-1" set:html={
+                                    data.aprenderas_html
+                                        .split('.')
+                                        .filter(item => item.trim() !== "") // Limpia espacios vacíos
+                .map(item => `<li>${item.trim()}</li>`)
+                                        .join('')
+                                } />
+                        ) : (
+                                <slot />
+                        )}
                     </div>
                 </div>
 
