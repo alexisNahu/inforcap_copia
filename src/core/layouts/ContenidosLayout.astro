@@ -69,13 +69,16 @@ const {
                     </div>-->
                     <div class="text-base text-gris leading-relaxed mb-8 custom-content">
                         {data.aprenderas_html ? (
-                                <ul class="list-disc space-y-1" set:html={
-                                    data.aprenderas_html
-                                        .split('-')
-                                        .filter(item => item.trim() !== "") // Limpia espacios vacíos
-                .map(item => `<li>${item.trim()}</li>`)
-                                        .join('')
-                                } />
+                                <ul class="list-disc space-y-1" set:html={(() => {
+                                    const delimiter = data.aprenderas_html.includes('-') ? '-' : '.';
+
+                                    return data.aprenderas_html
+                                                            .split(delimiter)
+                                                            .map(item => item.trim())
+                                                            .filter(item => item !== "") // Elimina fragmentos vacíos
+                                    .map(item => `<li>${item}</li>`)
+                                                            .join('');
+                                })()} />
                         ) : (
                                 <slot />
                         )}
