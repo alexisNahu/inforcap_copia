@@ -15,7 +15,6 @@ export async function getStaticPaths() {
     const seminarios = contenidos?.seminarios?.content || []
     const talleres = contenidos?.talleres?.content || []
 
-
     const allData: (Taller | Seminario)[] = [...talleres, ...seminarios]
 
     return allData.map((data: Taller | Seminario) => ({
