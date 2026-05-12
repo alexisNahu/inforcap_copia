@@ -8,10 +8,10 @@ import {SeminarioService} from "../features/Contenidos/Seminarios/services";
 import {type Seminario} from "../features/Contenidos/Seminarios/models";
 
 export async function getStaticPaths() {
-    const talleres = await TallerService.getAll();
-    const seminarios = await SeminarioService.getAll();
+    const talleres: Taller[] = await TallerService.getAll();
+    const seminarios: Seminario[] = await SeminarioService.getAll();
 
-    const allData = [...talleres, ...seminarios]
+    const allData: (Taller | Seminario)[] = [...talleres, ...seminarios]
 
     return allData.map((data: Taller | Seminario) => ({
         params: { slug: data.slug },
