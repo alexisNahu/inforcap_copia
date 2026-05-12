@@ -16,7 +16,6 @@ export const apiClient = async <T>(
     };
 
     try {
-        console.log(url)
         const response = await fetch(url, config);
 
         if (!response.ok) throw new Error(`Error API: ${response.status} ${response.statusText}`);

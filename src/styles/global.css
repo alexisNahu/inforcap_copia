@@ -1,12 +1,17 @@
+/*
 @import "tailwindcss";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @theme {
-    /* IMPORTANTE: En v4, para mantener el CamelCase exacto en la clase,
+    !* IMPORTANTE: En v4, para mantener el CamelCase exacto en la clase,
        la variable debe definirse así. Tailwind ignorará el guion inicial
        del nombre de la variable para crear la clase.
-    */
+    *!
 
-    /* Colores */
+    !* Colores *!
     --color-bordoInforcap: #9C2D32;
     --color-amarilloInforcap: #FFC700;
     --color-naranjaInforcap: #FF8A00;
@@ -14,8 +19,8 @@
     --color-grisClaro: #A6A6A6;
     --color-grisC: #cccccc;
 
-    /* Tipografías */
-    /* Estas se usarán como font-body, font-petrona, etc. */
+    !* Tipografías *!
+    !* Estas se usarán como font-body, font-petrona, etc. *!
     --font-body: "Inter", sans-serif;
     --font-petrona: "Petrona", serif;
     --font-sacramento: "Sacramento", cursive;
@@ -23,9 +28,9 @@
 
 .fade-in-down-initial {
     opacity: 0;
-    transform: translateY(-2rem); /* Mueve 2rem hacia arriba */
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Duración y suavizado */
-    will-change: opacity, transform; /* Optimización para el navegador */
+    transform: translateY(-2rem); !* Mueve 2rem hacia arriba *!
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; !* Duración y suavizado *!
+    will-change: opacity, transform; !* Optimización para el navegador *!
 }
 
 .fade-in-down-visible {
@@ -33,12 +38,12 @@
     transform: translateY(0);
 }
 
-/* src/styles/global.css */
+!* src/styles/global.css *!
 
 @layer components {
     .anim-hidden {
         @apply opacity-0 transition-all duration-1000 ease-out;
-        will-change: opacity, transform; /* Mantenemos tu optimización */
+        will-change: opacity, transform; !* Mantenemos tu optimización *!
     }
 
     @media (max-width: 768px) {
@@ -63,6 +68,67 @@
         @apply font-body text-[16px]
     }
 
+
+    .from-top {
+        @apply -translate-y-12;
+    }
+
+    .from-bottom {
+        @apply translate-y-12;
+    }
+
+    .anim-visible {
+        @apply opacity-100 translate-y-0;
+    }
+}
+*/
+
+/* 1. Directivas base de la v3 (CORRECTO) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 2. Tus clases de animación (Mantenlas tal cual) */
+.fade-in-down-initial {
+    opacity: 0;
+    transform: translateY(-2rem);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: opacity, transform;
+}
+
+.fade-in-down-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 3. Capa de componentes (CORRECTO para v3) */
+@layer components {
+    .anim-hidden {
+        @apply opacity-0 transition-all duration-1000 ease-out;
+        will-change: opacity, transform;
+    }
+
+    @media (max-width: 768px) {
+        .anim-hidden {
+            @apply opacity-100 transform-none;
+        }
+    }
+
+    .titulos {
+        @apply font-petrona font-bold text-[44px];
+    }
+
+    .subtitulos {
+        @apply font-body text-[20px] text-[#6A6969];
+    }
+
+    .titulo_seminario {
+        @apply font-petrona text-[33px];
+    }
+
+    .etiqueta_seminario {
+        @apply font-body text-[16px];
+    }
 
     .from-top {
         @apply -translate-y-12;

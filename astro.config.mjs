@@ -1,26 +1,21 @@
 import { defineConfig } from 'astro/config';
-import tailwindcss from "@tailwindcss/vite";
+import tailwind from '@astrojs/tailwind'; // Cambia esto
 import path from 'path';
-
-
 import vercel from '@astrojs/vercel';
 
-
 export default defineConfig({
-  output: 'server',
-
+  // output: 'server',
+  // adapter: vercel(),
+  integrations: [tailwind()],
   image: {
       domains: ['inforcap.fincreativo.com'],
   },
-
   vite: {
-    plugins: [tailwindcss()],
+    // ELIMINA tailwindcss() de aquí si usas la integración arriba
     resolve: {
       alias: {
         '@': path.resolve('./src'),
       },
     },
   },
-
-  adapter: vercel(),
 });
