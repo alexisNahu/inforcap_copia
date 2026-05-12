@@ -10,8 +10,8 @@ export interface CursoBase {
     estado: number;
     horario: string;
     precio: string;
-    duracion?: string;
-    aprenderas_html?: string
+    duracion: string;
+    aprenderas_html: string
 }
 
 export interface Data {

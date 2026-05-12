@@ -15,20 +15,16 @@ interface Props {
 const {
     data,
     subtitulo = data.tipo == "Taller" ? 'Taller' : 'Seminario',
-    duracion = "3 días",
-    mes = "Noviembre"
 } = Astro.props;
 
-
-const { id, tipo, titulo, dias, fecha_inicio, horario, imagen_portada, precio, aprenderas_html,slug } = data;
 ---
-<Layout title={`${titulo} | Inforcap`}>
+<Layout title={`${data.titulo} | Inforcap`}>
     <div class="w-full mt-10 p-4">
         <div class="max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-12 mx-auto">
             <div class="w-full aspect-square overflow-hidden rounded-xl shadow-lg bg-gray-50">
                 <Image
-                        src={imagen_portada ? imagen_portada : remoteImageSrc}
-                        alt={titulo}
+                        src={data.imagen_portada ? data.imagen_portada : remoteImageSrc}
+                        alt={data.titulo}
                         width={800}
                         height={800}
                         class="w-full h-full object-cover"
@@ -38,15 +34,15 @@ const { id, tipo, titulo, dias, fecha_inicio, horario, imagen_portada, precio, a
             <div class="w-full">
                 <header>
                     <h2 class="text-base">{subtitulo}</h2>
-                    <h1 class="font-petrona text-4xl md:text-5xl text-bordoInforcap leading-tight">{titulo}</h1>
+                    <h1 class="font-petrona text-4xl md:text-5xl text-bordoInforcap leading-tight">{data.titulo}</h1>
                 </header>
 
                 <div class="md:flex my-10">
                     { [
-                        { label: 'Mes', val: mes },
-                        { label: 'Día', val: dias },
-                        { label: 'Fecha', val: fecha_inicio },
-                        { label: 'Hora', val: horario }
+                        { label: 'Mes', val: data.mes },
+                        { label: 'Día', val: data.dias },
+                        { label: 'Fecha', val: data.fecha_inicio },
+                        { label: 'Hora', val: data.horario }
                     ].map((item) => (
                             <div class="px-6 border-r-2 border-amarilloInforcap">
                                 <p class="text-xs text-gris uppercase tracking-tighter">{item.label}</p>
@@ -74,15 +70,15 @@ const { id, tipo, titulo, dias, fecha_inicio, horario, imagen_portada, precio, a
                 </div>
 
                 <div class="space-y-6 pt-6 border-t border-gray-50">
-                    <p class="text-gris"><strong>Duración:</strong> {duracion}</p>
+                    <p class="text-gris"><strong>Duración:</strong> {data.duracion}</p>
 
                     <div class="inline-block bg-naranjaInforcap text-white px-6 py-3 rounded-xl shadow-md">
                         <span class="text-sm uppercase block opacity-80">Inversión</span>
-                        <span class="text-2xl font-bold">Gs. {precio}</span>
+                        <span class="text-2xl font-bold">Gs. {data.precio}</span>
                     </div>
 
                     <a
-                            href={`https://wa.me/595983350062?text=Me%20interesa%20el%20Seminario%20${encodeURIComponent(titulo)}`}
+                            href={`https://wa.me/595983350062?text=Me%20interesa%20el%20Seminario%20${encodeURIComponent(data.titulo)}`}
                             target="_blank"
                             class="flex items-center justify-center gap-3 bg-amarilloInforcap w-full py-4 uppercase hover:bg-naranjaInforcap text-white transition-all font-bold rounded-xl shadow-lg group"
                     >
