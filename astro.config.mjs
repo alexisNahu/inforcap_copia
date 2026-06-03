@@ -3,17 +3,28 @@ import tailwind from '@astrojs/tailwind';
 import path from 'path';
 import vercel from '@astrojs/vercel';
 
-const isVercel = process.env.VERCEL === '1';
-
 export default defineConfig({
-  // Solo usa SSR y el adaptador si estamos en Vercel
-  output: isVercel ? 'server' : 'static',
-  adapter: isVercel ? vercel() : undefined,
+  // Siempre usa 'server' para consistencia
+  output: 'server',
+
+  // El adapter solo es necesario para producción, pero no daña tenerlo siempre
+  adapter: vercel({
+    // Opcional: configuraciones específicas de Vercel
+    webAnalytics: {
+      enabled: false,
+    },
+  }),
 
   integrations: [tailwind()],
+
   image: {
-    domains: ['inforcap.fincreativo.com'],
+    // CORREGIDO: usar remotePatterns en lugar de domains
+    remotePatterns: [{
+      protocol: 'https',
+      hostname: 'inforcap.fincreativo.com',
+    }],
   },
+
   vite: {
     resolve: {
       alias: {
