@@ -1,31 +1,27 @@
 ---
-import {ContenidosServices} from "../features/Contenidos/services";
-export const prerender = true
+export const prerender = false;
 
-import { TallerService } from "../features/Contenidos/Talleres/services";
-import {type Taller } from "../features/Contenidos/Talleres/models";
+import { ContenidosServices } from "../features/Contenidos/services";
 import ContenidosLayout from "../core/layouts/ContenidosLayout.astro";
-import {SeminarioService} from "../features/Contenidos/Seminarios/services";
-import {type Seminario} from "../features/Contenidos/Seminarios/models";
-import {type ContenidosMix} from "../features/Contenidos/models";
 
-export async function getStaticPaths() {
-    const contenidos: ContenidosMix = await ContenidosServices.getMix()
+const { slug } = Astro.params;
 
-    const seminarios = contenidos?.seminarios?.content || []
-    const talleres = contenidos?.talleres?.content || []
-
-    const allData: (Taller | Seminario)[] = [...talleres, ...seminarios]
-
-    return allData.map((data: Taller | Seminario) => ({
-        params: { slug: data.slug },
-        props: {data}
-    }));
+if (!slug) {
+    return Astro.redirect('/404');
 }
 
-const { data } = Astro.props;
+// Obtener todos los contenidos (se ejecuta en cada request)
+const contenidos = await ContenidosServices.getMix();
+const todosLosContenidos = [
+    ...(contenidos?.talleres?.content || []),
+    ...(contenidos?.seminarios?.content || [])
+];
 
-if (!data) return Astro.redirect('/404');
+const data = todosLosContenidos.find(item => item.slug === slug);
+
+if (!data) {
+    return Astro.redirect('/404');
+}
 ---
 
 <ContenidosLayout data={data} />
