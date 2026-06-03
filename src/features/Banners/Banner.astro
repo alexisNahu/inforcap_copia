@@ -8,7 +8,6 @@ import {BannerService} from "./services";
 const banners: Banner[] = await BannerService.getAll()
 const banners_ordenados = banners.sort((a,b) => a.orden - b.orden)
 ---
-
 <div data-animate class="anim-hidden w-full">
     <article>
         <!-- Cambiado data-ride por data-bs-ride -->
