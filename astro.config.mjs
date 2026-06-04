@@ -1,16 +1,15 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import path from 'path';
-import vercel from '@astrojs/vercel';
-import react from '@astrojs/react'
+import react from '@astrojs/react';
+import node from '@astrojs/node'; // 1. Cambiaste la importación de vercel por node
 
 export default defineConfig({
   output: 'server',
 
-  adapter: vercel({
-    webAnalytics: {
-      enabled: false,
-    },
+  // 2. Cambiaste el adaptador de vercel por el de node en modo standalone
+  adapter: node({
+    mode: 'standalone',
   }),
 
   integrations: [tailwind(), react()],
