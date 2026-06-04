@@ -16,7 +16,7 @@ export const APP_PAGES = {
     especializaciones: (slug: string) => `/especializaciones/${slug}`,
 
     diplomados: (slug: string) => `${slug}`,
-    contenido: (slug: string) => `${slug}`,//para taller o seminarios
+    contenido: (slug: string) => `${`contenido?slug=${slug}`}`,//para taller o seminarios
     // Formaciones Profesionales
     capacitacion_personalizada: '/formacion-profesional/capacitacion-personalizada',
     clases_magistrales: '/formacion-profesional/clases-magistrales',

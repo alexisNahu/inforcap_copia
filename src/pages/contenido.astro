@@ -1,0 +1,21 @@
+---
+import ContenidoLayout from "../features/Contenidos/ContenidoLayout";
+import Layout from "../core/layouts/Layout.astro";
+
+
+
+/*const contenidos = await ContenidosServices.getMix();
+const todosLosContenidos = [
+    ...(contenidos?.talleres?.content || []),
+    ...(contenidos?.seminarios?.content || [])
+];
+
+const data = todosLosContenidos.find(item => item.slug === slug);
+
+if (!data) {
+    return Astro.redirect('/404');
+}*/
+---
+<Layout>
+    <ContenidoLayout client:load/>
+</Layout>

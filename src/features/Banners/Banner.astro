@@ -1,87 +1,98 @@
 ---
-export const prerender = false;
-
 import '@/styles/carusel.css'
 import { Image } from 'astro:assets';
 import { type Banner } from "./models";
 import { BannerService } from "./services";
-
-const banners: Banner[] = await BannerService.getAll()
-const banners_ordenados = banners.sort((a, b) => a.orden - b.orden)
+import FetchData from '@/components/FetchData.tsx'; // Asegúrate de ajustar la ruta de importación
 ---
 
 <div data-animate class="anim-hidden w-full">
-    <article>
-        <div class="relative carousel-container">
-            <div class="overflow-hidden relative">
-                <div class="flex transition-transform duration-500 ease-out" id="carouselTrack">
-                    {banners_ordenados.map((ban, i) => (
-                            <div class="flex-shrink-0 w-full" data-carousel-slide={i}>
-                                <Image
-                                        src={ban.imagen}
-                                        alt={ban.descripcion}
-                                        class="w-full h-auto min-h-[180px] md:h-[550px] object-cover"
-                                        width={1920}
-                                        height={1080}
-                                        loading={i === 0 ? "eager" : "lazy"}
-                                />
+    <FetchData client:load serviceFn={BannerService.getAll}>
+        {(banners: Banner[]) => {
+            const banners_ordenados = [...banners].sort((a, b) => a.orden - b.orden);
+
+            return (
+                    <article id="astroCarouselContainer" data-total={banners_ordenados.length}>
+                        <div class="relative carousel-container">
+                            <div class="overflow-hidden relative">
+                                <div class="flex transition-transform duration-500 ease-out" id="carouselTrack">
+                                    {banners_ordenados.map((ban, i) => (
+                                            <div class="flex-shrink-0 w-full" data-carousel-slide={i}>
+                                                <Image
+                                                        src={ban.imagen}
+                                                        alt={ban.descripcion}
+                                                        class="w-full h-auto min-h-[180px] md:h-[550px] object-cover"
+                                                        width={1920}
+                                                        height={1080}
+                                                        loading={i === 0 ? "eager" : "lazy"}
+                                                />
+                                            </div>
+                                    ))}
+                                </div>
                             </div>
-                    ))}
-                </div>
-            </div>
 
-            <button class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full" id="prevBtn">
-                ❮
-            </button>
-            <button class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full" id="nextBtn">
-                ❯
-            </button>
-        </div>
-    </article>
+                            {banners_ordenados.length > 1 && (
+                                    <>
+                                        <button class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full" id="prevBtn">
+                                            ❮
+                                        </button>
+                                        <button class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full" id="nextBtn">
+                                            ❯
+                                        </button>
+                                    </>
+                            )}
+                        </div>
+                    </article>
+            )
+        }}
+    </FetchData>
 </div>
+
 <script>
-    let currentIndex = 0;
-    const track = document.getElementById('carouselTrack');
-    const slides = document.querySelectorAll('[data-carousel-slide]');
-    const totalSlides = slides.length;
+    // Usamos 'astro:page-load' para asegurar que el script se vuelva a ejecutar si usas View Transitions
+    document.addEventListener('astro:page-load', () => {
+        const container = document.getElementById('astroCarouselContainer');
+        if (!container) return;
 
-    // 1. Declaramos una variable para guardar el identificador del temporizador
-    let autoPlayInterval: any;
+        const totalSlides = parseInt(container.getAttribute('data-total') || '0', 10);
+        const track = document.getElementById('carouselTrack');
 
-    function updateCarousel() {
-        if (!track) return;
-        const offset = -currentIndex * 100;
-        track.style.transform = `translateX(${offset}%)`;
-    }
+        if (totalSlides <= 1 || !track) return;
 
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % totalSlides;
-        updateCarousel();
-    }
+        let currentIndex = 0;
+        let autoPlayInterval: any;
 
-    function prevSlide() {
-        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-        updateCarousel();
-    }
+        function updateCarousel() {
+            if (!track) return;
+            const offset = -currentIndex * 100;
+            track.style.transform = `translateX(${offset}%)`;
+        }
 
-    // 2. Creamos una función para iniciar o "resetear" el temporizador
-    function startAutoPlay() {
-        // Si ya hay un temporizador activo, lo destruimos
-        clearInterval(autoPlayInterval);
-        // Iniciamos uno nuevo de 5 segundos
-        autoPlayInterval = setInterval(nextSlide, 5000);
-    }
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateCarousel();
+        }
 
-    // 3. Modificamos los eventos de los botones
-    document.getElementById('nextBtn')?.addEventListener('click', () => {
-        nextSlide();
-        startAutoPlay(); // Al hacer clic, se mueve y reinicia el segundero
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+
+        function startAutoPlay() {
+            clearInterval(autoPlayInterval);
+            autoPlayInterval = setInterval(nextSlide, 5000);
+        }
+
+        document.getElementById('nextBtn')?.addEventListener('click', () => {
+            nextSlide();
+            startAutoPlay();
+        });
+
+        document.getElementById('prevBtn')?.addEventListener('click', () => {
+            prevSlide();
+            startAutoPlay();
+        });
+
+        startAutoPlay();
     });
-    document.getElementById('prevBtn')?.addEventListener('click', () => {
-        prevSlide();
-        startAutoPlay(); // Al hacer clic, se mueve y reinicia el segundero
-    });
-
-    // 4. Arrancamos el temporizador por primera vez al cargar la página
-    startAutoPlay();
 </script>

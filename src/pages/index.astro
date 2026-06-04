@@ -1,21 +1,13 @@
 ---
-export const prerender = false;
 
-import { ContenidosServices } from "../features/Contenidos/services";
-import { type ContenidosMix } from "../features/Contenidos/models";
 import Layout from "../core/layouts/Layout.astro";
-import Banner from "@/features/Banners/Banner.astro";
+import {Banner} from "@/features/Banners/Banner";
 import Cursos from "../features/Cursos/Cursos.astro";
-import Contenido from "@/features/Contenidos/Contenido.astro";
-
-const contenidos: ContenidosMix = await ContenidosServices.getMix()
+import Contenido from "@/features/Contenidos/Contenido";
 ---
 
 <Layout title="Inforcap | Inicio">
-	<Banner />
-
-	{contenidos.seminarios && <Contenido info={contenidos.seminarios} />}
-	{contenidos.talleres && <Contenido info={contenidos.talleres} bg_color="F3F3F3" />}
-
+	<Banner client:load/>
+	<Contenido client:load/>
 	<Cursos />
 </Layout>

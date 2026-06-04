@@ -3,9 +3,7 @@ import SeminarioCard from './components/SeminarioCard.astro';
 
 
 import {type Seminario} from "./models";
-import {SeminarioService} from "./services";
 
-const seminarios: Seminario[] = await SeminarioService.getAll()
 
 ---
     <section data-animate class="anim-hidden from-top">

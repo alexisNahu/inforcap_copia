@@ -1,3 +1,4 @@
+/*
 import { API } from "@/constants.ts";
 import type { Taller } from "./models";
 
@@ -13,7 +14,7 @@ export const TallerService = {
             const json = await response.json()
             console.log(json)
             return mapToTaller(json)
-        } catch (e: any) {
+        } catch (e: any) {/!**!/
             console.error(`Error en el getAll de taller: ${e}`);
             throw e;
         }
@@ -73,3 +74,4 @@ export const TallerService = {
         }
     }
 };
+*/

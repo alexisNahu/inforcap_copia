@@ -1,6 +1,5 @@
 ---
 import { Image } from "astro:assets";
-import Layout from "../../../layouts/Layout.astro";
 import {type Taller} from "../models";
 
 interface Props {
@@ -20,7 +19,6 @@ const {
 const { titulo, dias, fecha_inicio, horario, imagen_portada, precio, aprenderas_html } = taller;
 ---
 
-<Layout title={`${titulo} | Inforcap`}>
     <div class="w-full mt-10 p-4">
         <div class="max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-12 mx-auto">
 
@@ -95,5 +93,4 @@ const { titulo, dias, fecha_inicio, horario, imagen_portada, precio, aprenderas_
     </div>
 
 
-</Layout>
 

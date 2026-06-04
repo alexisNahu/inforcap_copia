@@ -1,123 +1,112 @@
-// src/components/Carousel.tsx
-import { useState, useEffect, useRef } from 'react';
-import { BannerService } from '../Banners/services';
-import type { Banner as BannerType } from '../Banners/models.ts'; // Renombrado para evitar conflicto con el componente
+import React, { useState, useEffect } from 'react';
+import { BannerService } from "./services";
+import { type Banner as BannerType } from "./models";
+import '@/styles/carusel.css';
 
 export function Banner() {
     const [banners, setBanners] = useState<BannerType[]>([]);
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [isPlaying, setIsPlaying] = useState(true);
     const [loading, setLoading] = useState(true);
-    const trackRef = useRef<HTMLDivElement>(null);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    // Estado local para activar la animación de entrada
+    const [isVisible, setIsVisible] = useState(false);
 
-    // 1. Cargar banners al montar el componente
     useEffect(() => {
         let isMounted = true;
         async function loadBanners() {
             try {
-                const data = await BannerService.getAll();
-                const ordenados = data.sort((a, b) => a.orden - b.orden);
-                if (isMounted) setBanners(ordenados);
+                const res = await BannerService.getAll();
+                if (isMounted) {
+                    const sorted = [...res].sort((a, b) => a.orden - b.orden);
+                    setBanners(sorted);
+
+                    // Pequeño delay de milisegundos para que el DOM se monte antes de animar
+                    setTimeout(() => {
+                        if (isMounted) setIsVisible(true);
+                    }, 50);
+                }
             } catch (error) {
-                console.error('Error loading banners:', error);
+                console.error("Error cargando banners:", error);
             } finally {
                 if (isMounted) setLoading(false);
             }
         }
-
         loadBanners();
         return () => { isMounted = false; };
     }, []);
 
-    const totalSlides = banners.length;
-
-    // 2. Efecto para manejar el Auto-Play de forma segura
     useEffect(() => {
-        if (!isPlaying || totalSlides <= 1) return;
-
+        if (banners.length <= 1) return;
         const interval = setInterval(() => {
-            setCurrentIndex((prev) => (prev + 1) % totalSlides);
+            setCurrentIndex((prev) => (prev + 1) % banners.length);
         }, 5000);
-
         return () => clearInterval(interval);
-    }, [isPlaying, totalSlides, currentIndex]); // Al incluir currentIndex, el timer se reinicia limpiamente en cada cambio
+    }, [banners]);
 
-    // 3. Efecto para actualizar la posición visual en el DOM
-    useEffect(() => {
-        if (trackRef.current) {
-            const offset = -currentIndex * 100;
-            trackRef.current.style.transform = `translateX(${offset}%)`;
-        }
-    }, [currentIndex]);
+    // --- SKELETON: Bloque gris visible desde el segundo cero ---
+    if (loading || banners.length === 0) {
+        return (
+            <div
+                className="w-full animate-pulse bg-gray-300 block visual-fallback"
+                style={{ minHeight: '350px', height: '50vh', maxHeight: '550px' }}
+            />
+        );
+    }
 
-    // Mostrar loading o nada si no hay banners
-    if (loading || totalSlides === 0) return null;
-
-    // Manejadores de eventos simplificados
-    const handlePrevClick = () => {
-        setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
-    };
-
-    const handleNextClick = () => {
-        setCurrentIndex((prev) => (prev + 1) % totalSlides);
-    };
+    const nextSlide = () => setCurrentIndex((prev) => (prev + 1) % banners.length);
+    const prevSlide = () => setCurrentIndex((prev) => (prev - 1 + banners.length) % banners.length);
 
     return (
+        /* Usamos clases condicionales de Tailwind controladas por 'isVisible'.
+          Replicamos tu clase CSS: transición de 1000ms, suavizado ease-out y will-change.
+        */
         <div
-            className="relative carousel-container w-full overflow-hidden"
-            onMouseEnter={() => setIsPlaying(false)}
-            onMouseLeave={() => setIsPlaying(true)}
+            className={`w-full block relative transition-all duration-1000 ease-out will-change-[opacity,transform] ${
+                isVisible
+                    ? 'opacity-100 translate-y-0'
+                    : 'opacity-0 -translate-y-12 md:translate-y-12'
+            }`}
         >
-            <div className="overflow-hidden relative w-full">
-                <div
-                    ref={trackRef}
-                    className="flex transition-transform duration-500 ease-out w-full"
-                >
-                    {banners.map((ban, i) => (
-                        <div key={ban.id || i} className="flex-shrink-0 w-full" data-carousel-slide={i}>
-                            <img
-                                src={ban.imagen}
-                                alt={ban.descripcion || 'Banner'}
-                                className="w-full h-auto min-h-[180px] md:h-[550px] object-cover"
-                                loading={i === 0 ? "eager" : "lazy"}
-                            />
+            <article id="astroCarouselContainer">
+                <div className="relative carousel-container">
+                    <div className="overflow-hidden relative">
+                        <div
+                            className="flex transition-transform duration-500 ease-out"
+                            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+                        >
+                            {banners.map((ban, i) => (
+                                <div key={ban.id || i} className="flex-shrink-0 w-full">
+                                    <img
+                                        src={ban.imagen}
+                                        alt={ban.descripcion || "Banner Inforcap"}
+                                        className="w-full h-auto min-h-[180px] md:h-[550px] object-cover block"
+                                        loading={i === 0 ? "eager" : "lazy"}
+                                    />
+                                </div>
+                            ))}
                         </div>
-                    ))}
-                </div>
-            </div>
-
-            {totalSlides > 1 && (
-                <>
-                    <button
-                        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors z-10"
-                        onClick={handlePrevClick}
-                        aria-label="Previous"
-                    >
-                        ❮
-                    </button>
-                    <button
-                        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors z-10"
-                        onClick={handleNextClick}
-                        aria-label="Next"
-                    >
-                        ❯
-                    </button>
-
-                    {/* Indicadores/dots */}
-                    <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-10">
-                        {banners.map((_, i) => (
-                            <button
-                                key={i}
-                                className={`w-2 h-2 rounded-full transition-all ${
-                                    i === currentIndex ? 'bg-white w-4' : 'bg-white/50'
-                                }`}
-                                onClick={() => setCurrentIndex(i)}
-                                aria-label={`Go to slide ${i + 1}`}
-                            />
-                        ))}
                     </div>
-                </>
-            )}
+
+                    {/* Controles de navegación */}
+                    {banners.length > 1 && (
+                        <>
+                            <button
+                                onClick={prevSlide}
+                                className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/80 transition-colors z-10"
+                            >
+                                ❮
+                            </button>
+                            <button
+                                onClick={nextSlide}
+                                className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/80 transition-colors z-10"
+                            >
+                                ❯
+                            </button>
+                        </>
+                    )}
+                </div>
+            </article>
         </div>
     );
 }
+
+export default Banner;

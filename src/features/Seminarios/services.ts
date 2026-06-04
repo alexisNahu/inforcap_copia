@@ -1,4 +1,4 @@
-import { API } from "@/constants.ts";
+/*
 import type { Seminario } from "./models";
 
 function mapToSeminarios (obj: any) {
@@ -72,3 +72,4 @@ export const SeminarioService = {
         }
     }
 };
+*/

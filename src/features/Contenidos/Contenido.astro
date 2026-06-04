@@ -1,24 +1,18 @@
 ---
-import {APP_PAGES} from "@/core/pages";
-import {type Seminario} from "./Seminarios/models";
-import {type ContenidoDetalle, type ContenidosData} from "./models";
-import {capitalize} from "@/utils";
-import {type Taller} from "./Talleres/models";
+import { APP_PAGES } from "@/core/pages";
+import { type ContenidosData } from "./models";
 import ContenidosCard from "./Components/ContenidosCard.astro";
-
-/*interface Props {
-    contenido: ContenidoDetalle;
-    data: Seminario[] | Taller[];
-    bg_color?: string;
-}*/
+import FetchData from '@/components/FetchData.tsx';
 
 interface Props<T> {
-    info: {data: ContenidosData, content: T[]}
+    info: { data: ContenidosData };
     bg_color?: string;
     esTaller?: boolean;
+    serviceFn: () => Promise<any[]>;
 }
 
-const {info, bg_color} = Astro.props;
+const { info, bg_color } = Astro.props;
+const { serviceFn } = Astro.props as any;
 ---
 <section
         data-animate
@@ -39,10 +33,18 @@ const {info, bg_color} = Astro.props;
     </div>
 
     <div class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-items-center items-start">
-        {info.content.map((d: any) => (
-                <div class="w-full flex justify-center">
-                    <ContenidosCard data={d} verMasHref={APP_PAGES.contenido(d.slug)}/>
-                </div>
-        ))}
+        <FetchData client:load serviceFn={serviceFn}>
+            {(content: any[]) => {
+                return (
+                        <>
+                            {content.map((d: any) => (
+                                    <div class="w-full flex justify-center">
+                                        <ContenidosCard data={d} verMasHref={APP_PAGES.contenido(d.slug)}/>
+                                    </div>
+                            ))}
+                        </>
+                );
+            }}
+        </FetchData>
     </div>
 </section>
