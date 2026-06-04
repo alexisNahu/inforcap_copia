@@ -62,4 +62,13 @@ const { title = "Inforcap" } = Astro.props;
 					observer.unobserve(entry.target);
 				}
 			});
-		}, { threshold: 0.1
+		}, { threshold: 0.1 });
+
+		document.querySelectorAll('[data-animate]').forEach((el) => observer.observe(el));
+	};
+
+	initAnimations();
+	document.addEventListener('astro:after-swap', initAnimations);
+</script>
+</body>
+</html>
