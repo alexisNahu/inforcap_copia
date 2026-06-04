@@ -1,10 +1,6 @@
 ---
 import SeminarioCard from './components/SeminarioCard.astro';
 
-import imgHeladeria from '@/assets/img/Heladeria-Industrial.jpg';
-import imgAbcReposteria from '@/assets/img/ABC-de-la-reposteria.jpg';
-import {APP_PAGES} from "@/constants";
-import {createSlug} from '@/utils'
 
 import {type Seminario} from "./models";
 import {SeminarioService} from "./services";
@@ -21,9 +17,9 @@ const seminarios: Seminario[] = await SeminarioService.getAll()
             </h3>
         </div>
 
-        <div class="container mx-auto my-8 max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!--<div class="container mx-auto my-8 max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8">
             {seminarios.map((semi) => (
                 <SeminarioCard seminario={semi} verMasHref={APP_PAGES.seminarios(semi.slug)} />
             ))}
-        </div>
+        </div>-->
     </section>
