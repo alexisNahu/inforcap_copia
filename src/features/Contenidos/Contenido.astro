@@ -1,5 +1,4 @@
 ---
-export const prerender = true;
 import {APP_PAGES} from "@/core/pages";
 import {type Seminario} from "./Seminarios/models";
 import {type ContenidoDetalle, type ContenidosData} from "./models";
@@ -21,10 +20,6 @@ interface Props<T> {
 
 const {info, bg_color} = Astro.props;
 ---
-<!--
-    Cambiamos la clase dinámica por style={...}
-    Mantenemos las clases de animación y padding intactas.
--->
 <section
         data-animate
         class="anim-hidden from-bottom py-12"

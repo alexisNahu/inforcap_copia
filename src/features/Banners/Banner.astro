@@ -45,7 +45,7 @@ const banners_ordenados = banners.sort((a, b) => a.orden - b.orden)
     const totalSlides = slides.length;
 
     // 1. Declaramos una variable para guardar el identificador del temporizador
-    let autoPlayInterval: NodeJS.Timeout | number;
+    let autoPlayInterval: any;
 
     function updateCarousel() {
         if (!track) return;
