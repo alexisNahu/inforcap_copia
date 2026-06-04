@@ -1,5 +1,4 @@
 ---
-
 import Nav from '../../features/Nav.astro';
 import Footer from '../../features/Footer.astro';
 import "../../styles/global.css";
@@ -17,7 +16,7 @@ const { title = "Inforcap" } = Astro.props;
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" type="image/png" href="/src/assets/favicon.png" />
+	<link rel="icon" type="image/png" href="/favicon.png" />
 	<title>{title}</title>
 	<ClientRouter />
 	<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-CJ6HQW36LY"></script>
@@ -63,13 +62,4 @@ const { title = "Inforcap" } = Astro.props;
 					observer.unobserve(entry.target);
 				}
 			});
-		}, { threshold: 0.1 });
-
-		document.querySelectorAll('[data-animate]').forEach((el) => observer.observe(el));
-	};
-
-	initAnimations();
-	document.addEventListener('astro:after-swap', initAnimations);
-</script>
-</body>
-</html>
+		}, { threshold: 0.1
