@@ -8,7 +8,6 @@ import '@/styles/global.css';
 export function ContenidoLayout() {
     const [data, setData] = useState<Taller | Seminario | null>(null);
     const [loading, setLoading] = useState(true);
-    // Estado para controlar la animación de entrada nativa en React
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
@@ -16,39 +15,31 @@ export function ContenidoLayout() {
 
         async function loadContenido() {
             try {
-                // 1. Leer el Query Param (?slug=...) directamente en el navegador
                 const params = new URLSearchParams(window.location.search);
                 const slug = params.get('slug');
 
-                // Si no viene ningún slug en la URL, redirigimos al 404
                 if (!slug) {
                     window.location.href = '/';
                     return;
                 }
 
-                // 2. Ejecutamos el servicio de la API en el cliente
                 const contenidos: ContenidosMix = await ContenidosServices.getMix();
 
-                // 3. Mapeamos los contenidos según tu interfaz exacta
                 const talleresList = contenidos?.talleres?.content || [];
                 const seminariosList = contenidos?.seminarios?.content || [];
                 const todosLosContenidos = [...talleresList, ...seminariosList];
 
-                // 4. Buscamos por el slug obtenido del Query Param
                 const found = todosLosContenidos.find(item => item?.slug === slug);
 
                 if (isMounted) {
                     if (found) {
                         setData(found);
-                        // Cambiamos dinámicamente el título de la pestaña del navegador
                         document.title = `${found.titulo} | Inforcap`;
 
-                        // Pequeño delay de milisegundos para asegurar que el DOM real reemplazó al Skeleton
                         setTimeout(() => {
                             if (isMounted) setIsVisible(true);
                         }, 50);
                     } else {
-                        // Si el slug no existe en la BD, mandamos a la página 404
                         window.location.href = '/';
                     }
                 }
@@ -64,23 +55,19 @@ export function ContenidoLayout() {
         return () => { isMounted = false; };
     }, []);
 
-    // --- SKELETON LOADER (Mantiene las dimensiones fijas para evitar saltos visuales) ---
     if (loading || !data) {
         return (
             <div className="w-full mt-10 p-4 animate-pulse">
                 <div className="max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-12 mx-auto">
 
-                    {/* Esqueleto del Contenedor de Imagen */}
                     <div className="w-full aspect-square rounded-xl bg-gray-200 shadow-md" />
 
-                    {/* Esqueleto del Contenedor de Información */}
                     <div className="w-full space-y-6">
                         <header className="space-y-3">
                             <div className="h-4 bg-gray-200 rounded w-1/4" />
                             <div className="h-10 bg-gray-200 rounded w-3/4" />
                         </header>
 
-                        {/* Esqueleto de Bloques de Horarios */}
                         <div className="flex my-10 gap-x-6">
                             {[1, 2, 3, 4].map((i) => (
                                 <div key={i} className="flex-1 space-y-2 border-r border-gray-200 last:border-r-0 pr-4">
@@ -90,14 +77,12 @@ export function ContenidoLayout() {
                             ))}
                         </div>
 
-                        {/* Esqueleto del Cuerpo de Texto */}
                         <div className="space-y-3 pt-4">
                             <div className="h-6 bg-gray-200 rounded w-1/3 mb-4" />
                             <div className="h-4 bg-gray-200 rounded w-full" />
                             <div className="h-4 bg-gray-200 rounded w-5/6" />
                         </div>
 
-                        {/* Esqueleto de Botones e Inversión */}
                         <div className="space-y-4 pt-6 border-t border-gray-100">
                             <div className="h-14 bg-gray-200 rounded-xl w-1/3" />
                             <div className="h-14 bg-gray-200 rounded-xl w-full" />
@@ -109,11 +94,9 @@ export function ContenidoLayout() {
         );
     }
 
-    // --- VALORES PROCESADOS ---
     const subtitulo = data.tipo === "Taller" ? 'Taller' : 'Seminario';
     const imagenSrc = data.imagen_portada || 'https://images.pexels.com/photos/15587528/pexels-photo-15587528/free-photo-of-comida-azucar-postre-dulce.jpeg';
 
-    // --- INTERFAZ COMPLETA CON ANIMACIÓN DE ENTRADA CONTROLADA ---
     return (
         <div
             className={`w-full mt-10 p-4 transition-all duration-1000 ease-out will-change-[opacity,transform] ${
@@ -122,7 +105,6 @@ export function ContenidoLayout() {
         >
             <div className="max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-12 mx-auto">
 
-                {/* Contenedor Imagen de Portada */}
                 <div className="w-full aspect-square overflow-hidden rounded-xl shadow-lg bg-gray-50">
                     <img
                         src={imagenSrc}
@@ -131,14 +113,12 @@ export function ContenidoLayout() {
                     />
                 </div>
 
-                {/* Contenedor de Información */}
                 <div className="w-full">
                     <header>
                         <h2 className="text-base font-medium text-gray-500">{subtitulo}</h2>
                         <h1 className="font-petrona text-4xl md:text-5xl text-bordoInforcap leading-tight">{data.titulo}</h1>
                     </header>
 
-                    {/* Bloque de Horarios y Fechas */}
                     <div className="md:flex my-10 gap-y-4 md:gap-y-0">
                         {[
                             { label: 'Mes', val: data.mes },

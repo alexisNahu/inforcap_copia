@@ -28,7 +28,7 @@ export const TarjetaCurso: React.FC<Props> = ({ data }) => {
     const detalleHref = APP_PAGES.contenido(data.slug);
 
     return (
-        <div className="flex flex-col h-full min-h-[650px] bg-white rounded-md overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300 border border-slate-100">
+        <div className="w-full flex flex-col h-full min-h-[650px] bg-white rounded-md overflow-hidden shadow-lg transition-transform hover:scale-[1.01] duration-300 border border-slate-100">
 
             {/* 1. Envolvemos Imagen e Info en un contenedor que use todo el espacio menos el botón */}
             <div className="flex flex-col flex-grow">
@@ -36,7 +36,7 @@ export const TarjetaCurso: React.FC<Props> = ({ data }) => {
                 {/* Imagen: Usamos basis-1/2 para que ocupe el 50% de este sub-contenedor */}
                 <a
                     href={detalleHref}
-                    className="basis-1/2 shrink-0 overflow-hidden border-b-[3px] border-slate-400/30 block"
+                    className="h-[260px] shrink-0 overflow-hidden border-b-[3px] border-slate-400/30 block"
                 >
                     <img
                         src={data.imagen_portada ?? REMOTE_IMAGE_SRC_DEFAULT}
@@ -47,8 +47,8 @@ export const TarjetaCurso: React.FC<Props> = ({ data }) => {
                     />
                 </a>
 
-                {/* Información: También con basis-1/2 para equilibrar */}
-                <div className="basis-1/2 flex flex-col pt-4 font-petrona w-full justify-start px-6 pb-4">
+                {/* Información: altura fija de imagen arriba, esta sección ocupa el resto */}
+                <div className="flex-1 flex flex-col pt-4 font-petrona w-full justify-start px-6 pb-4">
           <span className="text-[16px] uppercase text-[#A6A6A6] font-body mb-1 block">
             {esTaller ? 'Seminario' : 'CLASES DE UN DÍA'}
           </span>
