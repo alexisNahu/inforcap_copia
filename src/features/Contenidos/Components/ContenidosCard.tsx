@@ -46,7 +46,6 @@ export const TarjetaCurso: React.FC<Props> = ({ data }) => {
                         className="w-full h-full object-cover"
                     />
                 </a>
-
                 {/* Información: altura fija de imagen arriba, esta sección ocupa el resto */}
                 <div className="flex-1 flex flex-col pt-4 font-petrona w-full justify-start px-6 pb-4">
           <span className="text-[16px] uppercase text-[#A6A6A6] font-body mb-1 block">
